@@ -1,0 +1,9 @@
+INSERT INTO `category` (`id`, `cat_hausa`, `cat_english`, `color`, `media_id`)
+VALUES
+	(1,'Iyali','Family', 16777215, 9),
+	(2,'Haɗuwa da sadarwa','Meeting and communicating', 15394862, 53),
+	(3,'Kwatancin mutane da abubuwa','Describing people and things', 7137355, 94),
+	(4,'Kasuwanci da ƙidaya','Commerce and counting', 5153510, 171),
+	(5,'Ayyukan yau da kullum','Everyday activities', 9449471, 195),
+    (6,'Lokaci da yanayi','Time and weather', 14952764, 294),
+    (7,'Ilmi','Education', 16622169, 347);

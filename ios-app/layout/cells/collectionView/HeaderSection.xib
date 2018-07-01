@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeaderSection" customModule="Hausa" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="bigSectionHeader" id="TMB-4R-B17" customClass="HeaderSection" customModule="Hausa" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="115"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Piu-Jw-fwf">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Most Popular " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONz-fs-FlS" userLabel="Most Popular">
+                            <rect key="frame" x="4" y="13" width="108.5" height="24"/>
+                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.16208741069999999" green="0.35514754059999998" blue="0.18445479870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="E8l-qp-DbU"/>
+                        <constraint firstItem="ONz-fs-FlS" firstAttribute="leading" secondItem="Piu-Jw-fwf" secondAttribute="leading" constant="4" id="Ffx-TK-qdq"/>
+                        <constraint firstItem="ONz-fs-FlS" firstAttribute="centerY" secondItem="Piu-Jw-fwf" secondAttribute="centerY" id="hSH-xd-cDi"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No items available to show" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8lg-hh-Gqp">
+                    <rect key="frame" x="86" y="87" width="203" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.80368381076388884" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Piu-Jw-fwf" firstAttribute="trailing" secondItem="L9K-QC-qLE" secondAttribute="trailing" id="Fpj-sq-XP2"/>
+                <constraint firstItem="L9K-QC-qLE" firstAttribute="bottom" secondItem="8lg-hh-Gqp" secondAttribute="bottom" constant="7" id="Sav-Di-5SD"/>
+                <constraint firstItem="Piu-Jw-fwf" firstAttribute="leading" secondItem="L9K-QC-qLE" secondAttribute="leading" id="lXO-zh-sF0"/>
+                <constraint firstItem="8lg-hh-Gqp" firstAttribute="centerX" secondItem="TMB-4R-B17" secondAttribute="centerX" id="oEs-QE-Zwi"/>
+                <constraint firstItem="Piu-Jw-fwf" firstAttribute="top" secondItem="L9K-QC-qLE" secondAttribute="top" id="rqP-O4-tuE"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="L9K-QC-qLE"/>
+            <connections>
+                <outlet property="headerLabel" destination="ONz-fs-FlS" id="MJj-zB-wVf"/>
+                <outlet property="textContainer" destination="Piu-Jw-fwf" id="ku5-l9-EJX"/>
+            </connections>
+            <point key="canvasLocation" x="-10.5" y="61.5"/>
+        </collectionReusableView>
+    </objects>
+</document>
