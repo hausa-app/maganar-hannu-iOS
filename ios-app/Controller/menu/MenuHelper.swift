@@ -47,7 +47,7 @@ struct MenuHelper {
     }
     
     static func menuWidth() -> CGFloat {
-        if UIDevice.current.orientation == .portrait {
+        if UIScreen.main.bounds.width < UIScreen.main.bounds.height {
             return 0.75
         } else {
             return 0.5

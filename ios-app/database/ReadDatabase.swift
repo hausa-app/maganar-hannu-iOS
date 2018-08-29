@@ -38,10 +38,8 @@ class ReadDatabase: Database {
         var entries: [Entry] = []
         
         do {
-            for word in try db.prepare(joinAll()) {
-                if word[entrycat_table[entrycat_catID]] == with {
-                    buildHausaList(&entries, word: word)
-                }
+            for word in try db.prepare(joinAll().where(entrycat_table[entrycat_catID] == with)) {
+                buildHausaList(&entries, word: word)
             }
             return entries
         } catch {
@@ -50,15 +48,13 @@ class ReadDatabase: Database {
         }
     }
     
-    func getSearchRequest(key: String) -> [Entry]? {
+    func getSearchRequestHausa(key: String) -> [Entry]? {
         var entries: [Entry] = []
         let wordKey = Utilities.hausaString(key)
         
         do {
-            for word in try db.prepare(joinAll()) {
-                if Utilities.hausaString(word[hausa_table[hausa_entry]]).hasPrefix(Utilities.hausaString(wordKey)) {
-                    buildHausaList(&entries, word: word)
-                }
+            for word in try db.prepare(joinAll().filter(toHausa(hausa_table[hausa_entry]).like("\(wordKey)%")).limit(50).order(hausa_table[hausa_entry])) {
+                buildHausaList(&entries, word: word)
             }
             return entries
         } catch {
@@ -72,16 +68,45 @@ class ReadDatabase: Database {
         let wordKey = Utilities.hausaString(key)
         
         do {
-            for word in try db.prepare(joinAll()) {
-                if Utilities.hausaString(word[english_table[english_entry]]).hasPrefix(Utilities.hausaString(wordKey)) {
-                    buildEnglishList(&entries, word: word)
-                }
+            for word in try db.prepare(joinAll().filter(toHausa(english_table[english_entry]).like("\(wordKey)%")).limit(50).order(hausa_table[hausa_entry])) {
+                buildEnglishList(&entries, word: word)
             }
             return entries
         } catch {
             print("Could not fetch request!")
             return nil
         }
+    }
+    
+    func getSearchRequest(key: String) -> [Entry]? {
+        var entries: [Entry] = []
+        let wordKey = Utilities.hausaString(key)
+        
+        do {
+            for word in try db.prepare(joinAll().filter(
+                toHausa(hausa_table[hausa_entry]).like("\(wordKey)%") || toHausa(english_table[english_entry]).like("\(wordKey)%")
+                ).limit(50).order(hausa_table[hausa_entry])) {
+                buildHausaList(&entries, word: word)
+            }
+            return entries
+        } catch {
+            print("Could not fetch request!")
+            return nil
+        }
+    }
+    
+    func toHausa(_ word: Expression<String>) -> Expression<String> {
+        return word
+            .replace("ƙ",with: "k")
+            .replace("ɗ",with: "d")
+            .replace(" ",with: "")
+            .replace("-", with: "")
+            .replace("'", with: "")
+            .replace("?", with: "")
+            .replace("’", with: "")
+            .replace("(", with: "")
+            .replace(")", with: "")
+            .lowercaseString
     }
     
     func getWordById(id: Int) -> Entry? {

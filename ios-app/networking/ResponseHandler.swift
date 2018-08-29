@@ -26,13 +26,12 @@ class ResponseHandler {
             return nil
         }
 
-        object.readParams(object: response.getArray(name: "message")?.values[0] as! JSONObject)
+        object.readParams(object: response)
         return object
     }
     
     func handleMessage(_ response: JSONObject) {
         let object = identifyPackage(response)
-
         if let object = object as? HN_receivedDatabaseDate {
             handleDatabaseDate(object)
         } else if let object = object as? HN_updatedEntries {

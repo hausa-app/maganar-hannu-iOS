@@ -16,10 +16,15 @@ class ResizedUITabBarController: UITabBarController {
     var trailing: NSLayoutConstraint!
     
     override func viewWillLayoutSubviews() {
-        var tabFrame = self.tabBar.frame
-        tabFrame.size.height = tabBarHeight
-        tabFrame.origin.y = self.view.frame.size.height - tabBarHeight
-        self.tabBar.frame = tabFrame
+        //var tabFrame = self.tabBar.frame
+        //tabFrame.size.height = tabBarHeight
+        //tabFrame.origin.y = self.view.frame.size.height - tabBarHeight
+        //self.tabBar.frame = tabFrame
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.tabBar.invalidateIntrinsicContentSize()
     }
     
     func openMenu() {

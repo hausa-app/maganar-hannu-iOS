@@ -105,14 +105,10 @@ class LimitedDatabase: Database {
     func getFavoriteList(_ limit: Int? = nil) -> [Entry]? {
         var entries: [Entry] = []
         do {
-            try db.transaction {
-                for word in try db.prepare(joinAll().filter(statsOwn[favorite] == true)) {
-
-                    self.buildHausaList(&entries, word: word)
-                    if entries.count == limit { break }
-                }
+            for word in try db.prepare(joinAll().filter(statsOwn[favorite] == true).order(hausa_table[hausa_entry])) {
+                self.buildHausaList(&entries, word: word)
+                if entries.count == limit { break }
             }
-
             return entries
         } catch {
             print("Could not fetch request!")
@@ -124,12 +120,10 @@ class LimitedDatabase: Database {
         var entries: [Entry] = []
         
         do {
-            try db.transaction {
-                for word in try db.prepare(joinAll().filter(statsOwn[newHits] != 0).order(statsOwn[newHits].desc)) {
-                    self.buildHausaList(&entries, word: word)
-                    if entries.count == limit { break }
+            for word in try db.prepare(joinAll().filter(statsOwn[newHits] != 0).order(statsOwn[newHits].desc).limit(limit)) {
+                self.buildHausaList(&entries, word: word)
+                if entries.count == limit { break }
             }
-        }
         return entries
         } catch {
             print("Could not fetch request!")
@@ -141,12 +135,10 @@ class LimitedDatabase: Database {
         var entries: [SignImage] = []
         
         do {
-            try db.transaction {
-                for (index, word) in try db.prepare(thumbnail().filter(statsOwn[newHits] != 0).order(statsOwn[newHits].desc)).enumerated() {
-                    if index < from { continue }
-                    entries.append((AppConfig.getImage(with: word[media_table[media_id]]))!)
-                    if index == to { break }
-                }
+            for (index, word) in try db.prepare(thumbnail().filter(statsOwn[newHits] != 0).order(statsOwn[newHits].desc)).enumerated() {
+                if index < from { continue }
+                entries.append((AppConfig.getImage(with: word[media_table[media_id]]))!)
+                if index == to { break }
             }
 
             return entries
@@ -160,12 +152,10 @@ class LimitedDatabase: Database {
         var entries: [SignImage] = []
         
         do {
-            try db.transaction {
-                for (index, word) in try db.prepare(thumbnail().filter(statsOwn[statsOwn_lastViewed] != Utilities.getInitDate().toInt()).order(statsOwn[statsOwn_lastViewed].desc)).enumerated() {
-                    if index < from { continue }
-                    entries.append((AppConfig.getImage(with: word[media_table[media_id]]))!)
-                    if index == to { break }
-                }
+            for (index, word) in try db.prepare(thumbnail().filter(statsOwn[statsOwn_lastViewed] != Utilities.getInitDate().toInt()).order(statsOwn[statsOwn_lastViewed].desc)).enumerated() {
+                if index < from { continue }
+                entries.append((AppConfig.getImage(with: word[media_table[media_id]]))!)
+                if index == to { break }
             }
             return entries
         } catch {
@@ -178,11 +168,9 @@ class LimitedDatabase: Database {
         var entries: [Entry] = []
         
         do {
-            try db.transaction {
-                for word in try db.prepare(joinAll().filter(statsOwn[statsOwn_lastViewed] != Utilities.getInitDate().toInt()).order(statsOwn[statsOwn_lastViewed].desc)) {
-                    self.buildHausaList(&entries, word: word)
-                    if entries.count == limit { break }
-                }
+            for word in try db.prepare(joinAll().filter(statsOwn[statsOwn_lastViewed] != Utilities.getInitDate().toInt()).order(statsOwn[statsOwn_lastViewed].desc)) {
+                self.buildHausaList(&entries, word: word)
+                if entries.count == limit { break }
             }
             return entries
         } catch {

@@ -27,7 +27,7 @@ class DatabaseInitializer: Database {
                 })
                 
                 try db.run( english_table.create(ifNotExists: true) { table in
-                    table.column(category_id, primaryKey: .autoincrement)
+                    table.column(english_id, primaryKey: .autoincrement)
                     table.column(english_entry)
                     table.column(english_timestamp, defaultValue: 332145240)
                 })

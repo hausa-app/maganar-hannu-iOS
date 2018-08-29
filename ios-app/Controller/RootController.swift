@@ -8,6 +8,7 @@
 
 import UIKit
 import MessageUI
+import Intents
 
 class RootController: UIViewController {
     
@@ -24,6 +25,12 @@ class RootController: UIViewController {
             UserConfig.readConfig()
             if !UserConfig.isClientActivated() {
                 StartupController.instance.initializeApp()
+                
+                if #available(iOS 10.0, *) {
+                    INPreferences.requestSiriAuthorization { status in
+                        
+                    }
+                }
             }
             
             StartupController.instance.initialize()
@@ -32,7 +39,7 @@ class RootController: UIViewController {
                 self.showMainViewController()
             }
         }
-
+    
     }
 
     func showSplashViewController() {

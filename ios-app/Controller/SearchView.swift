@@ -73,11 +73,11 @@ class SearchView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size  = self.frame.size.width;
-        if UIDevice.current.orientation == .portrait {
-            return CGSize(width: size * 0.5 - 20, height: size * 0.5 - 20)
+        let width  = self.frame.size.width;
+        if width < self.frame.size.height {
+            return CGSize(width: width * 0.5 - 20, height: width * 0.5 - 20)
         } else {
-            return CGSize(width: size * 0.25 - 20, height: size * 0.25 - 20)
+            return CGSize(width: width * 0.25 - 20, height: width * 0.25 - 20)
         }
     }
     

@@ -20,7 +20,7 @@ class SearchManager {
         let filter = UserConfig.getFilterType()
         
         if filter == .hausa {
-            return Utilities.sortList(entries: database.getSearchRequest(key: key)!)
+            return Utilities.sortList(entries: database.getSearchRequestHausa(key: key)!)
         } else if filter == .english {
             return Utilities.sortList(entries: database.getSearchRequestEnglish(key: key)!)
         } else {
@@ -29,14 +29,11 @@ class SearchManager {
     }
     
     func getHausaAndEnglishRequests(key: String) -> [Entry] {
-        let requestEnglish = database.getSearchRequestEnglish(key: key)
-        let requestHausa = database.getSearchRequest(key: key)
-        
-        let requestAll = requestEnglish! + requestHausa!
+        let requestAll = database.getSearchRequest(key: key)
         
         var result: [Entry] = []
         
-        for value in requestAll {
+        for value in requestAll! {
             if !result.contains(where: { $0.id == value.id } ) {
                 result.append(value)
             }

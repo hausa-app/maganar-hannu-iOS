@@ -17,6 +17,8 @@ class SearchFilterAlert: MainAlertController {
     private var rowCount = 0
     
     private var currentState = UserConfig.getFilterType()
+    
+    public var delegate: PopupVCDelegate?
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +71,12 @@ class SearchFilterAlert: MainAlertController {
         DispatchQueue.global(qos: .background).async {
             UserConfig.save(true)
         }
+        self.delegate?.popupDidDisapper()
         super.confirmRequest(sender: sender)
     }
     
+}
+
+protocol PopupVCDelegate {
+    func popupDidDisapper()
 }

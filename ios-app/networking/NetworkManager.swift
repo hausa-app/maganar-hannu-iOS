@@ -13,6 +13,7 @@ class NetworkManager {
     
     let responseHandler = ResponseHandler()
     let url = URL(string: "https://maganar-hannu.herokuapp.com/")
+    //let url = URL(string: "http://192.168.1.3:5000/")
     
     func checkNetworkAvailability() -> ReachabilityStatus {
         var zeroAddress = sockaddr_in()

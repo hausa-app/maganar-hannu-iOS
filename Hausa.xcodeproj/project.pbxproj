@@ -60,7 +60,6 @@
 		4EC1F9E21FF3515E0058599F /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC1F9E11FF3515E0058599F /* AppConfig.swift */; };
 		4EC1F9E41FF3516F0058599F /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC1F9E31FF3516F0058599F /* Config.swift */; };
 		4ECD68921FFFA07D007FCF71 /* TextCheckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECD68911FFFA07D007FCF71 /* TextCheckCell.swift */; };
-		4ED052E21FABECA20062481A /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ED052E31FABECA20062481A /* SQLite.framework */; };
 		4ED052F11FABF7D60062481A /* images in Resources */ = {isa = PBXBuildFile; fileRef = 4ED052F01FABF7D60062481A /* images */; };
 		4EDA064F2003F49600F7945A /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDA064E2003F49600F7945A /* Interactor.swift */; };
 		4EDA06512003F4BD00F7945A /* MenuHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDA06502003F4BD00F7945A /* MenuHelper.swift */; };
@@ -83,7 +82,7 @@
 		4EF759701FE8B47600C5332F /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF7596F1FE8B47600C5332F /* MainController.swift */; };
 		4EFE78FE20C9EEF4005960C8 /* TriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE78FD20C9EEF4005960C8 /* TriangleView.swift */; };
 		85BB9535193567C73A74D9C4 /* Pods_HausaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F33181249C8FC990313F54CF /* Pods_HausaTests.framework */; };
-		993998183A8773D8897CEDD2 /* Pods_Hausa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3F1B8109A600F720263465 /* Pods_Hausa.framework */; };
+		D0BD446E87089847E3F1F710 /* Pods_Hausa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3F1B8109A600F720263465 /* Pods_Hausa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,6 +181,7 @@
 		4ECD68911FFFA07D007FCF71 /* TextCheckCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCheckCell.swift; sourceTree = "<group>"; };
 		4ED052E31FABECA20062481A /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ED052F01FABF7D60062481A /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
+		4ED28B5C20E9CBE6001C55E2 /* SQLite.swift */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SQLite.swift; path = Pods/SQLite.swift; sourceTree = "<group>"; };
 		4EDA064E2003F49600F7945A /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 		4EDA06502003F4BD00F7945A /* MenuHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHelper.swift; sourceTree = "<group>"; };
 		4EDA06522003F55100F7945A /* PresentMenuAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentMenuAnimator.swift; sourceTree = "<group>"; };
@@ -215,8 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E2CAAA320082A26000A3617 /* SwiftSocket.framework in Frameworks */,
-				4ED052E21FABECA20062481A /* SQLite.framework in Frameworks */,
-				993998183A8773D8897CEDD2 /* Pods_Hausa.framework in Frameworks */,
+				D0BD446E87089847E3F1F710 /* Pods_Hausa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +479,7 @@
 		B75C69275F5C71D60CCE02AF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4ED28B5C20E9CBE6001C55E2 /* SQLite.swift */,
 				4E2CAAA420082A26000A3617 /* SwiftSocket.framework */,
 				4ED052E31FABECA20062481A /* SQLite.framework */,
 				3C3F1B8109A600F720263465 /* Pods_Hausa.framework */,
@@ -575,7 +575,7 @@
 		4EABD6FD1FABD9D80068CDB1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
+				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "MNM Team";
 				TargetAttributes = {
@@ -591,6 +591,9 @@
 							};
 							com.apple.SafariKeychain = {
 								enabled = 0;
+							};
+							com.apple.Siri = {
+								enabled = 1;
 							};
 						};
 					};
@@ -1038,7 +1041,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3AFEF96E45B1AB39023541EA /* Pods-Hausa.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Hausa.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P8P6AFZH78;
 				INFOPLIST_FILE = "ios-app/Info.plist";
@@ -1055,7 +1060,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BAB5E985DAD46CA72F56DCD2 /* Pods-Hausa.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Hausa.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P8P6AFZH78;
 				INFOPLIST_FILE = "ios-app/Info.plist";

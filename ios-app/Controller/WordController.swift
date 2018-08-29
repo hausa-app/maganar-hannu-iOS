@@ -86,7 +86,7 @@ class WordController: MainController {
     
     @IBAction func share(_ sender: UIBarButtonItem) {
         // text to share
-        let text = "Look at the sign for the word \"" + selectedEntry.word + "\". \n That's amazing! \n" + "http://192.168.1.5:3000/word?ids=" + String(selectedEntry.id) +
+        let text = "Look at the sign for the word \"" + selectedEntry.word + "\". \n That's amazing! \n" + "https://maganar-hannu.herokuapp.com/#/word/" + String(selectedEntry.id) +
         "\n You can also download the app on the website!"
         
         // set up activity view controller

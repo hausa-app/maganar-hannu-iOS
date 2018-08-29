@@ -142,15 +142,7 @@ class Utilities {
     static func sortList(entries: [Entry]) -> [Entry] {
         
         let sorted = entries.sorted { (object1, object2) -> Bool in
-            if object1 is HausaEntry && object2 is EnglishEntry {
-                return hausaString(object1.word) < hausaString(object2.word)
-            } else if object1 is HausaEntry && object2 is HausaEntry {
-                return hausaString(object1.word) < hausaString(object2.word)
-            } else if object1 is EnglishEntry && object2 is HausaEntry {
-                return hausaString(object1.word) < hausaString(object2.word)
-            } else {
-                return hausaString(object1.word) < hausaString(object2.word)
-            }
+            return hausaString(object1.word) < hausaString(object2.word)
         }
         return sorted
     }

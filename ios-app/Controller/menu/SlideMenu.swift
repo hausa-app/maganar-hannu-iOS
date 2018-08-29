@@ -32,7 +32,7 @@ class SlideMenu: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     override func viewWillLayoutSubviews() {
-        if UIDevice.current.orientation == .portrait {
+        if UIScreen.main.bounds.width < UIScreen.main.bounds.height {
             self.portraitWidth.isActive = true
             self.landscapeWidth.isActive = false
             self.tableView.isScrollEnabled = false

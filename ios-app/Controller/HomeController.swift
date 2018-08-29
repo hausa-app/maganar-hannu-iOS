@@ -198,11 +198,17 @@ class HomeController: MainController {
         }
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+    override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         if collectionView.numberOfItems(inSection: section) == 0 {
-            return CGSize(width: collectionView.frame.size.width, height: 115)
+            let width  = self.view.frame.size.width;
+            if width < self.view.frame.size.height {
+                return CGSize(width: collectionView.frame.width, height: width * 0.5 - 20)
+            } else {
+                return CGSize(width: collectionView.frame.width, height: width * 0.25 - 20)
+            }
+            
         }
-        return CGSize(width: collectionView.frame.size.width, height: 50)
+        return super.collectionView(collectionView, layout: collectionViewLayout, referenceSizeForHeaderInSection: section)
     }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {

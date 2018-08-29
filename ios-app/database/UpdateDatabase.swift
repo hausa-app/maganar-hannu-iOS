@@ -128,6 +128,7 @@ class UpdateDatabase: Database {
                         } else {
                             try db.run(table.delete())
                         }
+                        if idx == mediaEntries.count - 1 { completionHandler() }
                     }
                 }
             } catch {

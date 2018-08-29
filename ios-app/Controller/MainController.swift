@@ -47,7 +47,10 @@ class MainController: UIViewController, UICollectionViewDataSource, UICollection
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        searchBar.setImage(#imageLiteral(resourceName: "next_ico"), for: .bookmark, state: .normal)
+        searchBar.showsCancelButton = true
         searchBar.delegate = self
+        
         if collectionView != nil {
             if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
                 flowLayout.sectionHeadersPinToVisibleBounds = true
@@ -119,10 +122,12 @@ class MainController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func createSearchBar() {
-        searchBar.placeholder = "Search for ..."
+        searchBar.placeholder = "Search..."
         
-        let button3 = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelRequest(_:)))
-        navigationItem.rightBarButtonItem = button3
+        let button = UIBarButtonItem(image: #imageLiteral(resourceName: "filter"), style: .plain, target: self, action: #selector(filterSearch(_:)))
+        button.tintColor = .black
+        
+        navigationItem.leftBarButtonItem = button
         
         let searchBarContainer = SearchBarContainerView(customSearchBar: searchBar)
         searchBarContainer.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 44)
@@ -147,6 +152,24 @@ class MainController: UIViewController, UICollectionViewDataSource, UICollection
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 0
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize{
+        let width  = self.view.frame.size.width;
+        if width < self.view.frame.size.height {
+            return CGSize(width: collectionView.frame.width, height: (width * 0.5 - 20) * 0.275)
+        } else {
+            return CGSize(width: collectionView.frame.width, height: (width * 0.25 - 20) * 0.275)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width  = self.view.frame.size.width;
+        if width < self.view.frame.size.height {
+            return CGSize(width: width * 0.5 - 20, height: width * 0.5 - 20)
+        } else {
+            return CGSize(width: width * 0.25 - 20, height: width * 0.25 - 20)
+        }
+    }
 
     func changeView(toSearch: Bool) {
         if toSearch {
@@ -160,14 +183,20 @@ class MainController: UIViewController, UICollectionViewDataSource, UICollection
     
     func endSearching(_ back: Bool) {
         searchBar.endEditing(true)
-        searchBar.showsSearchResultsButton = false
+
         if back || screenMng.getSearchResults().isEmpty {
+            navigationItem.leftBarButtonItem = nil
             screenMng.clearSearchResults()
             removeBlurEffect()
             dismissSearchBar()
             addButtons()
             self.searchBar.text = ""
             changeView(toSearch: false)
+        } else {
+            searchBar.resignFirstResponder()
+            if let cancelButton = searchBar.value(forKey: "cancelButton") as? UIButton {
+                cancelButton.isEnabled = true
+            }
         }
     }
     
@@ -175,17 +204,16 @@ class MainController: UIViewController, UICollectionViewDataSource, UICollection
         self.navigationItem.titleView = nil
     }
     
-    @objc func cancelRequest(_ sender:UIBarButtonItem!) {
-        endSearching(true)
-        viewWillAppear(false)
-    }
-    
     @objc func search() {
         deleteButtons()
         createSearchBar()
         addBlurEffect()
-        searchBar.showsSearchResultsButton = true
+
         searchBar.becomeFirstResponder()
+    }
+    
+    @objc func filterSearch(_ sender: UIBarButtonItem) {
+        createDialog()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -208,14 +236,15 @@ class MainController: UIViewController, UICollectionViewDataSource, UICollection
     
 }
 
-extension MainController: UISearchBarDelegate {
+extension MainController: UISearchBarDelegate, PopupVCDelegate {
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        endSearching(true)
+        viewWillAppear(false)
+    }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         endSearching(false)
-    }
-    
-    func searchBarResultsListButtonClicked(_ searchBar: UISearchBar) {
-        createDialog()
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -235,23 +264,17 @@ extension MainController: UISearchBarDelegate {
         let popupVC = SearchFilterAlert()
         popupVC.modalPresentationStyle = .overCurrentContext
         popupVC.modalTransitionStyle = .crossDissolve
+        popupVC.delegate = self
         
         self.tabBarController?.present(popupVC, animated: true, completion: nil)
     }
     
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        searchBar.showsSearchResultsButton = true
+    func popupDidDisapper() {
+        changeView(toSearch: true)
+        removeBlurEffect()
+        screenMng.setSearchResults(key: searchBar.text!)
+        searchView.collectionView.reloadData()
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size  = self.view.frame.size.width;
-        if UIDevice.current.orientation == .portrait {
-            return CGSize(width: size * 0.5 - 20, height: size * 0.5 - 20)
-        } else {
-            return CGSize(width: size * 0.25 - 20, height: size * 0.25 - 20)
-        }
-    }
-    
 }
 
 extension MainController: UITabBarControllerDelegate {
