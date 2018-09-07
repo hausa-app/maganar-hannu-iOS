@@ -29,16 +29,19 @@ class SlideMenu: UIViewController, UITableViewDataSource, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(updateCells), name: .gotDBTime, object: nil)
+        
+        print(UIScreen.main.bounds.height)
+        print(tableView.contentSize.height)
     }
     
     override func viewWillLayoutSubviews() {
         if UIScreen.main.bounds.width < UIScreen.main.bounds.height {
-            self.portraitWidth.isActive = true
-            self.landscapeWidth.isActive = false
+            //self.portraitWidth.isActive = true
+            //self.landscapeWidth.isActive = false
             self.tableView.isScrollEnabled = false
         } else {
-            self.portraitWidth.isActive = false
-            self.landscapeWidth.isActive = true
+            //self.portraitWidth.isActive = false
+            //self.landscapeWidth.isActive = true
             self.tableView.isScrollEnabled = true
         }
     }

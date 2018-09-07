@@ -19,13 +19,15 @@ class MainAlertController: UIViewController, UITableViewDataSource, UITableViewD
     var heightConst: CGFloat = 0
     var constraint: NSLayoutConstraint!
     
+    var innerView: UIView!
+    
     override func loadView() {
         self.view = UIView()
 
         popupView.backgroundColor = UIColor.groupTableViewBackground
         popupView.layer.cornerRadius = 5
         
-        let innerView = UIView()
+        innerView = UIView()
         innerView.backgroundColor = UIColor.white
         innerView.layer.cornerRadius = 5
         
@@ -103,7 +105,14 @@ class MainAlertController: UIViewController, UITableViewDataSource, UITableViewD
         seperator2.translatesAutoresizingMaskIntoConstraints = false
         
         view.addConstraint(NSLayoutConstraint(item: popupView, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailingMargin, multiplier: 1, constant: -10))
-        view.addConstraint(NSLayoutConstraint(item: popupView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: 80))
+        
+        if view.frame.size.width < self.view.frame.size.height {
+            view.addConstraint(NSLayoutConstraint(item: popupView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: 80))
+        } else {
+            view.addConstraint(NSLayoutConstraint(item: popupView, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1, constant: 0))
+        }
+        
+        
         view.addConstraint(NSLayoutConstraint(item: view, attribute: .leadingMargin, relatedBy: .equal, toItem: popupView, attribute: .leading, multiplier: 1, constant: -10))
 
         popupView.addConstraint(NSLayoutConstraint(item: innerView, attribute: .top, relatedBy: .equal, toItem: popupView, attribute: .top, multiplier: 1, constant: 2))
@@ -163,8 +172,15 @@ class MainAlertController: UIViewController, UITableViewDataSource, UITableViewD
     override func viewWillLayoutSubviews() {
         const.isActive = false
         if constraint != nil { constraint.isActive = false }
-        constraint = NSLayoutConstraint(item: popupView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: tableView.contentSize.height + heightConst)
-        popupView.addConstraint(constraint)
+        
+        var frame = self.tableView.frame;
+        frame.size.height = self.tableView.contentSize.height;
+        self.tableView.frame = frame;
+        
+        //constraint = NSLayoutConstraint(item: popupView, attribute: .height, relatedBy: .greaterThanOrEqual, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: tableView.contentSize.height + heightConst)
+        //popupView.addConstraint(constraint)
+        tableView.addConstraint(NSLayoutConstraint(item: tableView, attribute: .height, relatedBy: .greaterThanOrEqual, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: tableView.frame.size.height))
+        print(tableView.frame.height + popupView.frame.height)
     }
     
     @objc func cancelRequest(sender: UIButton!) {

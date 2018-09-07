@@ -10,16 +10,22 @@ import UIKit
 
 class ResizedUITabBarController: UITabBarController {
     
-    let tabBarHeight: CGFloat = 42
+    fileprivate lazy var defaultTabBarHeight = { tabBar.frame.size.height }()
 
     let interactor = Interactor()
     var trailing: NSLayoutConstraint!
     
     override func viewWillLayoutSubviews() {
-        //var tabFrame = self.tabBar.frame
-        //tabFrame.size.height = tabBarHeight
-        //tabFrame.origin.y = self.view.frame.size.height - tabBarHeight
-        //self.tabBar.frame = tabFrame
+        super.viewWillLayoutSubviews()
+        
+        let newTabBarHeight = defaultTabBarHeight - 5
+        
+        var newFrame = tabBar.frame
+        newFrame.size.height = newTabBarHeight
+        newFrame.origin.y = view.frame.size.height - newTabBarHeight
+        
+        tabBar.frame = newFrame
+        tabBar.tintColor = .black
     }
     
     override func viewDidLayoutSubviews() {

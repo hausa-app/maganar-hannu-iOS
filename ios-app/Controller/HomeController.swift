@@ -16,114 +16,55 @@ class HomeController: MainController {
     var recentViewed: [Entry]!
     var recentSearches: [Entry]!
     
+    var entries = [Int: [Entry]]()
+    
     var editRS = false
     var editRV = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateEntries()
-        
-        collectionView.register(UINib(nibName:"HeaderSection", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "bigSectionHeader")
     }
-    
+
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
-        if indexPath.section == 0 {
-            let peCount = popularEntries.count
-            if peCount <= 4 {
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WordCell", for: indexPath) as! WordCell
-                cell.word = popularEntries[indexPath.item]
-                cell.setColor(type: .popular)
-                return cell
-            } else {
-                if indexPath == collectionView.lastIndexPath(inSection: indexPath.section) {
-                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExtraCell", for: indexPath) as! ExtraCell
-                    cell.entries = (popularEntries, 3)
-                    cell.setColor(type: .popular)
-                    return cell
-                } else {
-                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WordCell", for: indexPath) as! WordCell
-                    cell.word = popularEntries[indexPath.item]
-                    cell.setColor(type: .popular)
-                    return cell
-                }
-            }
-        } else if indexPath.section == 1 {
-            let rsCount = recentSearches.count
-            if rsCount <= 4 {
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WordCell", for: indexPath) as! WordCell
-                cell.word = recentSearches[indexPath.item]
-                cell.setColor(type: .recentSearches)
-
-                if self.editRS { cell.wobble(true) } else { cell.wobble(false)}
-                cell.deleteHandler = {
-                    UserConfig.deleteSearchEntry(pos: indexPath.item)
-                    self.recentSearches = UserConfig.getRecentSearches(5)
-                    collectionView.reloadData()
-                }
-                return cell
-            } else {
-                if indexPath == collectionView.lastIndexPath(inSection: indexPath.section) {
-                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExtraCell", for: indexPath) as! ExtraCell
-                    cell.entries = (recentSearches, 3)
-                    cell.setColor(type: .recentSearches)
-                    return cell
-                } else {
-                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WordCell", for: indexPath) as! WordCell
-                    cell.word = recentSearches[indexPath.item]
-                    cell.setColor(type: .recentSearches)
-                    
-                    if self.editRS { cell.wobble(true) } else { cell.wobble(false)}
-                    cell.deleteHandler = {
-                        UserConfig.deleteSearchEntry(pos: indexPath.item)
-                        self.recentSearches = UserConfig.getRecentSearches(5)
-                        collectionView.reloadData()
-                    }
-                    return cell
-                }
-            }
-        } else {
-            let rvCount = recentViewed.count
-            if rvCount <= 4 {
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WordCell", for: indexPath) as! WordCell
-                cell.word = recentViewed[indexPath.item]
-                cell.setColor(type: .recentViews)
-                if self.editRV { cell.wobble(true) } else { cell.wobble(false)}
-                cell.deleteHandler = {
-                    self.screenMng.removeViewed(entry: cell.word!)
-                    self.recentViewed = self.screenMng.getRecentViewedEntries(5)
-                    collectionView.reloadData()
-                }
-                return cell
-            } else {
-                if indexPath == collectionView.lastIndexPath(inSection: indexPath.section) {
-                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExtraCell", for: indexPath) as! ExtraCell
-                    cell.entries = (recentViewed, 3)
-                    cell.setColor(type: .recentViews)
-                    return cell
-                } else {
-                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WordCell", for: indexPath) as! WordCell
-                    cell.word = recentViewed[indexPath.item]
-                    cell.setColor(type: .recentViews)
-                    
-                    if self.editRV { cell.wobble(true) } else { cell.wobble(false)}
-                    cell.deleteHandler = {
-                        self.screenMng.removeViewed(entry: cell.word!)
-                        self.recentViewed = self.screenMng.getRecentViewedEntries(5)
-                        collectionView.reloadData()
-                    }
-                    return cell
-                }
-            }
+        var limit = 6
+        if self.view.frame.size.width < self.view.frame.size.height {
+            limit = 4
         }
+        
+        let entriesToSet = entries[indexPath.section]!
+        let count = entriesToSet.count
+        var cell: UICollectionViewCell
+        
+        if count <= limit || indexPath != collectionView.lastIndexPath(inSection: indexPath.section) {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WordCell", for: indexPath)
+            (cell as! WordCell).word = entriesToSet[indexPath.item]
+            (cell as! WordCell).setColor(type: ThemeType(rawValue: indexPath.section))
+        } else {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExtraCell", for: indexPath)
+            (cell as! ExtraCell).entries = (entriesToSet, limit - 1)
+            (cell as! ExtraCell).setColor(type: ThemeType(rawValue: indexPath.section))
+        }
+        
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let headerView: UICollectionReusableView!
         if collectionView.numberOfItems(inSection: indexPath.section) == 0 {
-            headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "bigSectionHeader", for: indexPath)
+            headerView =
+                collectionView
+                    .dequeueReusableSupplementaryView(
+                        ofKind: kind,
+                        withReuseIdentifier: "bigSectionHeader",
+                        for: indexPath)
         } else {
-            headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "sectionHeader", for: indexPath)
+            headerView =
+                collectionView
+                    .dequeueReusableSupplementaryView(
+                        ofKind: kind,
+                        withReuseIdentifier: "sectionHeader",
+                        for: indexPath)
         }
         
         switch kind {
@@ -197,7 +138,8 @@ class HomeController: MainController {
             }
         }
     }
-
+    
+    
     override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         if collectionView.numberOfItems(inSection: section) == 0 {
             let width  = self.view.frame.size.width;
@@ -216,12 +158,16 @@ class HomeController: MainController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        var limit = 6
+        if self.view.frame.size.width < self.view.frame.size.height {
+            limit = 4
+        }
         if section == 0 {
-            if popularEntries.count > 4 { return 4 } else { return popularEntries.count }
+            if popularEntries.count > limit { return limit } else { return popularEntries.count }
         } else if section == 1 {
-            if recentSearches.count > 4 { return 4 } else  { return recentSearches.count }
+            if recentSearches.count > limit { return limit } else  { return recentSearches.count }
         } else {
-            if recentViewed.count > 4 { return 4 } else { return recentViewed.count }
+            if recentViewed.count > limit { return limit } else { return recentViewed.count }
         }
     }
     
@@ -233,13 +179,7 @@ class HomeController: MainController {
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         super.shouldPerformSegue(withIdentifier: identifier, sender: sender)
         if identifier == "showWord" {
-            if self.index.section == 0 {
-                screenMng.setActiveEntryList(self.popularEntries)
-            } else if self.index.section == 1 {
-                screenMng.setActiveEntryList(self.recentSearches)
-            } else {
-                screenMng.setActiveEntryList(self.recentViewed)
-            }
+            screenMng.setActiveEntryList(entries[index.section]!)
             
             if let cell = sender as? WordCell {
                 if !cell.delete.isHidden {
@@ -265,16 +205,10 @@ class HomeController: MainController {
         }
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.endSearching(false)
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if searchView.isHidden {
-            updateEntries()
-            self.collectionView.reloadData()
-        }
+        updateEntries()
+        self.collectionView.reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -284,9 +218,45 @@ class HomeController: MainController {
     }
     
     func updateEntries() {
-        self.popularEntries = screenMng.getPopularEntries(5)
-        self.recentSearches = UserConfig.getRecentSearches(5)
-        self.recentViewed = screenMng.getRecentViewedEntries(5)
+        self.popularEntries = screenMng.getPopularEntries(7)
+        self.recentSearches = UserConfig.getRecentSearches(7)
+        self.recentViewed = screenMng.getRecentViewedEntries(7)
+        
+        entries[0] = popularEntries
+        entries[1] = recentSearches
+        entries[2] = recentViewed
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width  = self.view.frame.size.width
+        let intrinsicMargin: CGFloat = 15.0 + 15.0
+        var targetWidth: CGFloat = (collectionView.bounds.width - (collectionView.contentInset.left + collectionView.contentInset.right)) / 2
+        var height: CGFloat = 0
+        var cellSize: CGFloat = 0
+        
+        var item: Entry! = nil
+        
+        if width < self.view.frame.size.height {
+            targetWidth = width * 0.5 - 20
+            if indexPath.item % 2 != 0 {
+                item = entries[indexPath.section]![indexPath.item - (indexPath.item % 2)]
+            } else {
+                item = entries[indexPath.section]![indexPath.item]
+            }
+        } else {
+            targetWidth = width * (1/3) - 20
+            if indexPath.item % 3 != 0 {
+                item = entries[indexPath.section]![indexPath.item - (indexPath.item % 3)]
+            } else {
+                item = entries[indexPath.section]![indexPath.item]
+            }
+        }
+        
+        let labelSize = UILabel.estimatedSize(item.word, targetSize: CGSize(width: targetWidth, height: 0))
+        let sec = UILabel.estimatedSize(getAsString(list: item.translationList), targetSize: CGSize(width: targetWidth, height: 0))
+        cellSize = labelSize.height + intrinsicMargin + sec.height
+        
+        height = targetWidth + cellSize - intrinsicMargin
+        return CGSize(width: targetWidth, height: height)
+    }
 }

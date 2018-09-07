@@ -36,9 +36,9 @@ class ListWordsController: MainController {
             if !(self.collectionView.visibleCells.first as! MainCell).isOldColor() { return }
             for cell in self.collectionView.visibleCells {
                 if let cell = cell as? MainCell {
-                    if headerText == "Most Popular" {
+                    if headerText == "Most popular" {
                         cell.setColor(type: .popular)
-                    } else if headerText == "Recent Searches" {
+                    } else if headerText == "Recent searches" {
                         cell.setColor(type: .recentSearches)
                     } else {
                         cell.setColor(type: .recentViews)
@@ -49,9 +49,9 @@ class ListWordsController: MainController {
         
         for header in self.collectionView.visibleSupplementaryViews(ofKind: UICollectionElementKindSectionHeader) {
             if let header = header as? HeaderSection {
-                if headerText == "Most Popular" {
+                if headerText == "Most popular" {
                     header.setColor(type: .popular)
-                } else if headerText == "Recent Searches" {
+                } else if headerText == "Recent searches" {
                     header.setColor(type: .recentSearches)
                 } else {
                     header.setColor(type: .recentViews)
@@ -63,15 +63,15 @@ class ListWordsController: MainController {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "sectionHeader", for: indexPath) as! HeaderSection
         
-        if headerText == "Most Popular" {
+        if headerText == "Most popular" {
             headerView.setColor(type: .popular)
-        } else if headerText == "Recent Searches" {
+        } else if headerText == "Recent searches" {
             headerView.setColor(type: .recentSearches)
         } else {
             headerView.setColor(type: .recentViews)
         }
         
-        if entries.isEmpty || headerText == "Most Popular" {
+        if entries.isEmpty || headerText == "Most popular" {
             headerView.setHeader(headerText)
         } else {
             headerView.changeIcon(editingList)
@@ -86,35 +86,25 @@ class ListWordsController: MainController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let count = entries.count
-        if count <= 6 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WordCell", for: indexPath) as! WordCell
-            cell.word = entries[indexPath.item]
-            if self.editingList { cell.wobble(true) }
-            setCellColorAndHandler(cell: cell, indexPath: indexPath)
-            
-            return cell
-        } else if count % limit > 0 {
-            if indexPath == collectionView.lastIndexPath(inSection: indexPath.section) && limit <= count {
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExtraCell", for: indexPath) as! ExtraCell
-                cell.entries = (entries, limit - 1)
-                setCellColorAndHandler(cell: cell, indexPath: indexPath)
-                return cell
-            } else {
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WordCell", for: indexPath) as! WordCell
-                cell.word = entries[indexPath.item]
-                if self.editingList { cell.wobble(true) }
-                setCellColorAndHandler(cell: cell, indexPath: indexPath)
-                return cell
-            }
+        let cell: UICollectionViewCell
+
+        if indexPath != collectionView.lastIndexPath(inSection: indexPath.section) {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WordCell", for: indexPath)
+            (cell as! WordCell).word = entries[indexPath.item]
+            if editingList { (cell as! WordCell).wobble(true) }
+            setCellColorAndHandler(cell: (cell as! WordCell), indexPath: indexPath)
+        } else {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExtraCell", for: indexPath)
+            (cell as! ExtraCell).entries = (entries, limit - 1)
+            setCellColorAndHandler(cell: (cell as! ExtraCell), indexPath: indexPath)
         }
-        return collectionView.dequeueReusableCell(withReuseIdentifier: "WordCell", for: indexPath)
+        return cell
     }
     
     func setCellColorAndHandler(cell: MainCell, indexPath: IndexPath) {
-        if headerText == "Most Popular" {
+        if headerText == "Most popular" {
             cell.setColor(type: .popular)
-        } else if headerText == "Recent Searches" {
+        } else if headerText == "Recent searches" {
             cell.setColor(type: .recentSearches)
             if let cell = cell as? WordCell {
                 cell.deleteHandler = {
@@ -146,10 +136,6 @@ class ListWordsController: MainController {
         return count
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        endSearching(false)
-    }
-    
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         let cell = collectionView.cellForItem(at: indexPath)
         if cell is ExtraCell {
@@ -161,9 +147,9 @@ class ListWordsController: MainController {
     }
 
     func updateEntries() {
-        if headerText == "Most Popular" {
+        if headerText == "Most popular" {
             self.entries = screenMng.getPopularEntries(limit + 1)
-        } else if headerText == "Recent Searches" {
+        } else if headerText == "Recent searches" {
             self.entries = UserConfig.getRecentSearches(limit + 1)
         } else {
             self.entries = screenMng.getRecentViewedEntries(limit + 1)
@@ -196,5 +182,38 @@ class ListWordsController: MainController {
                 cell.wobble(header.settingsActive)
             }
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width  = self.view.frame.size.width;
+        let intrinsicMargin: CGFloat = 15.0 + 15.0
+        var targetWidth: CGFloat = (collectionView.bounds.width - (collectionView.contentInset.left + collectionView.contentInset.right)) / 2
+        var height: CGFloat = 0
+        var cellSize: CGFloat = 0
+        
+        var item: Entry! = nil
+        
+        if width < self.view.frame.size.height {
+            targetWidth = width * 0.5 - 20
+            if indexPath.item % 2 != 0 {
+                item = entries[indexPath.item - (indexPath.item % 2)]
+            } else {
+                item = entries[indexPath.item]
+            }
+        } else {
+            targetWidth = width * (1/3) - 20
+            if indexPath.item % 3 != 0 {
+                item = entries[indexPath.item - (indexPath.item % 3)]
+            } else {
+                item = entries[indexPath.item]
+            }
+        }
+        
+        let labelSize = UILabel.estimatedSize(item.word, targetSize: CGSize(width: targetWidth, height: 0))
+        let sec = UILabel.estimatedSize(getAsString(list: item.translationList), targetSize: CGSize(width: targetWidth, height: 0))
+        cellSize = labelSize.height + intrinsicMargin + sec.height
+        
+        height = targetWidth + cellSize - intrinsicMargin
+        return CGSize(width: targetWidth, height: height)
     }
 }

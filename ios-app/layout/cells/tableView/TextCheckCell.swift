@@ -48,8 +48,6 @@ class TextCheckCell: UITableViewCell {
         contentView.addConstraint(NSLayoutConstraint(item: checkedImage, attribute: .centerY, relatedBy: .equal, toItem: contentView, attribute: .centerY, multiplier: 1, constant: 0))
         contentView.addConstraint(NSLayoutConstraint(item: textView, attribute: .centerY, relatedBy: .equal, toItem: contentView, attribute: .centerY, multiplier: 1, constant: 0))
         
-        contentView.addConstraint(NSLayoutConstraint(item: contentView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 49))
-        
         self.selectionStyle = .none
     }
     

@@ -17,13 +17,12 @@ class FavoriteController: MainController {
     override func viewDidLoad() {
         super.viewDidLoad()
         favoriteEntries = screenMng.getFavoriteEntries(limit + 1)
-        collectionView.register(UINib(nibName:"HeaderSection", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "bigSectionHeader")
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let feCount = favoriteEntries.count
-        if feCount <= 6 {
+        if feCount <= 6 || feCount <= limit  {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WordCell", for: indexPath) as! WordCell
             cell.word = favoriteEntries[indexPath.item]
             cell.setColor()
@@ -80,13 +79,14 @@ class FavoriteController: MainController {
         return headerView
     }
     
+    
     override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         if collectionView.numberOfItems(inSection: section) == 0 {
             let width  = self.view.frame.size.width;
             if width < self.view.frame.size.height {
                 return CGSize(width: collectionView.frame.width, height: width * 0.5 - 20)
             } else {
-                return CGSize(width: collectionView.frame.width, height: width * 0.25 - 20)
+                return CGSize(width: collectionView.frame.width, height: width * 0.28 - 20)
             }
             
         }
@@ -103,10 +103,6 @@ class FavoriteController: MainController {
         return count
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.endSearching(false)
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         if segue.identifier == "showWord" {
@@ -117,11 +113,9 @@ class FavoriteController: MainController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if !self.mainView.isHidden {
-            limit = 6
-            updateEntries()
-            self.collectionView.reloadData()
-        }
+        limit = 6
+        updateEntries()
+        self.collectionView.reloadData()
         
         if !self.collectionView.visibleCells.isEmpty {
             if !(self.collectionView.visibleCells.first as! MainCell).isOldColor() { return }
@@ -183,6 +177,39 @@ class FavoriteController: MainController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.editingList = false
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width  = self.view.frame.size.width;
+        let intrinsicMargin: CGFloat = 15.0 + 15.0
+        var targetWidth: CGFloat = (collectionView.bounds.width - (collectionView.contentInset.left + collectionView.contentInset.right)) / 2
+        var height: CGFloat = 0
+        var cellSize: CGFloat = 0
+        
+        var item: Entry! = nil
+        
+        if width < self.view.frame.size.height {
+            targetWidth = width * 0.5 - 20
+            if indexPath.item % 2 != 0 {
+                item = favoriteEntries[indexPath.item - (indexPath.item % 2)]
+            } else {
+                item = favoriteEntries[indexPath.item]
+            }
+        } else {
+            targetWidth = width * (1/3) - 20
+            if indexPath.item % 3 != 0 {
+                item = favoriteEntries[indexPath.item - (indexPath.item % 3)]
+            } else {
+                item = favoriteEntries[indexPath.item]
+            }
+        }
+        
+        let labelSize = UILabel.estimatedSize(item.word, targetSize: CGSize(width: targetWidth, height: 0))
+        let sec = UILabel.estimatedSize(getAsString(list: item.translationList), targetSize: CGSize(width: targetWidth, height: 0))
+        cellSize = labelSize.height + intrinsicMargin + sec.height
+        
+        height = targetWidth + cellSize - intrinsicMargin
+        return CGSize(width: targetWidth, height: height)
     }
     
 }

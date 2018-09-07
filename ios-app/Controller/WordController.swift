@@ -8,11 +8,13 @@
 
 import UIKit
 
-class WordController: MainController {
+class WordController: UIViewController, UIScrollViewDelegate {
+    
+    let screenMng: ScreenManager = ScreenManager.instance
     
     @IBOutlet weak var hausaLabel: UILabel!
     @IBOutlet weak var englishLabel: UILabel!
-    @IBOutlet weak var favoriteButton: UIButton!
+    @IBOutlet weak var favoriteButton: UIBarButtonItem!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var previousButton: UIButton!
     
@@ -77,7 +79,7 @@ class WordController: MainController {
     
     @IBAction func setFavorite(_ sender: Any) {
         screenMng.setFavorited(entry: selectedEntry)
-        favoriteButton.isSelected = selectedEntry.favorite
+        selectedEntry.favorite == true ? (favoriteButton.image = #imageLiteral(resourceName: "favorite_selected")) : (favoriteButton.image = #imageLiteral(resourceName: "favorite"))
     }
     
     @IBAction func exitWordScreen(_ sender: UIBarButtonItem) {
@@ -113,7 +115,9 @@ class WordController: MainController {
     
     func updateEntry(_ updateAL: Bool? = false) {
         if updateAL! { self.activeList = screenMng.getActiveEntryList() }
-        index = activeList.index(of: selectedEntry)!
+        if let index = activeList.index(of: selectedEntry) {
+            self.index = index
+        }
         
         if selectedEntry is EnglishEntry {
             self.hausaLabel.text = getAsString(list: (selectedEntry.translationList)!)
@@ -123,7 +127,7 @@ class WordController: MainController {
             self.englishLabel.text = getAsString(list: (selectedEntry.translationList)!)
         }
         
-        favoriteButton.isSelected = selectedEntry.favorite
+        selectedEntry.favorite == true ? (favoriteButton.image = #imageLiteral(resourceName: "favorite_selected")) : (favoriteButton.image = #imageLiteral(resourceName: "favorite"))
         screenMng.addHit(entry: selectedEntry)
 
         if index == 0 {
@@ -186,8 +190,9 @@ class WordController: MainController {
             scrollView.contentOffset.x = scrollView.frame.width * CGFloat((self.pageControl?.currentPage)!)
             return
         }
+
         let pageSize = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
-        if (pageSize % 1 == 0) { self.pageControl?.currentPage = pageSize }
+        self.pageControl?.currentPage = lround(Double(pageSize))
     }
     
     func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {

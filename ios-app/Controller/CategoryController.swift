@@ -17,9 +17,7 @@ class CategoryController: MainController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if searchView.isHidden {
-            self.collectionView.reloadData()
-        }
+        self.collectionView.reloadData()
         
         if !self.collectionView.visibleCells.isEmpty {
             if !(self.collectionView.visibleCells.first as! MainCell).isOldColor() { return }
@@ -85,8 +83,37 @@ class CategoryController: MainController {
         return headerView
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        endSearching(false)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width  = self.view.frame.size.width;
+        let intrinsicMargin: CGFloat = 15.0 + 15.0
+        var targetWidth: CGFloat = (collectionView.bounds.width - (collectionView.contentInset.left + collectionView.contentInset.right)) / 2
+        var height: CGFloat = 0
+        var cellSize: CGFloat = 0
+        
+        var item: Category! = nil
+        
+        if width < self.view.frame.size.height {
+            targetWidth = width * 0.5 - 20
+            if indexPath.item % 2 != 0 {
+                item = screenMng.categoryList[indexPath.item - (indexPath.item % 2)]
+            } else {
+                item = screenMng.categoryList[indexPath.item]
+            }
+        } else {
+            targetWidth = width * (1/3) - 20
+            if indexPath.item % 3 != 0 {
+                item = screenMng.categoryList[indexPath.item - (indexPath.item % 3)]
+            } else {
+                item = screenMng.categoryList[indexPath.item]
+            }
+        }
+        
+        let labelSize = UILabel.estimatedSize(item.category_hausa, targetSize: CGSize(width: targetWidth, height: 0))
+        let sec = UILabel.estimatedSize(item.category_english, targetSize: CGSize(width: targetWidth, height: 0))
+        cellSize = labelSize.height + intrinsicMargin + sec.height
+
+        height = targetWidth + cellSize - intrinsicMargin
+        return CGSize(width: targetWidth, height: height)
     }
     
 }

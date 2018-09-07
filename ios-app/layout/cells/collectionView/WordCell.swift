@@ -60,7 +60,7 @@ class WordCell: MainCell {
         }
     }
     
-    func getAsString(list: [String]) -> String {
+    public func getAsString(list: [String]) -> String {
         var string = ""
         for a in list {
             string.append(a)

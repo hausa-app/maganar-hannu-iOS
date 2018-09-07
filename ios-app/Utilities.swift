@@ -359,8 +359,8 @@ extension UIWindow {
     }
 }
 
-enum ThemeType {
-    case main, popular, recentSearches, recentViews
+enum ThemeType: Int {
+    case popular = 0, recentViews = 1, recentSearches = 2, main = 3
 }
 
 public extension UIColor {
@@ -544,5 +544,15 @@ extension BinaryInteger {
 extension FloatingPoint {
     var degreesToRadians: Self { return self * .pi / 180 }
     var radiansToDegrees: Self { return self * 180 / .pi }
+}
+
+extension UILabel {
+    
+    public static func estimatedSize(_ text: String, targetSize: CGSize = .zero) -> CGSize {
+        let label = UILabel(frame: .zero)
+        label.numberOfLines = 0
+        label.text = text
+        return label.sizeThatFits(targetSize)
+    }
 }
 
