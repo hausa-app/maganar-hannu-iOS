@@ -37,7 +37,7 @@ class HN_requestDatabaseDate: HNObject {
 
 class HN_receivedDatabaseDate: HNObject {
     static let constructor = 0x03424534
-    var date: Int!
+    var date: Int64!
     
     override func serializeToJSON() -> JSONObject {
         object.put(name: "constructor", parameter: HN_requestDatabaseDate.constructor)
@@ -45,7 +45,7 @@ class HN_receivedDatabaseDate: HNObject {
     }
     
     override func readParams(object: JSONObject) {
-        date = object.getInt(name: "value")
+        date = Int64(object.getString(name: "value")!)
     }
 }
 
@@ -119,7 +119,7 @@ class HN_category: HNObject {
     var id: Int!
     var hausa: String!
     var english: String!
-    var timestamp: Int!
+    var timestamp: Int64!
     var flag: Bool!
     var color: String!
     var media_id: Int!
@@ -128,7 +128,7 @@ class HN_category: HNObject {
         id = object.getInt(name: "id")
         hausa = object.get(name: "cat_hausa") as! String
         english = object.get(name: "cat_hausa") as! String
-        timestamp = object.getInt(name: "timestamp")
+        timestamp = Int64(object.getString(name: "timestamp")!)
         flag = object.getBool(name: "flag")
         color = object.get(name: "color") as! String;
         media_id = object.getInt(name: "media_id")
@@ -139,14 +139,14 @@ class HN_entry: HNObject {
     var id: Int!
     var english_id: Int!
     var hausa_id: Int!
-    var timestamp: Int!
+    var timestamp: Int64!
     var flag: Bool!
     
     override func readParams(object: JSONObject) {
         id = object.getInt(name: "id")
         english_id = object.getInt(name: "english_id")
         hausa_id = object.getInt(name: "hausa_id")
-        timestamp = object.getInt(name: "timestamp")
+        timestamp = Int64(object.getString(name: "timestamp")!)
         flag = object.getBool(name: "flag")
     }
 }
@@ -154,13 +154,13 @@ class HN_entry: HNObject {
 class HN_entry_cat: HNObject {
     var id: Int!
     var cat_id: Int!
-    var timestamp: Int!
+    var timestamp: Int64!
     var flag: Bool!
     
     override func readParams(object: JSONObject) {
         id = object.getInt(name: "id")
         cat_id = object.getInt(name: "cat_id")
-        timestamp = object.getInt(name: "timestamp")
+        timestamp = Int64(object.getString(name: "timestamp")!)
         flag = object.getBool(name: "flag")
     }
 }
@@ -168,13 +168,13 @@ class HN_entry_cat: HNObject {
 class HN_hausa: HNObject {
     var id: Int!
     var entry: String!
-    var timestamp: Int!
+    var timestamp: Int64!
     var flag: Bool!
     
     override func readParams(object: JSONObject) {
         id = object.getInt(name: "id")
         entry = object.get(name: "entry_hausa") as! String
-        timestamp = object.getInt(name: "timestamp")
+        timestamp = Int64(object.getString(name: "timestamp")!)
         flag = object.getBool(name: "flag")
     }
 }
@@ -182,13 +182,13 @@ class HN_hausa: HNObject {
 class HN_english: HNObject {
     var id: Int!
     var entry: String!
-    var timestamp: Int!
+    var timestamp: Int64!
     var flag: Bool!
     
     override func readParams(object: JSONObject) {
         id = object.getInt(name: "id")
         entry = object.get(name: "entry_english") as! String
-        timestamp = object.getInt(name: "timestamp")
+        timestamp = Int64(object.getString(name: "timestamp")!)
         flag = object.getBool(name: "flag")
     }
 }
@@ -197,14 +197,14 @@ class HN_media: HNObject {
     var id: Int!
     var url: String!
     var type: String!
-    var timestamp: Int!
+    var timestamp: Int64!
     var flag: Bool!
     
     override func readParams(object: JSONObject) {
         id = object.getInt(name: "id")
         url = object.get(name: "media_url") as! String
         type = object.get(name: "media_type") as! String
-        timestamp = object.getInt(name: "timestamp")
+        timestamp = Int64(object.getString(name: "timestamp")!)
         flag = object.getBool(name: "flag")
     }
 }
@@ -212,13 +212,13 @@ class HN_media: HNObject {
 class HN_entry_media: HNObject {
     var id: Int!
     var media_id: Int!
-    var timestamp: Int!
+    var timestamp: Int64!
     var flag: Bool!
     
     override func readParams(object: JSONObject) {
         id = object.getInt(name: "id")
         media_id = object.getInt(name: "media_id")
-        timestamp = object.getInt(name: "timestamp")
+        timestamp = Int64(object.getString(name: "timestamp")!)
         flag = object.getBool(name: "flag")
     }
 }

@@ -20,8 +20,8 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Piu-Jw-fwf">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="32.333333333333336"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Most Popular " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONz-fs-FlS" userLabel="Most Popular">
-                            <rect key="frame" x="4" y="5" width="108.66666666666667" height="24"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Most Popular " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ONz-fs-FlS" userLabel="Most Popular">
+                            <rect key="frame" x="4" y="5" width="361" height="24"/>
                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -30,6 +30,7 @@
                     <color key="backgroundColor" red="0.16208741069999999" green="0.35514754059999998" blue="0.18445479870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstItem="ONz-fs-FlS" firstAttribute="leading" secondItem="Piu-Jw-fwf" secondAttribute="leading" constant="4" id="Ffx-TK-qdq"/>
+                        <constraint firstAttribute="trailing" secondItem="ONz-fs-FlS" secondAttribute="trailing" constant="10" id="MU4-xs-0FV"/>
                         <constraint firstItem="ONz-fs-FlS" firstAttribute="centerY" secondItem="Piu-Jw-fwf" secondAttribute="centerY" id="hSH-xd-cDi"/>
                     </constraints>
                 </view>

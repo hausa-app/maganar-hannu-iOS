@@ -30,7 +30,7 @@ class LimitedDatabase: Database {
                     
                     for word in try db.prepare(tempTable) {
                         let update = statsOwn.filter(word[entry_table[entry_id]] == stats_own_entryID)
-                        executeQuery(update.update(favorite <- !word[statsOwn[favorite]], favoritedOn <- Date().toInt()))
+                        executeQuery(update.update(favorite <- !word[statsOwn[favorite]], favoritedOn <- Int64(Date().toInt())))
                     }
                 }
             }
@@ -60,7 +60,7 @@ class LimitedDatabase: Database {
                     
                     for word in try db.prepare(tempTable) {
                         let update = statsOwn.filter(word[entry_table[entry_id]] == stats_own_entryID)
-                        executeQuery(update.update(newHits <- newHits + 1, statsOwn_lastViewed <- Date().toInt()))
+                        executeQuery(update.update(newHits <- newHits + 1, statsOwn_lastViewed <- Int64(Date().toInt())))
                     }
                     
                 }
@@ -91,7 +91,7 @@ class LimitedDatabase: Database {
                     
                     for word in try db.prepare(tempTable) {
                         let update = statsOwn.filter(word[entry_table[entry_id]] == stats_own_entryID)
-                        executeQuery(update.update(statsOwn_lastViewed <- Utilities.getInitDate().toInt()))
+                        executeQuery(update.update(statsOwn_lastViewed <- Int64(Utilities.getInitDate().toInt())))
                     }
                     
                 }
@@ -105,7 +105,7 @@ class LimitedDatabase: Database {
     func getFavoriteList(_ limit: Int? = nil) -> [Entry]? {
         var entries: [Entry] = []
         do {
-            for word in try db.prepare(joinAll().filter(statsOwn[favorite] == true)) {
+            for word in try db.prepare(joinAll().filter(statsOwn[favorite] == true).order(hausa_table[hausa_entry])) {
                 self.buildHausaList(&entries, word: word)
                 if entries.count == limit { break }
             }
@@ -152,7 +152,7 @@ class LimitedDatabase: Database {
         var entries: [SignImage] = []
         
         do {
-            for (index, word) in try db.prepare(thumbnail().filter(statsOwn[statsOwn_lastViewed] != Utilities.getInitDate().toInt()).order(statsOwn[statsOwn_lastViewed].desc)).enumerated() {
+            for (index, word) in try db.prepare(thumbnail().filter(statsOwn[statsOwn_lastViewed] != Int64(Utilities.getInitDate().toInt())).order(statsOwn[statsOwn_lastViewed].desc)).enumerated() {
                 if index < from { continue }
                 entries.append((AppConfig.getImage(with: word[media_table[media_id]]))!)
                 if index == to { break }
@@ -168,7 +168,7 @@ class LimitedDatabase: Database {
         var entries: [Entry] = []
         
         do {
-            for word in try db.prepare(joinAll().filter(statsOwn[statsOwn_lastViewed] != Utilities.getInitDate().toInt()).order(statsOwn[statsOwn_lastViewed].desc)) {
+            for word in try db.prepare(joinAll().filter(statsOwn[statsOwn_lastViewed] != Int64(Utilities.getInitDate().toInt())).order(statsOwn[statsOwn_lastViewed].desc)) {
                 self.buildHausaList(&entries, word: word)
                 if entries.count == limit { break }
             }

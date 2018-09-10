@@ -554,7 +554,7 @@
                                                             <rect key="frame" x="0.0" y="200" width="200" height="70"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7mb-a4-lOD">
-                                                                    <rect key="frame" x="4" y="5" width="192" height="60"/>
+                                                                    <rect key="frame" x="4" y="2" width="192" height="66"/>
                                                                     <attributedString key="attributedText">
                                                                         <fragment content="Nuna ">
                                                                             <attributes>
@@ -605,8 +605,8 @@ Cg
                                                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstItem="7mb-a4-lOD" firstAttribute="centerY" secondItem="P8H-D2-hH9" secondAttribute="centerY" id="BjT-i9-eB0"/>
-                                                                <constraint firstItem="7mb-a4-lOD" firstAttribute="top" secondItem="P8H-D2-hH9" secondAttribute="top" constant="5" id="Xpc-8H-wYM"/>
-                                                                <constraint firstAttribute="bottom" secondItem="7mb-a4-lOD" secondAttribute="bottom" constant="5" id="ZOo-O1-4Nv"/>
+                                                                <constraint firstItem="7mb-a4-lOD" firstAttribute="top" secondItem="P8H-D2-hH9" secondAttribute="top" constant="2" id="Xpc-8H-wYM"/>
+                                                                <constraint firstAttribute="bottom" secondItem="7mb-a4-lOD" secondAttribute="bottom" constant="2" id="ZOo-O1-4Nv"/>
                                                                 <constraint firstItem="7mb-a4-lOD" firstAttribute="leading" secondItem="P8H-D2-hH9" secondAttribute="leading" constant="4" id="apw-tz-VpP"/>
                                                                 <constraint firstAttribute="trailing" secondItem="7mb-a4-lOD" secondAttribute="trailing" constant="4" id="tN4-Qe-3nR"/>
                                                             </constraints>
@@ -1116,7 +1116,7 @@ Cg
                                                             <rect key="frame" x="0.0" y="200" width="200" height="70"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Azi-Zu-aBa">
-                                                                    <rect key="frame" x="4" y="5" width="192" height="60"/>
+                                                                    <rect key="frame" x="4" y="2" width="192" height="66"/>
                                                                     <attributedString key="attributedText">
                                                                         <fragment content="Nuna ">
                                                                             <attributes>
@@ -1167,8 +1167,8 @@ Cg
                                                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstItem="Azi-Zu-aBa" firstAttribute="centerY" secondItem="GHK-3D-qoa" secondAttribute="centerY" id="AFD-dm-gkc"/>
-                                                                <constraint firstAttribute="bottom" secondItem="Azi-Zu-aBa" secondAttribute="bottom" constant="5" id="QVN-Hk-oyi"/>
-                                                                <constraint firstItem="Azi-Zu-aBa" firstAttribute="top" secondItem="GHK-3D-qoa" secondAttribute="top" constant="5" id="WXN-SE-WMs"/>
+                                                                <constraint firstAttribute="bottom" secondItem="Azi-Zu-aBa" secondAttribute="bottom" constant="2" id="QVN-Hk-oyi"/>
+                                                                <constraint firstItem="Azi-Zu-aBa" firstAttribute="top" secondItem="GHK-3D-qoa" secondAttribute="top" constant="2" id="WXN-SE-WMs"/>
                                                                 <constraint firstAttribute="trailing" secondItem="Azi-Zu-aBa" secondAttribute="trailing" constant="4" id="eml-f9-YOQ"/>
                                                                 <constraint firstItem="Azi-Zu-aBa" firstAttribute="leading" secondItem="GHK-3D-qoa" secondAttribute="leading" constant="4" id="t5z-Zy-IJd"/>
                                                             </constraints>
@@ -1421,7 +1421,7 @@ Cg
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jrr-4G-8QU">
-                                                            <rect key="frame" x="243.33333333333334" y="7.6666666666666679" width="49.333333333333343" height="30.000000000000004"/>
+                                                            <rect key="frame" x="243.33333333333334" y="7" width="49.333333333333343" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="Jrr-4G-8QU" secondAttribute="height" multiplier="49:31" id="cJw-rU-66E"/>
                                                                 <constraint firstAttribute="height" constant="30" id="q12-dn-6NL"/>
@@ -1459,7 +1459,7 @@ Cg
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vmJ-9g-UUJ">
-                                                            <rect key="frame" x="243.33333333333334" y="7.6666666666666679" width="49.333333333333343" height="30.000000000000004"/>
+                                                            <rect key="frame" x="243.33333333333334" y="7" width="49.333333333333343" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="8A9-KO-37W"/>
                                                                 <constraint firstAttribute="width" secondItem="vmJ-9g-UUJ" secondAttribute="height" multiplier="49:31" id="CMA-Ga-l7a"/>
@@ -1856,16 +1856,16 @@ Cg
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IvD-3r-od5" userLabel="Container">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                                        <rect key="frame" x="8" y="8" width="398" height="672"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Privacy policy statement" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAZ-PW-ZRQ">
-                                                <rect key="frame" x="15" y="20" width="384" height="20.666666666666671"/>
+                                                <rect key="frame" x="15" y="20" width="368" height="21"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxQ-18-X6S">
-                                                <rect key="frame" x="15" y="50.666666666666671" width="384" height="27"/>
+                                                <rect key="frame" x="15" y="51" width="368" height="27"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="The Application Maganar hannu does not collect, transmit or maintain any user data.">
                                                         <attributes>
@@ -1877,7 +1877,7 @@ Cg
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2p5-ze-WM9">
-                                                <rect key="frame" x="15" y="79.666666666666657" width="384" height="187.99999999999997"/>
+                                                <rect key="frame" x="15" y="80" width="368" height="228"/>
                                                 <attributedString key="attributedText">
                                                     <fragment>
                                                         <string key="content">The Application does not collect or transmit any personally identifiable information about you, such as your name, address, phone number or email address.
@@ -1905,13 +1905,13 @@ Cg
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Impressum" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IE0-sP-KWu">
-                                                <rect key="frame" x="15" y="282.66666666666669" width="384" height="21"/>
+                                                <rect key="frame" x="15" y="323" width="368" height="21"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3SG-cE-G1V">
-                                                <rect key="frame" x="15" y="313.66666666666669" width="384" height="107.33333333333331"/>
+                                                <rect key="frame" x="15" y="354" width="368" height="107.33333333333331"/>
                                                 <attributedString key="attributedText">
                                                     <fragment>
                                                         <string key="content">Dr. Constanze Halima Schmaling
@@ -1970,16 +1970,16 @@ constanze.schmaling@lmu.de</string>
                                             <constraint firstItem="jAZ-PW-ZRQ" firstAttribute="leading" secondItem="IvD-3r-od5" secondAttribute="leading" constant="10" id="wJk-tD-w2v">
                                                 <variation key="heightClass=regular" constant="15"/>
                                             </constraint>
+                                            <constraint firstAttribute="height" constant="672" id="xhi-Dr-pX0"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="IvD-3r-od5" firstAttribute="top" secondItem="xCr-n7-ag0" secondAttribute="top" id="8nT-TB-0Lz"/>
-                                    <constraint firstItem="IvD-3r-od5" firstAttribute="centerX" secondItem="xCr-n7-ag0" secondAttribute="centerX" id="U5V-mm-nJQ"/>
-                                    <constraint firstItem="IvD-3r-od5" firstAttribute="leading" secondItem="xCr-n7-ag0" secondAttribute="leading" id="a6C-t5-cDk"/>
-                                    <constraint firstAttribute="bottom" secondItem="IvD-3r-od5" secondAttribute="bottom" id="ehp-mx-uvv"/>
-                                    <constraint firstAttribute="trailing" secondItem="IvD-3r-od5" secondAttribute="trailing" id="foE-Wi-9Kk"/>
-                                    <constraint firstItem="IvD-3r-od5" firstAttribute="centerY" secondItem="xCr-n7-ag0" secondAttribute="centerY" id="ntS-xf-e7Q"/>
+                                    <constraint firstItem="IvD-3r-od5" firstAttribute="top" secondItem="xCr-n7-ag0" secondAttribute="topMargin" id="AFq-A0-iRq"/>
+                                    <constraint firstAttribute="bottom" secondItem="IvD-3r-od5" secondAttribute="bottom" constant="-8" id="K9o-tf-pjq"/>
+                                    <constraint firstItem="IvD-3r-od5" firstAttribute="centerX" secondItem="xCr-n7-ag0" secondAttribute="centerX" id="eWq-qA-hxb"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="IvD-3r-od5" secondAttribute="trailing" id="ldO-ZU-FMG"/>
+                                    <constraint firstItem="IvD-3r-od5" firstAttribute="leading" secondItem="xCr-n7-ag0" secondAttribute="leadingMargin" id="sbj-fV-sfA"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -1987,7 +1987,6 @@ constanze.schmaling@lmu.de</string>
                         <constraints>
                             <constraint firstItem="Fvn-SA-cT8" firstAttribute="leading" secondItem="rlw-Bi-Sii" secondAttribute="leading" id="2x8-XJ-16r"/>
                             <constraint firstItem="xCr-n7-ag0" firstAttribute="top" secondItem="Fvn-SA-cT8" secondAttribute="bottom" id="LRI-6R-AAq"/>
-                            <constraint firstItem="xCr-n7-ag0" firstAttribute="width" secondItem="rlw-Bi-Sii" secondAttribute="width" id="U3U-DW-yDk"/>
                             <constraint firstItem="xCr-n7-ag0" firstAttribute="leading" secondItem="rlw-Bi-Sii" secondAttribute="leading" id="Yke-30-nJV"/>
                             <constraint firstItem="STU-uO-ftY" firstAttribute="top" secondItem="xCr-n7-ag0" secondAttribute="bottom" id="bSZ-MZ-XtE"/>
                             <constraint firstAttribute="trailing" secondItem="Fvn-SA-cT8" secondAttribute="trailing" id="fAu-gD-P0j"/>
@@ -2199,7 +2198,7 @@ constanze.schmaling@lmu.de</string>
                                                             <rect key="frame" x="0.0" y="200" width="200" height="70"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7p6-JZ-wUa">
-                                                                    <rect key="frame" x="4" y="5" width="192" height="60"/>
+                                                                    <rect key="frame" x="4" y="2" width="192" height="66"/>
                                                                     <attributedString key="attributedText">
                                                                         <fragment content="Nuna ">
                                                                             <attributes>
@@ -2250,9 +2249,9 @@ Cg
                                                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstItem="7p6-JZ-wUa" firstAttribute="leading" secondItem="3nh-aZ-ULT" secondAttribute="leading" constant="4" id="TXu-Ni-hAk"/>
-                                                                <constraint firstItem="7p6-JZ-wUa" firstAttribute="top" secondItem="3nh-aZ-ULT" secondAttribute="top" constant="5" id="UWP-8Y-Vgf"/>
+                                                                <constraint firstItem="7p6-JZ-wUa" firstAttribute="top" secondItem="3nh-aZ-ULT" secondAttribute="top" constant="2" id="UWP-8Y-Vgf"/>
                                                                 <constraint firstItem="7p6-JZ-wUa" firstAttribute="centerY" secondItem="3nh-aZ-ULT" secondAttribute="centerY" id="tif-D3-5Em"/>
-                                                                <constraint firstAttribute="bottom" secondItem="7p6-JZ-wUa" secondAttribute="bottom" constant="5" id="wE5-K7-Stt"/>
+                                                                <constraint firstAttribute="bottom" secondItem="7p6-JZ-wUa" secondAttribute="bottom" constant="2" id="wE5-K7-Stt"/>
                                                                 <constraint firstAttribute="trailing" secondItem="7p6-JZ-wUa" secondAttribute="trailing" constant="4" id="zyF-1M-J9T"/>
                                                             </constraints>
                                                             <variation key="default">
@@ -2262,8 +2261,8 @@ Cg
                                                             </variation>
                                                             <variation key="heightClass=regular">
                                                                 <mask key="constraints">
-                                                                    <exclude reference="tif-D3-5Em"/>
                                                                     <include reference="UWP-8Y-Vgf"/>
+                                                                    <exclude reference="tif-D3-5Em"/>
                                                                 </mask>
                                                             </variation>
                                                         </view>

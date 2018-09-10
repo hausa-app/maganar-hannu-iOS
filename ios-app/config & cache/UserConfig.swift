@@ -18,7 +18,7 @@ class UserConfig: Config {
     static var clientActivated = false
     
     static var quality: String = "mi"
-    static var databaseTimestamp: Int = 332145240
+    static var databaseTimestamp: Int64 = 332145240
     static var updateOnlyOnWifi: Bool = true
     static var participateInStats: Bool = false
     static var updateStatsOnStartup: Bool = false
@@ -56,7 +56,7 @@ class UserConfig: Config {
             
             self.quality = preferences.string(forKey: "quality")!
             
-            self.databaseTimestamp = preferences.object(forKey: "databaseTimestamp") as! Int
+            self.databaseTimestamp = preferences.object(forKey: "databaseTimestamp") as! Int64
             self.updateOnlyOnWifi = preferences.bool(forKey: "updateOnlyOnWifi")
             self.participateInStats = preferences.bool(forKey: "participateInStats")
             self.updateStatsOnStartup = preferences.bool(forKey: "updateStatsOnStartup")
@@ -82,11 +82,11 @@ class UserConfig: Config {
         self.quality = quality
     }
     
-    static func getDatabaseTimestamp() -> Int {
+    static func getDatabaseTimestamp() -> Int64 {
         return databaseTimestamp
     }
     
-    static func setDatabaseTimestamp(timestamp: Int) {
+    static func setDatabaseTimestamp(timestamp: Int64) {
         self.databaseTimestamp = timestamp
     }
     

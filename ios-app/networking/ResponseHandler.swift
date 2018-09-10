@@ -35,19 +35,20 @@ class ResponseHandler {
         if let object = object as? HN_receivedDatabaseDate {
             handleDatabaseDate(object)
         } else if let object = object as? HN_updatedEntries {
-            handleUpdatedEntries(object, response.getInt(name: "timestamp")!)
+            handleUpdatedEntries(object, Int64(response.getString(name: "timestamp")!)!)
         }
     }
     
     private func handleDatabaseDate(_ object: HN_receivedDatabaseDate){
-        let databaseDate = object.date
-        AppConfig.setDatabaseTimestampServer(databaseDate!)
-        AppConfig.setLastCheckedDBTimestampServer(Date().toInt())
+        if let databaseDate = object.date {
+            AppConfig.setDatabaseTimestampServer(databaseDate)
+            AppConfig.setLastCheckedDBTimestampServer(Int64(Date().toInt()))
+        }
         NotificationCenter.default.post(name: .gotDBTime, object: nil)
         NotificationCenter.default.post(name: .updateState, object: nil)
     }
     
-    private func handleUpdatedEntries(_ object: HN_updatedEntries, _ timestamp: Int){
+    private func handleUpdatedEntries(_ object: HN_updatedEntries, _ timestamp: Int64){
         updateDatabase.handleMediaEntriesUpdate(object.mediaEntries) { () in
             for item in object.categories {
                 self.updateDatabase.handleCategoryUpdate(item)

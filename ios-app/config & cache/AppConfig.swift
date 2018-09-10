@@ -11,8 +11,8 @@ import Foundation
 class AppConfig: Config {
     
     static var imageList: [SignImage] = []
-    static var databaseTimestampServer: Int!
-    static var lastCheckedDBTimestampServer: Int!
+    static var databaseTimestampServer: Int64!
+    static var lastCheckedDBTimestampServer: Int64!
     
     static func getImage(with: Int) -> SignImage? {
         return imageList.first(where: { $0.media_id == with })
@@ -29,10 +29,10 @@ class AppConfig: Config {
             imageList = NSKeyedUnarchiver.unarchiveObject(with: imageListObject as Data) as! [SignImage]
         }
         if let lastChecked = preferences.value(forKey: "lastChecked") {
-            lastCheckedDBTimestampServer = lastChecked as! Int
+            lastCheckedDBTimestampServer = lastChecked as! Int64
         }
         if let dbTSServer = preferences.value(forKey: "databaseTimestampServer") {
-            databaseTimestampServer = dbTSServer as! Int
+            databaseTimestampServer = dbTSServer as! Int64
         }
     }
     
@@ -43,19 +43,19 @@ class AppConfig: Config {
         if alone! { preferences.synchronize() }
     }
     
-    static func getDatabaseTimestampServer() -> Int? {
+    static func getDatabaseTimestampServer() -> Int64? {
         return databaseTimestampServer
     }
     
-    static func setDatabaseTimestampServer(_ timestamp: Int) {
+    static func setDatabaseTimestampServer(_ timestamp: Int64) {
         self.databaseTimestampServer = timestamp
     }
     
-    static func getLastCheckedDBTimestampServer() -> Int? {
+    static func getLastCheckedDBTimestampServer() -> Int64? {
         return lastCheckedDBTimestampServer
     }
     
-    static func setLastCheckedDBTimestampServer(_ timestamp: Int) {
+    static func setLastCheckedDBTimestampServer(_ timestamp: Int64) {
         self.lastCheckedDBTimestampServer = timestamp
     }
     

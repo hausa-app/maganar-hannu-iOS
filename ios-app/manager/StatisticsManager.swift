@@ -17,7 +17,7 @@ class StatisticsManager {
     }
     
     func getFavoriteEntries(_ limit: Int? = nil) -> [Entry] {
-        return sortList(entries: database.getFavoriteList(limit)!)
+        return database.getFavoriteList(limit)!
     }
     
     func getMostPopularEntries(_ limit: Int? = nil) -> [Entry] {
@@ -47,13 +47,5 @@ class StatisticsManager {
     func changeFavoriteStatus(entry: Entry) {
         self.database.changeFavoriteStatus(entry: entry)
         entry.favorite = !entry.favorite
-    }
-    
-    func sortList(entries: [Entry]) -> [Entry] {
-        
-        let sorted = entries.sorted { (object1, object2) -> Bool in
-            return object1.favoritedTime > object2.favoritedTime
-        }
-        return sorted
     }
 }

@@ -147,7 +147,7 @@ class Utilities {
         return sorted
     }
     
-    static func buildTime(_ date: Int) -> String {
+    static func buildTime(_ date: Int64) -> String {
         var text = ""
         if date <= 60 {
             text.append("\(date % 60) sec ")
@@ -442,6 +442,15 @@ extension Int {
     }
     
 }
+
+extension Int64 {
+    
+    public func toDate() -> Date {
+        return Date(timeIntervalSince1970: TimeInterval(self / 1000))
+    }
+    
+}
+
 
 extension UILabel {
     func underline() {

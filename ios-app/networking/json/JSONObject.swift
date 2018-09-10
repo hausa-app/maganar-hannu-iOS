@@ -75,11 +75,10 @@ class JSONObject: CustomStringConvertible {
     
     func getString(name: String) -> String? {
         let object = get(name:name)
-        let result = object as! String?
-        if result == nil {
-            return nil
+        if let result = object as? String {
+            return result
         }
-        return result
+        return nil
     }
     
     func getArray(name: String) -> JSONArray? {

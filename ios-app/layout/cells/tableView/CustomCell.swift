@@ -145,7 +145,7 @@ class CustomCell: UITableViewCell {
             break;
         }
         if AppConfig.getLastCheckedDBTimestampServer() == nil { lastChecked.text = "Last checked: never"}
-        else { lastChecked.text = "Last checked: " + Utilities.buildTime(Date().toInt() - AppConfig.getLastCheckedDBTimestampServer()!) }
+        else { lastChecked.text = "Last checked: " + Utilities.buildTime(Int64(Date().toInt()) - AppConfig.getLastCheckedDBTimestampServer()!) }
         updateHeader.underline()
         
         let status = StartupController.instance.networkManager.checkNetworkAvailability()
