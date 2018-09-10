@@ -643,7 +643,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/menu/SlideMenu.swift"
-            timestampString = "558232262.803255"
+            timestampString = "558290012.740593"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "69"
@@ -659,7 +659,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/menu/SlideMenu.swift"
-            timestampString = "558232262.804673"
+            timestampString = "558290012.740669"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "70"
@@ -675,7 +675,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/menu/SlideMenu.swift"
-            timestampString = "558232262.8055331"
+            timestampString = "558290012.74072"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "50"
@@ -691,7 +691,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/menu/SlideMenu.swift"
-            timestampString = "558232262.806362"
+            timestampString = "558290012.740768"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
@@ -707,7 +707,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/menu/SlideMenu.swift"
-            timestampString = "558232262.807217"
+            timestampString = "558290012.740816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "82"
@@ -723,7 +723,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/menu/SlideMenu.swift"
-            timestampString = "558232262.808135"
+            timestampString = "558290012.74086"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "85"
@@ -787,12 +787,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/CategoryWordsController.swift"
-            timestampString = "558047604.278367"
+            timestampString = "558290012.740954"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
             endingLineNumber = "28"
-            landmarkName = "viewWillAppear(_:)"
+            landmarkName = "viewDidAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -803,7 +803,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/WordController.swift"
-            timestampString = "558200324.029197"
+            timestampString = "558239639.105525"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
@@ -819,7 +819,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/WordController.swift"
-            timestampString = "558200324.029247"
+            timestampString = "558239639.1056319"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
@@ -835,12 +835,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/CategoryWordsController.swift"
-            timestampString = "558047604.279639"
+            timestampString = "558290012.741033"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
             endingLineNumber = "30"
-            landmarkName = "viewWillAppear(_:)"
+            landmarkName = "viewDidAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -851,12 +851,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/CategoryWordsController.swift"
-            timestampString = "558047604.279703"
+            timestampString = "558290012.74108"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
             endingLineNumber = "31"
-            landmarkName = "viewWillAppear(_:)"
+            landmarkName = "viewDidAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1331,7 +1331,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/WordController.swift"
-            timestampString = "558200324.029624"
+            timestampString = "558239639.106212"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "220"
@@ -1523,7 +1523,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/HomeController.swift"
-            timestampString = "558232262.809788"
+            timestampString = "558290012.741547"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "160"
@@ -1539,7 +1539,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/HomeController.swift"
-            timestampString = "558232262.809864"
+            timestampString = "558290012.741622"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "186"
@@ -1555,11 +1555,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/layout/cells/collectionView/ExtraCell.swift"
-            timestampString = "558133944.763931"
+            timestampString = "558290012.741688"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "entries"
             landmarkType = "24">
             <Locations>
@@ -1603,13 +1603,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/ListWordsController.swift"
-            timestampString = "558232262.8099819"
+            timestampString = "558290680.4638849"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "166"
             endingLineNumber = "166"
-            landmarkName = "updateEntries()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1619,13 +1619,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/ListWordsController.swift"
-            timestampString = "558232262.810063"
+            timestampString = "558290680.464084"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "151"
             endingLineNumber = "151"
-            landmarkName = "collectionView(_:numberOfItemsInSection:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1635,13 +1635,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/ListWordsController.swift"
-            timestampString = "558232262.810122"
+            timestampString = "558290680.4641581"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "150"
             endingLineNumber = "150"
-            landmarkName = "collectionView(_:numberOfItemsInSection:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1651,13 +1651,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/ListWordsController.swift"
-            timestampString = "558232262.8101799"
+            timestampString = "558290680.464228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "165"
             endingLineNumber = "165"
-            landmarkName = "updateEntries()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1667,13 +1667,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/ListWordsController.swift"
-            timestampString = "558232262.810238"
+            timestampString = "558290680.464267"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "158"
             endingLineNumber = "158"
-            landmarkName = "collectionView(_:shouldSelectItemAt:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1683,13 +1683,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/ListWordsController.swift"
-            timestampString = "558232262.810299"
+            timestampString = "558290680.4643151"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "167"
             endingLineNumber = "167"
-            landmarkName = "updateEntries()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1699,13 +1699,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/ListWordsController.swift"
-            timestampString = "558232262.810356"
+            timestampString = "558290680.464362"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "168"
             endingLineNumber = "168"
-            landmarkName = "updateEntries()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1715,13 +1715,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/ListWordsController.swift"
-            timestampString = "558232262.810412"
+            timestampString = "558290680.464399"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "169"
             endingLineNumber = "169"
-            landmarkName = "updateEntries()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1731,13 +1731,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/ListWordsController.swift"
-            timestampString = "558232262.810467"
+            timestampString = "558290680.4644361"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "170"
             endingLineNumber = "170"
-            landmarkName = "updateEntries()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1747,13 +1747,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/ListWordsController.swift"
-            timestampString = "558232262.810522"
+            timestampString = "558290680.4644721"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "171"
             endingLineNumber = "171"
-            landmarkName = "updateEntries()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1763,7 +1763,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/database/LimitedDatabase.swift"
-            timestampString = "558200324.03046"
+            timestampString = "558290012.744658"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "175"
@@ -1779,7 +1779,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/HomeController.swift"
-            timestampString = "558232262.810605"
+            timestampString = "558290012.744709"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "195"
@@ -1811,7 +1811,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/WordController.swift"
-            timestampString = "558200324.030581"
+            timestampString = "558239639.107663"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "187"
@@ -1827,7 +1827,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/WordController.swift"
-            timestampString = "558200324.03062"
+            timestampString = "558239639.10774"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "193"
@@ -1843,7 +1843,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/WordController.swift"
-            timestampString = "558200324.030655"
+            timestampString = "558239639.107807"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "194"
@@ -1859,7 +1859,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/layout/Badges.swift"
-            timestampString = "558232262.810774"
+            timestampString = "558239639.10788"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "65"
@@ -1875,7 +1875,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/layout/Badges.swift"
-            timestampString = "558232262.810845"
+            timestampString = "558239639.107955"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "64"
@@ -1891,13 +1891,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/ListWordsController.swift"
-            timestampString = "558232262.810903"
+            timestampString = "558290680.464597"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "100"
             endingLineNumber = "100"
-            landmarkName = "collectionView(_:cellForItemAt:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1907,13 +1907,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/ListWordsController.swift"
-            timestampString = "558232262.810963"
+            timestampString = "558290680.464637"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "103"
             endingLineNumber = "103"
-            landmarkName = "collectionView(_:cellForItemAt:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1923,13 +1923,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/ListWordsController.swift"
-            timestampString = "558232262.81102"
+            timestampString = "558290680.4646749"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "116"
             endingLineNumber = "116"
-            landmarkName = "collectionView(_:cellForItemAt:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1939,13 +1939,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/ListWordsController.swift"
-            timestampString = "558232262.811077"
+            timestampString = "558290680.464711"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "104"
             endingLineNumber = "104"
-            landmarkName = "collectionView(_:cellForItemAt:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1955,13 +1955,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/ListWordsController.swift"
-            timestampString = "558232262.811132"
+            timestampString = "558290680.464747"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "101"
             endingLineNumber = "101"
-            landmarkName = "collectionView(_:cellForItemAt:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1971,7 +1971,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/menu/SlideMenu.swift"
-            timestampString = "558232262.8111891"
+            timestampString = "558290012.746383"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "54"
@@ -1987,7 +1987,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/menu/SlideMenu.swift"
-            timestampString = "558232262.8121001"
+            timestampString = "558290012.746435"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "53"
@@ -2003,7 +2003,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/menu/SlideMenu.swift"
-            timestampString = "558232262.812948"
+            timestampString = "558290012.7464809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"
@@ -2019,7 +2019,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/menu/SlideMenu.swift"
-            timestampString = "558232262.813805"
+            timestampString = "558290012.746572"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
@@ -2035,7 +2035,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/menu/SlideMenu.swift"
-            timestampString = "558232262.814659"
+            timestampString = "558290012.746622"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "109"
@@ -2051,7 +2051,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/menu/SlideMenu.swift"
-            timestampString = "558232262.815503"
+            timestampString = "558290012.746667"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "107"
@@ -2067,7 +2067,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/menu/SlideMenu.swift"
-            timestampString = "558232262.816457"
+            timestampString = "558290012.746713"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "110"
@@ -2115,7 +2115,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/menu/MenuHelper.swift"
-            timestampString = "558232262.817387"
+            timestampString = "558239639.114025"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "64"
@@ -2131,7 +2131,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/menu/MenuHelper.swift"
-            timestampString = "558232262.817462"
+            timestampString = "558239639.114128"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "65"
@@ -2147,7 +2147,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/menu/MenuHelper.swift"
-            timestampString = "558232262.8175189"
+            timestampString = "558239639.11421"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
@@ -2163,7 +2163,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/menu/MenuHelper.swift"
-            timestampString = "558232262.817572"
+            timestampString = "558239639.114288"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "58"
@@ -2179,7 +2179,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/menu/MenuHelper.swift"
-            timestampString = "558232262.817625"
+            timestampString = "558239639.114368"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
@@ -2195,7 +2195,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/menu/MenuHelper.swift"
-            timestampString = "558232262.817678"
+            timestampString = "558239639.114448"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
@@ -2275,7 +2275,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/menu/Interactor.swift"
-            timestampString = "558232262.817853"
+            timestampString = "558239639.114647"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "12"
@@ -2338,7 +2338,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/menu/Interactor.swift"
-            timestampString = "558232262.8179229"
+            timestampString = "558239639.114735"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "13"
@@ -2401,7 +2401,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/menu/MenuHelper.swift"
-            timestampString = "558232262.817979"
+            timestampString = "558239639.114815"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
@@ -2417,7 +2417,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/menu/MenuHelper.swift"
-            timestampString = "558232262.818038"
+            timestampString = "558239639.114892"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
@@ -2465,7 +2465,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/menu/SlideMenu.swift"
-            timestampString = "558232262.818135"
+            timestampString = "558290012.746978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "118"
@@ -2481,7 +2481,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/MainController.swift"
-            timestampString = "558232262.81901"
+            timestampString = "558290893.3641649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
@@ -2497,7 +2497,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/MainController.swift"
-            timestampString = "558232262.8190809"
+            timestampString = "558290893.364599"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "55"
@@ -2513,7 +2513,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/MainController.swift"
-            timestampString = "558232262.8191431"
+            timestampString = "558290893.364825"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"
@@ -2529,11 +2529,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/ResizedUITabBarController.swift"
-            timestampString = "558232262.819208"
+            timestampString = "558290893.365046"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "animationController(forDismissed:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2545,13 +2545,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/ListWordsController.swift"
-            timestampString = "558232262.8192739"
+            timestampString = "558290680.465739"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "106"
             endingLineNumber = "106"
-            landmarkName = "collectionView(_:cellForItemAt:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2561,12 +2561,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/ListWordsController.swift"
-            timestampString = "558232262.819337"
+            timestampString = "558290680.465784"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "111"
             endingLineNumber = "111"
-            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios-app/Controller/HomeController.swift"
+            timestampString = "558290012.749815"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

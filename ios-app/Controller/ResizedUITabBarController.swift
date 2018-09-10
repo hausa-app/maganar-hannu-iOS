@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class ResizedUITabBarController: UITabBarController {
+class ResizedUITabBarController: UITabBarController, MFMailComposeViewControllerDelegate {
     
     fileprivate lazy var defaultTabBarHeight = { tabBar.frame.size.height }()
 
@@ -34,10 +35,13 @@ class ResizedUITabBarController: UITabBarController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         if interactor.toView == "policy" {
             performSegue(withIdentifier: "showPolicy", sender: self)
         } else if interactor.toView == "menu" {
             performSegue(withIdentifier: "openMenu", sender: nil)
+        } else if interactor.toView == "mail" {
+            sendMail()
         }
         
         interactor.toView = ""
@@ -54,6 +58,21 @@ class ResizedUITabBarController: UITabBarController {
         } else if let destination = segue.destination as? PolicyController {
             destination.interactor = interactor
         }
+    }
+    
+    func sendMail() {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients(["halimayarfulani@yahoo.com"])
+            
+            present(mail, animated: true)
+        }
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
+        self.openMenu()
     }
 }
 

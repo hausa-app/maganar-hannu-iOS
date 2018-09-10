@@ -88,15 +88,15 @@ class HomeController: MainController {
             
             if let header = headerView as? HeaderSection {
                 if indexPath.section == 0 {
-                    header.setHeader("Mafi jan hankali - Most popular")
+                    header.setHeader("Mafi jan hankali — Most popular")
                     header.setColor(type: .popular)
                 } else if indexPath.section == 1 {
                     header.setColor(type: .recentSearches)
                     if (entries[1]?.isEmpty)! {
-                        header.setHeader("Kalmomin da aka nema - Recent searches")
+                        header.setHeader("Kalmomin da aka nema — Recent searches")
                     } else {
                         header.changeIcon(editRS)
-                        header.setHeader("Kalmomin da aka nema - Recent searches", withButton: true)
+                        header.setHeader("Kalmomin da aka nema — Recent searches", withButton: true)
                         header.settingsHandler = {
                             self.executeDeleteSettings(header: header, indexPath: indexPath)
                             self.editRV = false
@@ -107,10 +107,10 @@ class HomeController: MainController {
                 } else {
                     header.setColor(type: .recentViews)
                     if (entries[2]?.isEmpty)! {
-                        header.setHeader("Kalmomin da aka duba - Recent views")
+                        header.setHeader("Kalmomin da aka duba — Recent views")
                     } else {
                         header.changeIcon(editRV)
-                        header.setHeader("Kalmomin da aka duba - Recent views", withButton: true)
+                        header.setHeader("Kalmomin da aka duba — Recent views", withButton: true)
                         header.settingsHandler = {
                             self.executeDeleteSettings(header: header, indexPath: indexPath)
                             self.editRV == true ? (self.editRV = false) : (self.editRV = true)
@@ -206,15 +206,13 @@ class HomeController: MainController {
         if segue.identifier == "showList" {
             let destController: ListWordsController = segue.destination as! ListWordsController
             if index.section == 0 {
-                destController.headerText = "Mafi jan hankali - Most popular"
+                destController.headerText = "Mafi jan hankali — Most popular"
             } else if index.section == 1 {
-                destController.headerText = "Kalmomin da aka nema - Recent searches"
+                destController.headerText = "Kalmomin da aka nema — Recent searches"
             } else {
-                destController.headerText = "Kalmomin da aka duba - Recent views"
+                destController.headerText = "Kalmomin da aka duba — Recent views"
             }
         }
-        
-        print(0xdb8d14)
     }
     
     override func viewWillAppear(_ animated: Bool) {

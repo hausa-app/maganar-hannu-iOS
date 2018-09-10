@@ -73,7 +73,7 @@ class CategoryController: MainController {
         case UICollectionElementKindSectionHeader:
             
             if let header = headerView as? HeaderSection {
-                header.headerLabel.text = "Fannoni - Categories"
+                header.headerLabel.text = "Fannoni — Categories"
                 header.setColor()
             }
             return headerView

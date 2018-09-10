@@ -42,6 +42,7 @@ class SearchController: UIViewController, UICollectionViewDataSource, UICollecti
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         if let cancelButton = searchBar.value(forKey: "cancelButton") as? UIButton {
             cancelButton.isEnabled = true
         }

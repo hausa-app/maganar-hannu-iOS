@@ -15,6 +15,7 @@ class ExtraCell: MainCell {
     @IBOutlet weak var imageThree: UIImageView!
     @IBOutlet weak var imageFour: UIImageView!
     
+    @IBOutlet weak var imageView: UIView!
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -80,7 +81,11 @@ class ExtraCell: MainCell {
             }
             
             self.containerView.backgroundColor = colorToSet
+            self.imageView.backgroundColor = colorToSet
         }
-        else { self.containerView.backgroundColor = color }
+        else {
+            self.containerView.backgroundColor = color
+            self.imageView.backgroundColor = color
+        }
     }
 }

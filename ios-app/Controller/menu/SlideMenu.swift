@@ -329,7 +329,17 @@ class SlideMenu: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 self.dismiss(animated: false)
             }
         } else if cell.id == 14 {
-            
+            if let url = URL(string: "mailto:halimayarfulani@yahoo.com") {
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(url)
+                } else {
+                    UIApplication.shared.openURL(url)
+                }
+            }
+            //DispatchQueue.main.async {
+            //    self.interactor?.toView = "mail"
+            //    self.dismiss(animated: false)
+            //}
         }
     }
     
@@ -345,4 +355,5 @@ class SlideMenu: UIViewController, UITableViewDataSource, UITableViewDelegate {
         super.viewWillDisappear(animated)
         UserConfig.save(true)
     }
+
 }

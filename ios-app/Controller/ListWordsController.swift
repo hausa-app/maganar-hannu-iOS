@@ -44,9 +44,9 @@ class ListWordsController: MainController {
             if !(self.collectionView.visibleCells.first as! MainCell).isOldColor() { return }
             for cell in self.collectionView.visibleCells {
                 if let cell = cell as? MainCell {
-                    if headerText == "Mafi jan hankali - Most popular" {
+                    if headerText == "Mafi jan hankali — Most popular" {
                         cell.setColor(type: .popular)
-                    } else if headerText == "Kalmomin da aka nema - Recent searches" {
+                    } else if headerText == "Kalmomin da aka nema — Recent searches" {
                         cell.setColor(type: .recentSearches)
                     } else {
                         cell.setColor(type: .recentViews)
@@ -57,9 +57,9 @@ class ListWordsController: MainController {
         
         for header in self.collectionView.visibleSupplementaryViews(ofKind: UICollectionElementKindSectionHeader) {
             if let header = header as? HeaderSection {
-                if headerText == "Mafi jan hankali - Most popular" {
+                if headerText == "Mafi jan hankali — Most popular" {
                     header.setColor(type: .popular)
-                } else if headerText == "Kalmomin da aka nema - Recent searches" {
+                } else if headerText == "Kalmomin da aka nema — Recent searches" {
                     header.setColor(type: .recentSearches)
                 } else {
                     header.setColor(type: .recentViews)
@@ -71,15 +71,15 @@ class ListWordsController: MainController {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "sectionHeader", for: indexPath) as! HeaderSection
         
-        if headerText == "Mafi jan hankali - Most popular" {
+        if headerText == "Mafi jan hankali — Most popular" {
             headerView.setColor(type: .popular)
-        } else if headerText == "Kalmomin da aka nema - Recent searches" {
+        } else if headerText == "Kalmomin da aka nema — Recent searches" {
             headerView.setColor(type: .recentSearches)
         } else {
             headerView.setColor(type: .recentViews)
         }
         
-        if entries.isEmpty || headerText == "Mafi jan hankali - Most popular" {
+        if entries.isEmpty || headerText == "Mafi jan hankali — Most popular" {
             headerView.setHeader(headerText)
         } else {
             headerView.changeIcon(editingList)
@@ -117,9 +117,9 @@ class ListWordsController: MainController {
     }
     
     func setCellColorAndHandler(cell: MainCell, indexPath: IndexPath) {
-        if headerText == "Mafi jan hankali - Most popular" {
+        if headerText == "Mafi jan hankali — Most popular" {
             cell.setColor(type: .popular)
-        } else if headerText == "Kalmomin da aka nema - Recent searches" {
+        } else if headerText == "Kalmomin da aka nema — Recent searches" {
             cell.setColor(type: .recentSearches)
             if let cell = cell as? WordCell {
                 cell.deleteHandler = {
@@ -162,9 +162,9 @@ class ListWordsController: MainController {
     }
 
     func updateEntries() {
-        if headerText == "Mafi jan hankali - Most popular" {
+        if headerText == "Mafi jan hankali — Most popular" {
             self.entries = screenMng.getPopularEntries(limit + 1)
-        } else if headerText == "Kalmomin da aka nema - Recent searches" {
+        } else if headerText == "Kalmomin da aka nema — Recent searches" {
             self.entries = UserConfig.getRecentSearches(limit + 1)
         } else {
             self.entries = screenMng.getRecentViewedEntries(limit + 1)

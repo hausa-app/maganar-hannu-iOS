@@ -105,11 +105,11 @@ class LimitedDatabase: Database {
     func getFavoriteList(_ limit: Int? = nil) -> [Entry]? {
         var entries: [Entry] = []
         do {
-            for word in try db.prepare(joinAll().filter(statsOwn[favorite] == true).order(hausa_table[hausa_entry])) {
+            for word in try db.prepare(joinAll().filter(statsOwn[favorite] == true)) {
                 self.buildHausaList(&entries, word: word)
                 if entries.count == limit { break }
             }
-            return entries
+            return entries.sorted(by: { $0.word < $1.word })
         } catch {
             print("Could not fetch request!")
             return nil
