@@ -120,7 +120,7 @@ class LimitedDatabase: Database {
         var entries: [Entry] = []
         
         do {
-            for word in try db.prepare(joinAll().filter(statsOwn[newHits] != 0).order(statsOwn[newHits].desc).limit(limit)) {
+            for word in try db.prepare(joinAll().filter(statsOwn[newHits] != 0).order(statsOwn[newHits].desc)) {
                 self.buildHausaList(&entries, word: word)
                 if entries.count == limit { break }
             }

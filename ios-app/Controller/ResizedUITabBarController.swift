@@ -33,6 +33,16 @@ class ResizedUITabBarController: UITabBarController {
         self.tabBar.invalidateIntrinsicContentSize()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if interactor.toView == "policy" {
+            performSegue(withIdentifier: "showPolicy", sender: self)
+        } else if interactor.toView == "menu" {
+            performSegue(withIdentifier: "openMenu", sender: nil)
+        }
+        
+        interactor.toView = ""
+    }
+    
     func openMenu() {
         performSegue(withIdentifier: "openMenu", sender: nil)
     }
@@ -41,6 +51,8 @@ class ResizedUITabBarController: UITabBarController {
         if let destinationViewController = segue.destination as? SlideMenu {
             destinationViewController.transitioningDelegate = self
             destinationViewController.interactor = interactor
+        } else if let destination = segue.destination as? PolicyController {
+            destination.interactor = interactor
         }
     }
 }

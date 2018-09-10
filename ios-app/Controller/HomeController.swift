@@ -12,10 +12,6 @@ class HomeController: MainController {
     
     var index: IndexPath!
     
-    var popularEntries: [Entry]!
-    var recentViewed: [Entry]!
-    var recentSearches: [Entry]!
-    
     var entries = [Int: [Entry]]()
     
     var editRS = false
@@ -40,6 +36,26 @@ class HomeController: MainController {
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WordCell", for: indexPath)
             (cell as! WordCell).word = entriesToSet[indexPath.item]
             (cell as! WordCell).setColor(type: ThemeType(rawValue: indexPath.section))
+            (cell as! WordCell).deleteHandler = {
+                if indexPath.section == 1 {
+                    UserConfig.deleteSearchEntry(pos: indexPath.item)
+                } else if indexPath.section == 2 {
+                    self.screenMng.removeViewed(entry: (cell as! WordCell).word!)
+                }
+                self.updateEntries()
+                self.collectionView.reloadData()
+            }
+            if editRS, indexPath.section == 1 {
+                (cell as! WordCell).wobble(true)
+            } else if editRV, indexPath.section == 2 {
+                (cell as! WordCell).wobble(true)
+            }
+            
+            if editRS, indexPath.section != 1 {
+                (cell as! WordCell).wobble(false)
+            } else if editRV, indexPath.section != 2 {
+                (cell as! WordCell).wobble(false)
+            }
         } else {
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExtraCell", for: indexPath)
             (cell as! ExtraCell).entries = (entriesToSet, limit - 1)
@@ -72,32 +88,32 @@ class HomeController: MainController {
             
             if let header = headerView as? HeaderSection {
                 if indexPath.section == 0 {
-                    header.setHeader("Most popular")
+                    header.setHeader("Mafi jan hankali - Most popular")
                     header.setColor(type: .popular)
                 } else if indexPath.section == 1 {
                     header.setColor(type: .recentSearches)
-                    if recentSearches.isEmpty {
-                        header.setHeader("Recent searches")
+                    if (entries[1]?.isEmpty)! {
+                        header.setHeader("Kalmomin da aka nema - Recent searches")
                     } else {
                         header.changeIcon(editRS)
-                        header.setHeader("Recent searches", withButton: true)
+                        header.setHeader("Kalmomin da aka nema - Recent searches", withButton: true)
                         header.settingsHandler = {
                             self.executeDeleteSettings(header: header, indexPath: indexPath)
                             self.editRV = false
-                            self.editRS = true
+                            self.editRS == true ? (self.editRS = false) : (self.editRS = true)
                         }
                     }
 
                 } else {
                     header.setColor(type: .recentViews)
-                    if recentViewed.isEmpty {
-                        header.setHeader("Recent views")
+                    if (entries[2]?.isEmpty)! {
+                        header.setHeader("Kalmomin da aka duba - Recent views")
                     } else {
                         header.changeIcon(editRV)
-                        header.setHeader("Recent views", withButton: true)
+                        header.setHeader("Kalmomin da aka duba - Recent views", withButton: true)
                         header.settingsHandler = {
                             self.executeDeleteSettings(header: header, indexPath: indexPath)
-                            self.editRV = true
+                            self.editRV == true ? (self.editRV = false) : (self.editRV = true)
                             self.editRS = false
                         }
                     }
@@ -162,13 +178,8 @@ class HomeController: MainController {
         if self.view.frame.size.width < self.view.frame.size.height {
             limit = 4
         }
-        if section == 0 {
-            if popularEntries.count > limit { return limit } else { return popularEntries.count }
-        } else if section == 1 {
-            if recentSearches.count > limit { return limit } else  { return recentSearches.count }
-        } else {
-            if recentViewed.count > limit { return limit } else { return recentViewed.count }
-        }
+        
+        return (entries[section]?.count)! > limit ? limit : (entries[section]?.count)!
     }
     
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
@@ -195,14 +206,15 @@ class HomeController: MainController {
         if segue.identifier == "showList" {
             let destController: ListWordsController = segue.destination as! ListWordsController
             if index.section == 0 {
-                destController.headerText = "Most popular"
+                destController.headerText = "Mafi jan hankali - Most popular"
             } else if index.section == 1 {
-                destController.headerText = "Recent searches"
+                destController.headerText = "Kalmomin da aka nema - Recent searches"
             } else {
-                destController.headerText = "Recent views"
+                destController.headerText = "Kalmomin da aka duba - Recent views"
             }
-            
         }
+        
+        print(0xdb8d14)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -218,13 +230,9 @@ class HomeController: MainController {
     }
     
     func updateEntries() {
-        self.popularEntries = screenMng.getPopularEntries(7)
-        self.recentSearches = UserConfig.getRecentSearches(7)
-        self.recentViewed = screenMng.getRecentViewedEntries(7)
-        
-        entries[0] = popularEntries
-        entries[1] = recentSearches
-        entries[2] = recentViewed
+        entries[0] = screenMng.getPopularEntries(7)
+        entries[1] = UserConfig.getRecentSearches(7)
+        entries[2] = screenMng.getRecentViewedEntries(7)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

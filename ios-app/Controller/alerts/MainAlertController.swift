@@ -180,7 +180,6 @@ class MainAlertController: UIViewController, UITableViewDataSource, UITableViewD
         //constraint = NSLayoutConstraint(item: popupView, attribute: .height, relatedBy: .greaterThanOrEqual, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: tableView.contentSize.height + heightConst)
         //popupView.addConstraint(constraint)
         tableView.addConstraint(NSLayoutConstraint(item: tableView, attribute: .height, relatedBy: .greaterThanOrEqual, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: tableView.frame.size.height))
-        print(tableView.frame.height + popupView.frame.height)
     }
     
     @objc func cancelRequest(sender: UIButton!) {

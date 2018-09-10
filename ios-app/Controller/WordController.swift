@@ -56,7 +56,6 @@ class WordController: UIViewController, UIScrollViewDelegate {
     }
     
     func layout() {
-        print(self.scrollContainer.frame)
         for (index, view) in self.scrollContainer.subviews.filter({ if $0 is UIImageView { return false } else { return true }}).enumerated() {
             view.frame = CGRect(x: CGFloat(index) * scrollContainer.frame.width, y: 0, width: self.scrollContainer.frame.width, height: self.scrollContainer.frame.height)
             for image in view.subviews {

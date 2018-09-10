@@ -22,6 +22,8 @@ class SlideMenu: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var portraitWidth: NSLayoutConstraint!
     @IBOutlet weak var landscapeWidth: NSLayoutConstraint!
     
+    var identifier: String!
+    
     class func instanceFromNib() -> UIViewController {
         return UINib(nibName: "SlideMenu", bundle: Bundle(for: SlideMenu.self)).instantiate(withOwner: self, options: nil)[0] as! UIViewController
     }
@@ -29,9 +31,6 @@ class SlideMenu: UIViewController, UITableViewDataSource, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(updateCells), name: .gotDBTime, object: nil)
-        
-        print(UIScreen.main.bounds.height)
-        print(tableView.contentSize.height)
     }
     
     override func viewWillLayoutSubviews() {
@@ -53,6 +52,11 @@ class SlideMenu: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         self.dismiss(animated: false)
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        self.identifier = identifier
+        return true
     }
     
     @objc func updateCells() {
@@ -132,7 +136,7 @@ class SlideMenu: UIViewController, UITableViewDataSource, UITableViewDelegate {
             } else if cell.id == 7 {
                 cell.setIconWithLabel(#imageLiteral(resourceName: "design_ico"), text: "Design Settings")
             } else if cell.id == 12 {
-                cell.setIconWithLabel(#imageLiteral(resourceName: "contact"), text: "Contact")
+                cell.setIconWithLabel(#imageLiteral(resourceName: "contact"), text: "Info")
             }
             
         } else if cell.reuseIdentifier == "updateCell" {
@@ -167,9 +171,11 @@ class SlideMenu: UIViewController, UITableViewDataSource, UITableViewDelegate {
                     tableView.reloadData()
                 }
             } else if cell.id == 13 {
-                cell.setIconWithLabel(text: "Open website", withSwitch: false)
+                cell.setLabel(text: "Open website")
             } else if cell.id == 14 {
                 cell.setLabel(text: "Contact via e-Mail")
+            } else if cell.id == 15 {
+                cell.setLabel(text: "Privacy policy/Impressum")
             }
         } else if cell.reuseIdentifier == "designCell" {
             if cell.id == 8 {
@@ -317,9 +323,22 @@ class SlideMenu: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         if cell.id == 13 {
             UIApplication.shared.openURL(URL(string: "https://maganar-hannu.herokuapp.com/")!)
+        } else if cell.id == 15 {
+            DispatchQueue.main.async {
+                self.interactor?.toView = "policy"
+                self.dismiss(animated: false)
+            }
         } else if cell.id == 14 {
-            //Mail senden
+            
         }
+    }
+    
+    func topMostController() -> UIViewController {
+        var topController: UIViewController = UIApplication.shared.keyWindow!.rootViewController!
+        while (topController.presentedViewController != nil) {
+            topController = topController.presentedViewController!
+        }
+        return topController
     }
     
     override func viewWillDisappear(_ animated: Bool) {

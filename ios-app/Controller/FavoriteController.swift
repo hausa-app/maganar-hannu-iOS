@@ -97,6 +97,16 @@ class FavoriteController: MainController {
         return 1
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if collectionView.numberOfItems(inSection: 0) <= 0 { return }
+        for i in 0...collectionView.numberOfItems(inSection: 0)-1 {
+            let cell = collectionView.cellForItem(at: IndexPath(item: i, section: 0))
+            if let cell = cell as? WordCell {
+                cell.wobble(self.editingList)
+            }
+        }
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let count = favoriteEntries.count
         if count > limit { return count - 1 }

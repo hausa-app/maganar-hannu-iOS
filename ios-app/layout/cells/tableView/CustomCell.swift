@@ -89,14 +89,15 @@ class CustomCell: UITableViewCell {
      - text: The text used for the label
      - withSwitch: (optional) The bool value setting the switch button
      */
-    func setIconWithLabel(_ image: UIImage? = nil, text: String, withSwitch: Bool? = false) {
+    func setIconWithLabel(_ image: UIImage? = nil, text: String, withSwitch: Bool = false) {
         if icon != nil { icon.image = image }
         label.text = text
-        if withSwitch! { switchBttn.isHidden = false }
+        if (switchBttn != nil) { switchBttn.isHidden = !withSwitch }
     }
     
     func setLabel(text: String) {
         label.text = text
+        if (switchBttn != nil) { switchBttn.isHidden = true }
     }
     
     // The function connected to the InterfaceBuilder that executes the predefined function when the slider is being moved
@@ -191,6 +192,7 @@ class CustomCell: UITableViewCell {
         super.prepareForReuse()
         if icon != nil { icon.tintColor = .black }
         if label != nil { label.textColor = .black }
+        if (switchBttn != nil) { switchBttn.isHidden = true }
     }
 
 }

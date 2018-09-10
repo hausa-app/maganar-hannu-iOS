@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="landscape">
+    <device id="retina5_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -13,15 +13,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeaderSection" customModule="Hausa" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="bigSectionHeader" id="TMB-4R-B17" customClass="HeaderSection" customModule="Hausa" customModuleProvider="target">
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="bigSectionHeader" id="TMB-4R-B17" userLabel="Header Section Big" customClass="HeaderSection" customModule="Hausa" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="115"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Piu-Jw-fwf">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="35.5"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="32.333333333333336"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Most Popular " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONz-fs-FlS" userLabel="Most Popular">
-                            <rect key="frame" x="4" y="6.5" width="108.5" height="24"/>
+                            <rect key="frame" x="4" y="5" width="108.66666666666667" height="24"/>
                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -34,10 +34,10 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tM1-es-kfa" userLabel="Container 2">
-                    <rect key="frame" x="0.0" y="35.5" width="375" height="79.5"/>
+                    <rect key="frame" x="0.0" y="32.333333333333336" width="375" height="82.666666666666657"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No items available to show" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8lg-hh-Gqp">
-                            <rect key="frame" x="86" y="29" width="203" height="21"/>
+                            <rect key="frame" x="86" y="31.666666666666664" width="203" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="0.80368381076388884" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -53,24 +53,37 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="Piu-Jw-fwf" firstAttribute="top" secondItem="TMB-4R-B17" secondAttribute="top" id="4UL-u3-xVw"/>
+                <constraint firstItem="Piu-Jw-fwf" firstAttribute="height" secondItem="TMB-4R-B17" secondAttribute="height" multiplier="0.31" id="77N-b6-O76"/>
                 <constraint firstAttribute="trailing" secondItem="tM1-es-kfa" secondAttribute="trailing" id="7Zg-71-srW"/>
                 <constraint firstAttribute="bottom" secondItem="tM1-es-kfa" secondAttribute="bottom" id="ELX-UA-Lt6"/>
                 <constraint firstItem="tM1-es-kfa" firstAttribute="leading" secondItem="TMB-4R-B17" secondAttribute="leading" id="Fhv-mN-R0I"/>
+                <constraint firstItem="Piu-Jw-fwf" firstAttribute="height" secondItem="TMB-4R-B17" secondAttribute="height" multiplier="0.28" id="bHa-DD-tUq"/>
                 <constraint firstItem="tM1-es-kfa" firstAttribute="top" secondItem="Piu-Jw-fwf" secondAttribute="bottom" id="mMr-cQ-TQ3"/>
-                <constraint firstItem="Piu-Jw-fwf" firstAttribute="height" secondItem="TMB-4R-B17" secondAttribute="height" multiplier="0.31" id="oxF-HX-b33"/>
-                <constraint firstItem="Piu-Jw-fwf" firstAttribute="height" secondItem="TMB-4R-B17" secondAttribute="height" multiplier="0.28" id="p7y-5g-eJr"/>
+                <constraint firstItem="Piu-Jw-fwf" firstAttribute="height" secondItem="TMB-4R-B17" secondAttribute="height" multiplier="0.28" id="n7c-uc-Rgn"/>
                 <constraint firstAttribute="trailing" secondItem="Piu-Jw-fwf" secondAttribute="trailing" id="rDH-qG-YvL"/>
                 <constraint firstItem="Piu-Jw-fwf" firstAttribute="leading" secondItem="TMB-4R-B17" secondAttribute="leading" id="usR-jM-FRJ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="L9K-QC-qLE"/>
             <variation key="default">
                 <mask key="constraints">
-                    <exclude reference="p7y-5g-eJr"/>
+                    <exclude reference="77N-b6-O76"/>
+                    <exclude reference="bHa-DD-tUq"/>
+                    <exclude reference="n7c-uc-Rgn"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=compact">
+                <mask key="constraints">
+                    <include reference="n7c-uc-Rgn"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=compact-widthClass=compact">
+                <mask key="constraints">
+                    <include reference="77N-b6-O76"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
                 <mask key="constraints">
-                    <include reference="p7y-5g-eJr"/>
+                    <include reference="bHa-DD-tUq"/>
                 </mask>
             </variation>
             <connections>

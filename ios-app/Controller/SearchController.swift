@@ -30,20 +30,24 @@ class SearchController: UIViewController, UICollectionViewDataSource, UICollecti
         searchBar.tintColor = .black
         
         searchBar.layer.borderColor = UIColor.white.cgColor
-
+        
+    
         let searchBarContainer = SearchBarContainerView(customSearchBar: searchBar)
         searchBarContainer.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: navBar.frame.height)
         navitem.titleView = searchBarContainer
     }
     
     override func viewDidLoad() {
-        searchBar.becomeFirstResponder()
         collectionView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         if let cancelButton = searchBar.value(forKey: "cancelButton") as? UIButton {
             cancelButton.isEnabled = true
+        }
+        
+        DispatchQueue.main.async {
+            self.searchBar.becomeFirstResponder()
         }
     }
     

@@ -12,7 +12,6 @@ import AudioToolbox
 class MainController: UIViewController, UICollectionViewDataSource, HausaLayoutDelegate, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     let screenMng: ScreenManager = ScreenManager.instance
-    let searchBar = UISearchBar()
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var menuButton: UIBarButtonItem!
@@ -25,7 +24,7 @@ class MainController: UIViewController, UICollectionViewDataSource, HausaLayoutD
         let barButton = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         barButton.tintColor = .black
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = barButton
-
+        
         setUpUI()
     }
     
@@ -79,13 +78,14 @@ class MainController: UIViewController, UICollectionViewDataSource, HausaLayoutD
     @objc func updateState() {
         DispatchQueue.main.async {
             if Config.updateAvailable() == .available {
-                self.menuButton.tintColor = .red
-                //AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-            } else { self.menuButton.tintColor = .black }
+                self.menuButton.setBadge(text: "1")
+            } else {
+                self.menuButton.removeBadge()
+            }
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         updateState()
     }
     
