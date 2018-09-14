@@ -11,9 +11,11 @@ import MessageUI
 
 class ResizedUITabBarController: UITabBarController, MFMailComposeViewControllerDelegate {
     
-    fileprivate lazy var defaultTabBarHeight = { tabBar.frame.size.height }()
-
+    let present = PresentMenuAnimator()
+    let dismiss = DismissMenuAnimator()
     let interactor = Interactor()
+    
+    fileprivate lazy var defaultTabBarHeight = { tabBar.frame.size.height }()
     var trailing: NSLayoutConstraint!
     
     override func viewWillLayoutSubviews() {
@@ -79,11 +81,11 @@ class ResizedUITabBarController: UITabBarController, MFMailComposeViewController
 extension ResizedUITabBarController: UIViewControllerTransitioningDelegate {
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return PresentMenuAnimator()
+        return present
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return DismissMenuAnimator()
+        return dismiss
     }
     
     func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {

@@ -11,7 +11,6 @@ import UIKit
 open class SplashViewController: UIViewController {
     open var pulsing: Bool = false
     
-    let animatedLogo = AnimatedLogo(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
     var tileGridView: TileGridView!
     
     public init(tileViewFileName: String) {
@@ -21,9 +20,11 @@ open class SplashViewController: UIViewController {
         view.addSubview(tileGridView)
         tileGridView.frame = view.bounds
         
+        let animatedLogo =
+            AnimatedLogo(frame: CGRect(x: self.view.frame.width * 0.5, y: self.view.frame.height * 0.5, width: self.view.frame.width * 0.75, height: self.view.frame.width * 0.75))
+        
         view.addSubview(animatedLogo)
         animatedLogo.layer.position = view.layer.position
-        animatedLogo.layer.position.y -= 150
         
         tileGridView.startAnimating()
         animatedLogo.startAnimating()

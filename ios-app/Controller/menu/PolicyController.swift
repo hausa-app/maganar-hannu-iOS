@@ -19,20 +19,19 @@ class PolicyController: UIViewController {
     
     override func viewDidLoad() {
         if let bar = navBAR {
-            let width = bar.frame.size.width
             let height = bar.frame.size.height
-            let x = width / 2 - logoImage.size.width / 2
-            let y = height / 2 - logoImage.size.height / 2
             
             let imageView = UIImageView(image: logoImage)
-            imageView.frame = CGRect(x: x, y: y, width: width, height: height)
-            imageView.contentMode = .scaleAspectFit
-            navItem.titleView = imageView
+            imageView.contentMode = UIViewContentMode.scaleAspectFit
+            let titleView = UIView(frame: CGRect(x: 0, y: 0, width: (height / logoImage.size.height) * logoImage.size.width, height: height))
+            imageView.frame = titleView.bounds
+            titleView.addSubview(imageView)
+            
+            self.navItem.titleView = titleView
         }
     }
     
     @IBAction func exitScreen(_ sender: UIBarButtonItem) {
-        interactor?.toView = "menu"
         self.dismiss(animated: true)
     }
 }

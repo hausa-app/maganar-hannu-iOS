@@ -11,6 +11,7 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -93,9 +94,10 @@
                                                         <constraint firstItem="F4e-Mi-4Vk" firstAttribute="leading" secondItem="zrS-Y6-0S1" secondAttribute="leading" id="wuT-2N-Vr5"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="5"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="6"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
@@ -153,14 +155,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dgB-3o-gWJ">
-                        <leftBarButtonItems>
-                            <barButtonItem enabled="NO" title="Item" id="Cht-QU-f1e">
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </barButtonItem>
-                            <barButtonItem enabled="NO" title="Item" id="quN-bd-CR0">
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </barButtonItem>
-                        </leftBarButtonItems>
                         <rightBarButtonItems>
                             <barButtonItem image="menu" id="qv5-Po-YSa">
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -312,6 +306,7 @@
                         <outlet property="englishLabel" destination="gK9-eN-qfk" id="Z5D-G1-fTj"/>
                         <outlet property="favoriteButton" destination="Wcr-gi-lWh" id="stU-Qn-vaP"/>
                         <outlet property="hausaLabel" destination="0N1-LG-az7" id="gbg-5x-axE"/>
+                        <outlet property="navBar" destination="Kc6-xc-UQO" id="B8d-CT-7mf"/>
                         <outlet property="nextButton" destination="hHu-IE-v5l" id="yle-6b-Rpr"/>
                         <outlet property="pageControl" destination="xlO-br-s9e" id="Qbo-WM-6gD"/>
                         <outlet property="previousButton" destination="l9V-SE-dA2" id="2H5-Gi-iuA"/>
@@ -320,7 +315,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5gb-94-hlf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3372.4637681159425" y="202.98913043478262"/>
+            <point key="canvasLocation" x="3457" y="202"/>
         </scene>
         <!--Category Words Controller-->
         <scene sceneID="ZTq-6w-PT4">
@@ -411,9 +406,10 @@
                                                         <constraint firstItem="7SF-YK-fjd" firstAttribute="top" secondItem="EBf-CE-ywd" secondAttribute="top" id="pJu-6X-VTM"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="5"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="6"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
@@ -431,7 +427,10 @@
                                             <outlet property="hausaLabel" destination="tF5-cs-t5l" id="TuB-Nd-ILn"/>
                                             <outlet property="imageView" destination="CxM-HG-jpV" id="IEF-aQ-kTh"/>
                                             <outlet property="textContainer" destination="lp4-ii-8L6" id="ibH-lS-IGA"/>
-                                            <segue destination="LVX-Kb-MhN" kind="presentation" identifier="showWord" id="DR8-EI-MfP"/>
+                                            <segue destination="LVX-Kb-MhN" kind="presentation" identifier="showWord" id="DR8-EI-MfP">
+                                                <segue key="commit" inheritsFrom="parent" id="W9i-Hc-j1O"/>
+                                                <segue key="preview" destination="LVX-Kb-MhN" identifier="showWordPreview" id="ZSY-mh-g0H"/>
+                                            </segue>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -504,7 +503,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BXT-7k-bne">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BXT-7k-bne" customClass="NavigationBarWithoutAnimation" customModule="Hausa" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -687,9 +686,10 @@ Cg
                                                         <constraint firstItem="P8H-D2-hH9" firstAttribute="top" secondItem="Tnf-TC-Ocj" secondAttribute="bottom" id="tF0-7r-ypc"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="5"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="6"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
@@ -778,9 +778,10 @@ Cg
                                                         <constraint firstItem="zne-wA-Gc3" firstAttribute="height" relation="greaterThanOrEqual" secondItem="Alg-V8-AVT" secondAttribute="height" multiplier="0.6" id="tbp-yj-VVs"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="5"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="6"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ids-UM-pic" customClass="UIButton">
@@ -824,7 +825,10 @@ Cg
                                             <outlet property="hausaLabel" destination="nRc-8T-nGO" id="bi9-WC-Wsy"/>
                                             <outlet property="imageView" destination="xPw-zh-yk3" id="mON-rG-Phn"/>
                                             <outlet property="textContainer" destination="jHC-E2-uS8" id="bDC-D4-bSk"/>
-                                            <segue destination="LVX-Kb-MhN" kind="presentation" identifier="showWord" id="TeI-mQ-cHD"/>
+                                            <segue destination="LVX-Kb-MhN" kind="presentation" identifier="showWord" id="TeI-mQ-cHD">
+                                                <segue key="commit" inheritsFrom="parent" id="3Pi-ev-w1v"/>
+                                                <segue key="preview" destination="LVX-Kb-MhN" identifier="showWordPreview" id="l8C-Vr-bnM"/>
+                                            </segue>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -883,14 +887,6 @@ Cg
                     </view>
                     <navigationItem key="navigationItem" id="0xc-Sn-yfI">
                         <nil key="title"/>
-                        <leftBarButtonItems>
-                            <barButtonItem enabled="NO" title="Item" id="s82-wX-Cqe">
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </barButtonItem>
-                            <barButtonItem enabled="NO" title="Item" id="XFe-LW-eS9">
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </barButtonItem>
-                        </leftBarButtonItems>
                         <rightBarButtonItems>
                             <barButtonItem image="menu" id="OZO-Ae-2gN" userLabel="Menu">
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -957,7 +953,7 @@ Cg
                         <segue destination="SSj-Iq-cVO" kind="relationship" relationship="viewControllers" id="gBm-K7-SXG"/>
                         <segue destination="Oja-s1-eKG" kind="relationship" relationship="viewControllers" id="5xK-p6-zTt"/>
                         <segue destination="GcD-X1-Ogw" kind="presentation" identifier="openMenu" id="Ci5-qH-s6S"/>
-                        <segue destination="SNN-He-YRr" kind="presentation" identifier="showPolicy" id="nih-kB-tp7"/>
+                        <segue destination="SNN-He-YRr" kind="custom" identifier="showPolicy" customClass="SegueFromLeft" customModule="Hausa" customModuleProvider="target" id="nih-kB-tp7"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="csu-sq-3Mt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1053,9 +1049,10 @@ Cg
                                                         <constraint firstItem="9ep-67-IoI" firstAttribute="height" relation="greaterThanOrEqual" secondItem="Xgf-fR-rBR" secondAttribute="height" multiplier="0.25" id="ugc-fF-r6K"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="5"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="6"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NJ9-yQ-zJ7" customClass="UIButton">
@@ -1099,7 +1096,10 @@ Cg
                                             <outlet property="hausaLabel" destination="68c-RN-Oht" id="jdV-Yv-gJH"/>
                                             <outlet property="imageView" destination="qde-nl-s8T" id="XSd-Zl-rw8"/>
                                             <outlet property="textContainer" destination="9ep-67-IoI" id="W3J-gK-SK1"/>
-                                            <segue destination="LVX-Kb-MhN" kind="presentation" identifier="showWord" id="rwK-L5-c5c"/>
+                                            <segue destination="LVX-Kb-MhN" kind="presentation" identifier="showWord" id="rwK-L5-c5c">
+                                                <segue key="commit" inheritsFrom="parent" id="typ-iJ-mGZ"/>
+                                                <segue key="preview" destination="LVX-Kb-MhN" identifier="showWordPreview" id="jd6-2A-Vog"/>
+                                            </segue>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ExtraCell" id="H0b-an-jDp" customClass="ExtraCell" customModule="Hausa" customModuleProvider="target">
@@ -1250,9 +1250,10 @@ Cg
                                                         <constraint firstItem="GHK-3D-qoa" firstAttribute="top" secondItem="dl5-ze-oFr" secondAttribute="bottom" id="yMZ-pz-dve"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="5"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="6"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
@@ -1329,14 +1330,6 @@ Cg
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Nlf-lo-iiG">
-                        <leftBarButtonItems>
-                            <barButtonItem enabled="NO" title="Item" id="Ntn-SF-Euz">
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </barButtonItem>
-                            <barButtonItem enabled="NO" title="Item" id="Wen-5R-Ic7">
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </barButtonItem>
-                        </leftBarButtonItems>
                         <rightBarButtonItems>
                             <barButtonItem image="menu" id="mje-fY-iGe">
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1753,6 +1746,31 @@ Cg
                                                     </constraints>
                                                 </tableViewCellContentView>
                                             </tableViewCell>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="textCell" id="V1d-Bj-gg2" userLabel="textCell" customClass="CustomCell" customModule="Hausa" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="457" width="310.66666666666669" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V1d-Bj-gg2" id="8Tm-hg-vqc">
+                                                    <rect key="frame" x="0.0" y="0.0" width="310.66666666666669" height="43.666666666666664"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R87-gA-RyR">
+                                                            <rect key="frame" x="23" y="11.666666666666666" width="264.66666666666669" height="20.333333333333336"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="R87-gA-RyR" firstAttribute="leading" secondItem="8Tm-hg-vqc" secondAttribute="leadingMargin" constant="15" id="HCi-SH-1Ls"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="R87-gA-RyR" secondAttribute="trailing" constant="15" id="Mqd-IV-Sfm"/>
+                                                        <constraint firstItem="R87-gA-RyR" firstAttribute="centerY" secondItem="8Tm-hg-vqc" secondAttribute="centerY" id="gAo-9X-B9N"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="container" destination="8Tm-hg-vqc" id="ENy-GZ-FbN"/>
+                                                    <outlet property="label" destination="R87-gA-RyR" id="bdh-KJ-gl5"/>
+                                                </connections>
+                                            </tableViewCell>
                                         </prototypes>
                                         <connections>
                                             <outlet property="dataSource" destination="GcD-X1-Ogw" id="qDE-ap-ajT"/>
@@ -1816,6 +1834,7 @@ Cg
                     </view>
                     <connections>
                         <outlet property="tableView" destination="cg8-id-feo" id="ZGN-oM-ufa"/>
+                        <segue destination="SNN-He-YRr" kind="showDetail" identifier="showPolicy" id="4Uh-7V-Fvl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1jG-pU-bVQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1852,20 +1871,20 @@ Cg
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCr-n7-ag0">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCr-n7-ag0">
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IvD-3r-od5" userLabel="Container">
-                                        <rect key="frame" x="8" y="8" width="398" height="672"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="451.33333333333331"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Privacy policy statement" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAZ-PW-ZRQ">
-                                                <rect key="frame" x="15" y="20" width="368" height="21"/>
+                                                <rect key="frame" x="15" y="20" width="384" height="21"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxQ-18-X6S">
-                                                <rect key="frame" x="15" y="51" width="368" height="27"/>
+                                                <rect key="frame" x="15" y="51" width="384" height="27"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="The Application Maganar hannu does not collect, transmit or maintain any user data.">
                                                         <attributes>
@@ -1877,7 +1896,7 @@ Cg
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2p5-ze-WM9">
-                                                <rect key="frame" x="15" y="80" width="368" height="228"/>
+                                                <rect key="frame" x="15" y="80" width="384" height="188"/>
                                                 <attributedString key="attributedText">
                                                     <fragment>
                                                         <string key="content">The Application does not collect or transmit any personally identifiable information about you, such as your name, address, phone number or email address.
@@ -1905,13 +1924,13 @@ Cg
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Impressum" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IE0-sP-KWu">
-                                                <rect key="frame" x="15" y="323" width="368" height="21"/>
+                                                <rect key="frame" x="15" y="283" width="384" height="21"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3SG-cE-G1V">
-                                                <rect key="frame" x="15" y="354" width="368" height="107.33333333333331"/>
+                                                <rect key="frame" x="15" y="314" width="384" height="107.33333333333331"/>
                                                 <attributedString key="attributedText">
                                                     <fragment>
                                                         <string key="content">Dr. Constanze Halima Schmaling
@@ -1921,7 +1940,7 @@ Oettingenstr. 67
 80538 Munich
 Germany
 +49 89 2180 2232
-constanze.schmaling@lmu.de</string>
+hausa-app@mnm-team.org</string>
                                                         <attributes>
                                                             <font key="NSFont" size="12" name="ArialMT"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -1931,7 +1950,7 @@ constanze.schmaling@lmu.de</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.99607843139999996" green="0.99607843139999996" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="jxQ-18-X6S" firstAttribute="top" secondItem="jAZ-PW-ZRQ" secondAttribute="bottom" constant="10" id="0q4-0K-D6U"/>
                                             <constraint firstAttribute="trailing" secondItem="IE0-sP-KWu" secondAttribute="trailing" constant="10" id="6UC-oE-10m">
@@ -1967,25 +1986,26 @@ constanze.schmaling@lmu.de</string>
                                             <constraint firstAttribute="trailing" secondItem="jAZ-PW-ZRQ" secondAttribute="trailing" constant="10" id="msg-YO-XzB">
                                                 <variation key="heightClass=regular" constant="15"/>
                                             </constraint>
+                                            <constraint firstAttribute="bottom" secondItem="3SG-cE-G1V" secondAttribute="bottom" constant="30" id="pwa-nI-6Fx"/>
                                             <constraint firstItem="jAZ-PW-ZRQ" firstAttribute="leading" secondItem="IvD-3r-od5" secondAttribute="leading" constant="10" id="wJk-tD-w2v">
                                                 <variation key="heightClass=regular" constant="15"/>
                                             </constraint>
-                                            <constraint firstAttribute="height" constant="672" id="xhi-Dr-pX0"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="IvD-3r-od5" firstAttribute="top" secondItem="xCr-n7-ag0" secondAttribute="topMargin" id="AFq-A0-iRq"/>
-                                    <constraint firstAttribute="bottom" secondItem="IvD-3r-od5" secondAttribute="bottom" constant="-8" id="K9o-tf-pjq"/>
-                                    <constraint firstItem="IvD-3r-od5" firstAttribute="centerX" secondItem="xCr-n7-ag0" secondAttribute="centerX" id="eWq-qA-hxb"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="IvD-3r-od5" secondAttribute="trailing" id="ldO-ZU-FMG"/>
-                                    <constraint firstItem="IvD-3r-od5" firstAttribute="leading" secondItem="xCr-n7-ag0" secondAttribute="leadingMargin" id="sbj-fV-sfA"/>
+                                    <constraint firstAttribute="trailing" secondItem="IvD-3r-od5" secondAttribute="trailing" id="80L-hk-9ty"/>
+                                    <constraint firstAttribute="bottom" secondItem="IvD-3r-od5" secondAttribute="bottom" id="Ejw-UC-tLs"/>
+                                    <constraint firstItem="IvD-3r-od5" firstAttribute="top" secondItem="xCr-n7-ag0" secondAttribute="top" id="gxh-rT-KNi"/>
+                                    <constraint firstItem="IvD-3r-od5" firstAttribute="leading" secondItem="xCr-n7-ag0" secondAttribute="leading" id="p6i-5C-1rT"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Fvn-SA-cT8" firstAttribute="leading" secondItem="rlw-Bi-Sii" secondAttribute="leading" id="2x8-XJ-16r"/>
+                            <constraint firstItem="IvD-3r-od5" firstAttribute="width" secondItem="rlw-Bi-Sii" secondAttribute="width" id="EUt-yO-K3v"/>
+                            <constraint firstItem="IvD-3r-od5" firstAttribute="height" secondItem="rlw-Bi-Sii" secondAttribute="height" priority="250" id="LO8-Ae-Q75"/>
                             <constraint firstItem="xCr-n7-ag0" firstAttribute="top" secondItem="Fvn-SA-cT8" secondAttribute="bottom" id="LRI-6R-AAq"/>
                             <constraint firstItem="xCr-n7-ag0" firstAttribute="leading" secondItem="rlw-Bi-Sii" secondAttribute="leading" id="Yke-30-nJV"/>
                             <constraint firstItem="STU-uO-ftY" firstAttribute="top" secondItem="xCr-n7-ag0" secondAttribute="bottom" id="bSZ-MZ-XtE"/>
@@ -2001,7 +2021,7 @@ constanze.schmaling@lmu.de</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d1D-Xh-9aB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2463.75" y="1262.323943661972"/>
+            <point key="canvasLocation" x="-2463.768115942029" y="1261.9565217391305"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sQo-ge-yei">
@@ -2011,7 +2031,7 @@ constanze.schmaling@lmu.de</string>
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Aqk-Te-9LD">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Aqk-Te-9LD" customClass="NavigationBarWithoutAnimation" customModule="Hausa" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2033,7 +2053,7 @@ constanze.schmaling@lmu.de</string>
                         <inset key="largeContentSizeImageInsets" minX="-1" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tFJ-nW-icJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tFJ-nW-icJ" customClass="NavigationBarWithoutAnimation" customModule="Hausa" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2135,9 +2155,10 @@ constanze.schmaling@lmu.de</string>
                                                         <constraint firstAttribute="trailing" secondItem="FRN-zy-h6m" secondAttribute="trailing" id="pSt-T8-4Tx"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="5"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="6"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vmS-g8-dSP" customClass="UIButton">
@@ -2181,7 +2202,10 @@ constanze.schmaling@lmu.de</string>
                                             <outlet property="hausaLabel" destination="jIc-rA-aUM" id="tUO-p1-6zS"/>
                                             <outlet property="imageView" destination="k85-uY-efg" id="gb8-cE-fkA"/>
                                             <outlet property="textContainer" destination="l5a-Jf-0nJ" id="CUo-IQ-z7W"/>
-                                            <segue destination="LVX-Kb-MhN" kind="presentation" identifier="showWord" id="9cK-fp-0OK"/>
+                                            <segue destination="LVX-Kb-MhN" kind="presentation" identifier="showWord" id="9cK-fp-0OK">
+                                                <segue key="commit" inheritsFrom="parent" id="bt4-S1-LjC"/>
+                                                <segue key="preview" destination="LVX-Kb-MhN" identifier="showWordPreview" id="gCz-3C-FqY"/>
+                                            </segue>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ExtraCell" id="anK-54-iBw" customClass="ExtraCell" customModule="Hausa" customModuleProvider="target">
@@ -2332,9 +2356,10 @@ Cg
                                                         <constraint firstAttribute="trailing" secondItem="3nh-aZ-ULT" secondAttribute="trailing" id="ktf-pK-ZSw"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="5"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="6"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
@@ -2456,7 +2481,7 @@ Cg
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NZn-l8-IYD">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NZn-l8-IYD">
                                 <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <color key="backgroundColor" red="0.99607843139999996" green="0.99607843139999996" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="scrollIndicatorInsets" minX="1" minY="1" maxX="0.0" maxY="1"/>
@@ -2533,9 +2558,10 @@ Cg
                                                         <constraint firstAttribute="trailing" secondItem="kKk-0U-VNB" secondAttribute="trailing" id="uay-bz-PVL"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="5"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="6"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
@@ -2553,7 +2579,10 @@ Cg
                                             <outlet property="hausaLabel" destination="uLZ-GK-MYK" id="cv9-dh-IMw"/>
                                             <outlet property="imageView" destination="At7-m0-Hyk" id="Jvh-y1-Oca"/>
                                             <outlet property="textContainer" destination="MnT-h4-DCr" id="cLi-kO-nhe"/>
-                                            <segue destination="LVX-Kb-MhN" kind="presentation" identifier="showWord" id="Qrp-Zw-xIL"/>
+                                            <segue destination="LVX-Kb-MhN" kind="presentation" identifier="showWord" id="Qrp-Zw-xIL">
+                                                <segue key="commit" inheritsFrom="parent" id="38u-qy-ff8"/>
+                                                <segue key="preview" destination="LVX-Kb-MhN" identifier="showWordPreview" id="uJm-uh-Hx0"/>
+                                            </segue>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -2621,7 +2650,8 @@ Cg
         <image name="uptodate" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zVN-5Z-QWf"/>
-        <segue reference="rwK-L5-c5c"/>
+        <segue reference="Tjx-7a-ZnG"/>
+        <segue reference="nih-kB-tp7"/>
+        <segue reference="TeI-mQ-cHD"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -19,7 +19,7 @@ class CategoryWordsController: MainController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-        if segue.identifier == "showWord" {
+        if segue.identifier == "showWord" || segue.identifier == "showWordPreview" {
             screenMng.setActiveEntryList(self.categoryObjects)
         }
     }
@@ -94,7 +94,7 @@ class CategoryWordsController: MainController {
         } else {
             targetWidth = width * (1/3) - 20
             if indexPath.item % 3 != 0 {
-                item = categoryObjects[indexPath.item - (indexPath.item % 4)]
+                item = categoryObjects[indexPath.item - (indexPath.item % 3)]
             } else {
                 item = categoryObjects[indexPath.item]
             }

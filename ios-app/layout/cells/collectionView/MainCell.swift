@@ -17,8 +17,8 @@ class MainCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        containerView.layer.cornerRadius = 6
-        containerView.layer.masksToBounds = true
+        //containerView.layer.cornerRadius = 6
+        //containerView.layer.masksToBounds = true
     }
     
     func setColor(_ color: UIColor? = nil, type: ThemeType? = .main) {

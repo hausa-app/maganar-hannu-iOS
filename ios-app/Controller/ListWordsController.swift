@@ -24,7 +24,7 @@ class ListWordsController: MainController {
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         super.shouldPerformSegue(withIdentifier: identifier, sender: sender)
-        if identifier == "showWord", self.editingList {
+        if identifier == "showWord" || identifier == "showWordPreview", self.editingList {
             return false
         }
         return true
@@ -32,7 +32,7 @@ class ListWordsController: MainController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-        if segue.identifier == "showWord" {
+        if segue.identifier == "showWord" || segue.identifier == "showWordPreview" {
             screenMng.setActiveEntryList(self.entries)
         }
     }

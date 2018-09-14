@@ -211,6 +211,22 @@ class StringBuilder {
 
 extension UIView {
     
+    public func snapshotImage() -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(bounds.size, isOpaque, 0)
+        drawHierarchy(in: bounds, afterScreenUpdates: false)
+        let snapshotImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return snapshotImage
+    }
+    
+    public func snapshotView() -> UIView? {
+        if let snapshotImage = snapshotImage() {
+            return UIImageView(image: snapshotImage)
+        } else {
+            return nil
+        }
+    }
+    
     func addBlurEffect(withDuration: TimeInterval) {
         let blurEffect = UIBlurEffect(style: .light)
         let effectView = UIVisualEffectView(effect: blurEffect)
@@ -565,3 +581,62 @@ extension UILabel {
     }
 }
 
+import UIKit
+class SegueFromLeft: UIStoryboardSegue {
+    override func perform() {
+        let src = self.source
+        let dst = self.destination
+        
+        src.view.superview?.insertSubview(dst.view, aboveSubview: src.view)
+        dst.view.transform = CGAffineTransform(translationX: -src.view.frame.size.width, y: 0)
+        
+        UIView.animate(withDuration: 0.25,
+                       delay: 0.0,
+                       options: .curveEaseInOut,
+                       animations: {
+                        dst.view.transform = CGAffineTransform(translationX: 0, y: 0)
+        },
+                       completion: { finished in
+                        src.present(dst, animated: false, completion: nil)
+        }
+        )
+    }
+}
+
+class transitionFromRight: UIStoryboardSegue {
+    
+    override func perform() {
+        
+        let src = self.source
+        let dst = self.destination
+        let transition: CATransition = CATransition()
+        let timeFunc : CAMediaTimingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        transition.duration = 0.3
+        transition.timingFunction = timeFunc
+        transition.type = kCATransitionPush
+        transition.subtype = kCATransitionFromRight
+        
+        src.view.window?.layer.add(transition, forKey: nil)
+        src.present(dst, animated: false, completion: nil)
+        
+    }
+    
+    
+}
+
+class NavigationBarWithoutAnimation: UINavigationBar {
+    
+    override func popItem(animated: Bool) -> UINavigationItem? {
+        return super.popItem(animated: false)
+    }
+    
+    override func pushItem(_ item: UINavigationItem, animated: Bool) {
+        var items = self.items!
+        items.append(item)
+        self.items = items
+    }
+    
+    override func setItems(_ items: [UINavigationItem]?, animated: Bool) {
+        super.setItems(items, animated: false)
+    }
+}

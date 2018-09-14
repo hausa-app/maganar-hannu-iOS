@@ -280,7 +280,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Utilities.swift"
-            timestampString = "558313839.2567379"
+            timestampString = "558629351.5351419"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "95"
@@ -296,7 +296,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Utilities.swift"
-            timestampString = "558313839.2567869"
+            timestampString = "558629351.535322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "96"
@@ -403,7 +403,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/RootController.swift"
-            timestampString = "557728448.312922"
+            timestampString = "558629351.535477"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
@@ -419,7 +419,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/config &amp; cache/UserConfig.swift"
-            timestampString = "558313839.256851"
+            timestampString = "558629351.5356441"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
@@ -435,7 +435,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/config &amp; cache/UserConfig.swift"
-            timestampString = "558313839.256887"
+            timestampString = "558629351.535724"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "43"
@@ -451,7 +451,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/RootController.swift"
-            timestampString = "557728448.3130161"
+            timestampString = "558629351.5358"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
@@ -467,7 +467,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/RootController.swift"
-            timestampString = "557728448.313054"
+            timestampString = "558629351.535857"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
@@ -483,7 +483,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/RootController.swift"
-            timestampString = "557728448.313089"
+            timestampString = "558629351.535955"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
@@ -499,7 +499,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/RootController.swift"
-            timestampString = "557728448.313123"
+            timestampString = "558629351.536126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
@@ -515,7 +515,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/RootController.swift"
-            timestampString = "557728448.313157"
+            timestampString = "558629351.536202"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
@@ -531,12 +531,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/RootController.swift"
-            timestampString = "557728448.31319"
+            timestampString = "558629351.536263"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
             endingLineNumber = "37"
-            landmarkName = "viewDidLoad()"
+            landmarkName = "showSplashViewController()"
             landmarkType = "7">
             <Locations>
                <Location
@@ -579,12 +579,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/RootController.swift"
-            timestampString = "557728448.3132221"
+            timestampString = "558629351.536352"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
             endingLineNumber = "38"
-            landmarkName = "viewDidLoad()"
+            landmarkName = "showSplashViewController()"
             landmarkType = "7">
             <Locations>
                <Location
@@ -627,12 +627,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/RootController.swift"
-            timestampString = "557728448.313254"
+            timestampString = "558629351.536423"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
             endingLineNumber = "39"
-            landmarkName = "viewDidLoad()"
+            landmarkName = "showSplashViewController()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -643,12 +643,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/menu/SlideMenu.swift"
-            timestampString = "558047604.277673"
+            timestampString = "558629351.536556"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "loadProperties()"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "updateCells()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -659,12 +659,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/menu/SlideMenu.swift"
-            timestampString = "558047604.277806"
+            timestampString = "558629351.536705"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "loadProperties()"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "updateCells()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -675,11 +675,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/menu/SlideMenu.swift"
-            timestampString = "558047604.277925"
+            timestampString = "558629351.53686"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -691,13 +691,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/menu/SlideMenu.swift"
-            timestampString = "558047604.278028"
+            timestampString = "558629351.536988"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "loadProperties()"
-            landmarkType = "7">
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "SlideMenu"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -707,11 +707,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/menu/SlideMenu.swift"
-            timestampString = "558047604.278138"
+            timestampString = "558629351.537109"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "getVisibleRows()"
             landmarkType = "7">
          </BreakpointContent>
@@ -723,11 +723,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/menu/SlideMenu.swift"
-            timestampString = "558047604.2782561"
+            timestampString = "558629351.5372469"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "getVisibleRows()"
             landmarkType = "7">
          </BreakpointContent>
@@ -739,7 +739,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/ResponseHandler.swift"
-            timestampString = "558313839.257123"
+            timestampString = "558629351.537434"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
@@ -755,7 +755,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/ResponseHandler.swift"
-            timestampString = "558313839.2571779"
+            timestampString = "558629351.5376199"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
@@ -771,7 +771,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/ResponseHandler.swift"
-            timestampString = "558313839.2572351"
+            timestampString = "558629351.53776"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
@@ -787,7 +787,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/CategoryWordsController.swift"
-            timestampString = "558310246.292738"
+            timestampString = "558629351.537891"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
@@ -803,11 +803,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/WordController.swift"
-            timestampString = "558308051.333885"
+            timestampString = "558629351.53804"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -819,11 +819,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/WordController.swift"
-            timestampString = "558308051.334272"
+            timestampString = "558629351.53818"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -835,7 +835,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/CategoryWordsController.swift"
-            timestampString = "558310246.292872"
+            timestampString = "558629351.5382791"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
@@ -851,7 +851,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/CategoryWordsController.swift"
-            timestampString = "558310246.292937"
+            timestampString = "558629351.5383821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
@@ -947,7 +947,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/messaging/HNObject.swift"
-            timestampString = "558313839.257405"
+            timestampString = "558629351.538553"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
@@ -963,7 +963,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/messaging/HNObject.swift"
-            timestampString = "558313839.257444"
+            timestampString = "558629351.5387"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "74"
@@ -1011,7 +1011,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/messaging/HNObject.swift"
-            timestampString = "558313839.257481"
+            timestampString = "558629351.5387861"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "75"
@@ -1027,7 +1027,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/messaging/HNObject.swift"
-            timestampString = "558313839.257534"
+            timestampString = "558629351.5388809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "80"
@@ -1155,7 +1155,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/NetworkManager.swift"
-            timestampString = "558313839.257628"
+            timestampString = "558629351.5390919"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"
@@ -1171,7 +1171,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/ResponseHandler.swift"
-            timestampString = "558313839.257665"
+            timestampString = "558629351.539202"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "83"
@@ -1187,7 +1187,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/NetworkManager.swift"
-            timestampString = "558313839.2577029"
+            timestampString = "558629351.53933"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "58"
@@ -1235,7 +1235,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/NetworkManager.swift"
-            timestampString = "558313839.257735"
+            timestampString = "558629351.539399"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
@@ -1251,7 +1251,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/NetworkManager.swift"
-            timestampString = "558313839.257764"
+            timestampString = "558629351.539462"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "55"
@@ -1267,7 +1267,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/NetworkManager.swift"
-            timestampString = "558313839.257796"
+            timestampString = "558629351.5395041"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "54"
@@ -1315,13 +1315,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/RootController.swift"
-            timestampString = "557728448.314072"
+            timestampString = "558629351.539603"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "115"
             endingLineNumber = "115"
-            landmarkName = "prepare(for:sender:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1331,11 +1331,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/WordController.swift"
-            timestampString = "558308051.334783"
+            timestampString = "558629351.539672"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "221"
-            endingLineNumber = "221"
+            startingLineNumber = "234"
+            endingLineNumber = "234"
             landmarkName = "viewForZooming(in:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1347,7 +1347,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/ResponseHandler.swift"
-            timestampString = "558313839.257874"
+            timestampString = "558629351.539791"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
@@ -1363,7 +1363,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/ResponseHandler.swift"
-            timestampString = "558313839.2579139"
+            timestampString = "558629351.5398721"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "18"
@@ -1379,7 +1379,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/NetworkManager.swift"
-            timestampString = "558313839.257951"
+            timestampString = "558629351.539988"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "40"
@@ -1395,7 +1395,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/ResponseHandler.swift"
-            timestampString = "558313839.257982"
+            timestampString = "558629351.540076"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
@@ -1411,7 +1411,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/ResponseHandler.swift"
-            timestampString = "558313839.258019"
+            timestampString = "558629351.540208"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"
@@ -1491,7 +1491,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/NetworkManager.swift"
-            timestampString = "558313839.258081"
+            timestampString = "558629351.540387"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "61"
@@ -1523,12 +1523,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/HomeController.swift"
-            timestampString = "558047604.280508"
+            timestampString = "558629351.540514"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
-            landmarkName = "collectionView(_:layout:referenceSizeForHeaderInSection:)"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "executeDeleteSettings(header:indexPath:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1539,13 +1539,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/HomeController.swift"
-            timestampString = "558047604.280597"
+            timestampString = "558629351.540606"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
-            landmarkName = "collectionView(_:shouldSelectItemAt:)"
-            landmarkType = "7">
+            startingLineNumber = "177"
+            endingLineNumber = "177"
+            landmarkName = "HomeController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1603,7 +1603,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/ListWordsController.swift"
-            timestampString = "558047604.280728"
+            timestampString = "558629351.54076"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "151"
@@ -1619,7 +1619,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/ListWordsController.swift"
-            timestampString = "558047604.2808239"
+            timestampString = "558629351.540858"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "136"
@@ -1635,7 +1635,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/ListWordsController.swift"
-            timestampString = "558047604.280917"
+            timestampString = "558629351.54093"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "135"
@@ -1651,7 +1651,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/ListWordsController.swift"
-            timestampString = "558047604.28101"
+            timestampString = "558629351.540989"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "150"
@@ -1667,7 +1667,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/ListWordsController.swift"
-            timestampString = "558047604.281105"
+            timestampString = "558629351.541039"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "143"
@@ -1683,7 +1683,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/ListWordsController.swift"
-            timestampString = "558047604.281197"
+            timestampString = "558629351.541082"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "152"
@@ -1699,7 +1699,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/ListWordsController.swift"
-            timestampString = "558047604.281289"
+            timestampString = "558629351.541134"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "153"
@@ -1715,7 +1715,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/ListWordsController.swift"
-            timestampString = "558047604.281382"
+            timestampString = "558629351.541191"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "154"
@@ -1731,7 +1731,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/ListWordsController.swift"
-            timestampString = "558047604.281473"
+            timestampString = "558629351.541241"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "155"
@@ -1747,7 +1747,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/ListWordsController.swift"
-            timestampString = "558047604.281564"
+            timestampString = "558629351.541293"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "156"
@@ -1763,7 +1763,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/database/LimitedDatabase.swift"
-            timestampString = "558313839.258263"
+            timestampString = "558629351.541416"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "175"
@@ -1779,13 +1779,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/HomeController.swift"
-            timestampString = "558047604.2816761"
+            timestampString = "558629351.541502"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
-            landmarkName = "shouldPerformSegue(withIdentifier:sender:)"
-            landmarkType = "7">
+            startingLineNumber = "186"
+            endingLineNumber = "186"
+            landmarkName = "HomeController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1811,11 +1811,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/WordController.swift"
-            timestampString = "558308051.33525"
+            timestampString = "558629351.541612"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "188"
-            endingLineNumber = "188"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
             landmarkName = "scrollViewDidScroll(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1827,11 +1827,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/WordController.swift"
-            timestampString = "558308051.33542"
+            timestampString = "558629351.541695"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
             landmarkName = "scrollViewDidScroll(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1843,11 +1843,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/Controller/WordController.swift"
-            timestampString = "558308051.3355809"
+            timestampString = "558629351.541782"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
+            startingLineNumber = "208"
+            endingLineNumber = "208"
             landmarkName = "scrollViewDidScroll(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1859,7 +1859,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/database/LimitedDatabase.swift"
-            timestampString = "558313839.258352"
+            timestampString = "558629351.541871"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "113"
@@ -1875,7 +1875,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/ResponseHandler.swift"
-            timestampString = "558313839.258388"
+            timestampString = "558629351.541995"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "43"
@@ -1891,7 +1891,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/ResponseHandler.swift"
-            timestampString = "558313839.258427"
+            timestampString = "558629351.542173"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
@@ -1907,7 +1907,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/ResponseHandler.swift"
-            timestampString = "558313839.2584651"
+            timestampString = "558629351.542351"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
@@ -1923,7 +1923,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/ResponseHandler.swift"
-            timestampString = "558313839.258504"
+            timestampString = "558629351.542469"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
@@ -1939,7 +1939,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/ResponseHandler.swift"
-            timestampString = "558313839.25855"
+            timestampString = "558629351.542616"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
@@ -1955,7 +1955,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/NetworkManager.swift"
-            timestampString = "558313839.258589"
+            timestampString = "558629351.542757"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
@@ -1971,7 +1971,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/ResponseHandler.swift"
-            timestampString = "558313839.258644"
+            timestampString = "558629351.5428621"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
@@ -1987,7 +1987,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/json/JSONObject.swift"
-            timestampString = "558313839.258685"
+            timestampString = "558629351.543039"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
@@ -2003,7 +2003,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/json/JSONObject.swift"
-            timestampString = "558313839.258759"
+            timestampString = "558629351.543179"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "60"
@@ -2019,7 +2019,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/json/JSONObject.swift"
-            timestampString = "558313839.258811"
+            timestampString = "558629351.543269"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "61"
@@ -2035,7 +2035,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/json/JSONObject.swift"
-            timestampString = "558313839.258886"
+            timestampString = "558629351.54335"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "64"
@@ -2051,7 +2051,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/json/JSONObject.swift"
-            timestampString = "558313839.258918"
+            timestampString = "558629351.543471"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
@@ -2067,7 +2067,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/json/JSONObject.swift"
-            timestampString = "558313839.25895"
+            timestampString = "558629351.543576"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "79"
@@ -2083,12 +2083,316 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/messaging/HNObject.swift"
-            timestampString = "558313839.2589819"
+            timestampString = "558629351.543696"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
             endingLineNumber = "49"
             landmarkName = "readParams(object:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios-app/Controller/menu/SlideMenu.swift"
+            timestampString = "558629351.543794"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "357"
+            endingLineNumber = "357"
+            landmarkName = "viewWillDisappear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios-app/Controller/menu/SlideMenu.swift"
+            timestampString = "558629351.543885"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "viewWillTransition(to:with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios-app/Controller/menu/SlideMenu.swift"
+            timestampString = "558629351.544058"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "handleGesture(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios-app/Controller/menu/SlideMenu.swift"
+            timestampString = "558629351.544215"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "handleGesture(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios-app/Controller/menu/MenuHelper.swift"
+            timestampString = "558379950.67307"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "mapGestureStateToInteractor(_:progress:interactor:triggerSegue:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios-app/Controller/menu/MenuHelper.swift"
+            timestampString = "558379950.673102"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "menuWidth()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios-app/Controller/menu/MenuHelper.swift"
+            timestampString = "558379950.673133"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "calculateProgress(_:viewBounds:direction:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios-app/Controller/menu/PresentMenuAnimator.swift"
+            timestampString = "558629351.544458"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "animateTransition(using:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios-app/Controller/menu/DismissMenuAnimator.swift"
+            timestampString = "558382381.790084"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "animateTransition(using:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios-app/Controller/menu/DismissMenuAnimator.swift"
+            timestampString = "558382381.79012"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "animateTransition(using:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios-app/Controller/menu/DismissMenuAnimator.swift"
+            timestampString = "558382381.790154"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "animateTransition(using:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios-app/Controller/menu/DismissMenuAnimator.swift"
+            timestampString = "558382381.790186"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "animateTransition(using:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios-app/Controller/menu/DismissMenuAnimator.swift"
+            timestampString = "558382381.790218"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "animateTransition(using:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios-app/Controller/ResizedUITabBarController.swift"
+            timestampString = "558629351.544683"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "animationController(forPresented:presenting:source:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios-app/Controller/ResizedUITabBarController.swift"
+            timestampString = "558629351.544802"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "animationController(forDismissed:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios-app/Controller/ResizedUITabBarController.swift"
+            timestampString = "558629351.544898"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "interactionControllerForDismissal(using:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios-app/Controller/ResizedUITabBarController.swift"
+            timestampString = "558629351.545012"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "interactionControllerForPresentation(using:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios-app/Controller/ResizedUITabBarController.swift"
+            timestampString = "558629351.545076"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "animationController(forDismissed:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios-app/Controller/HomeController.swift"
+            timestampString = "558629351.545163"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
+            landmarkName = "shouldPerformSegue(withIdentifier:sender:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

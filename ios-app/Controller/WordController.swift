@@ -17,6 +17,7 @@ class WordController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var favoriteButton: UIBarButtonItem!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var previousButton: UIButton!
+    @IBOutlet weak var navBar: UINavigationBar!
     
     public var selectedEntry: Entry!
     public var activeList: [Entry]!
@@ -29,6 +30,8 @@ class WordController: UIViewController, UIScrollViewDelegate {
     var index: Int!
     var activeImgIndex: IndexPath!
     
+    var segue: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,6 +40,16 @@ class WordController: UIViewController, UIScrollViewDelegate {
         
         scrollContainer.minimumZoomScale = 1.0
         scrollContainer.maximumZoomScale = 2.5
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        previousButton.isHidden = segue == "showWordPreview" ? true : false
+        nextButton.isHidden = segue == "showWordPreview" ? true : false
+        pageControl.isHidden = segue == "showWordPreview" || selectedEntry.imageList.count <= 1 ? true : false
+        navBar.isHidden = segue == "showWordPreview" ? true : false
+        if segue == "showWord" {
+            self.updateEntry()
+        }
     }
     
     override func didReceiveMemoryWarning() {

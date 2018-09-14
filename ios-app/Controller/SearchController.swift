@@ -53,7 +53,7 @@ class SearchController: UIViewController, UICollectionViewDataSource, UICollecti
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if identifier == "showWord" {
+        if identifier == "showWord" || identifier == "showWordPreview" {
             screenMng.setActiveEntryList(screenMng.getSearchResults())
         }
         return true
@@ -61,8 +61,9 @@ class SearchController: UIViewController, UICollectionViewDataSource, UICollecti
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let cell = sender as? WordCell {
-            if segue.identifier == "showWord" {
+            if segue.identifier == "showWord" || segue.identifier == "showWordPreview" {
                 let destController: WordController = segue.destination as! WordController
+                destController.segue = segue.identifier
                 
                 let selectedEntry = cell.word!
                 destController.selectedEntry = selectedEntry
@@ -101,17 +102,27 @@ class SearchController: UIViewController, UICollectionViewDataSource, UICollecti
         var height: CGFloat = 0
         var cellSize: CGFloat = 0
         
-        let item = screenMng.getSearchResults()[indexPath.item]
+        var item: Entry! = nil
+        
+        if width < self.view.frame.size.height {
+            targetWidth = width * 0.5 - 20
+            if indexPath.item % 2 != 0 {
+                item = screenMng.getSearchResults()[indexPath.item - (indexPath.item % 2)]
+            } else {
+                item = screenMng.getSearchResults()[indexPath.item]
+            }
+        } else {
+            targetWidth = width * (1/3) - 20
+            if indexPath.item % 3 != 0 {
+                item = screenMng.getSearchResults()[indexPath.item - (indexPath.item % 3)]
+            } else {
+                item = screenMng.getSearchResults()[indexPath.item]
+            }
+        }
         
         let labelSize = UILabel.estimatedSize(item.word, targetSize: CGSize(width: targetWidth, height: 0))
         let sec = UILabel.estimatedSize(getAsString(list: item.translationList), targetSize: CGSize(width: targetWidth, height: 0))
         cellSize = labelSize.height + intrinsicMargin + sec.height
-        
-        if width < self.view.frame.size.height {
-            targetWidth = width * 0.5 - 20
-        } else {
-            targetWidth = width * (1/3) - 20
-        }
         
         height = targetWidth + cellSize - intrinsicMargin
         return CGSize(width: targetWidth, height: height)

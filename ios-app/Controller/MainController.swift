@@ -9,7 +9,7 @@
 import UIKit
 import AudioToolbox
 
-class MainController: UIViewController, UICollectionViewDataSource, HausaLayoutDelegate, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class MainController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     let screenMng: ScreenManager = ScreenManager.instance
     
@@ -30,7 +30,6 @@ class MainController: UIViewController, UICollectionViewDataSource, HausaLayoutD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         if let cv = collectionView {
             cv.register(
                 UINib(nibName: "HeaderSection", bundle: nil),
@@ -43,10 +42,6 @@ class MainController: UIViewController, UICollectionViewDataSource, HausaLayoutD
                 forSupplementaryViewOfKind: UICollectionElementKindSectionHeader,
                 withReuseIdentifier: "bigSectionHeader"
             )
-            
-            if let customLayout = cv.collectionViewLayout as? HausaLayout {
-                customLayout.delegate = self
-            }
             cv.delegate = self
         }
         
@@ -57,8 +52,9 @@ class MainController: UIViewController, UICollectionViewDataSource, HausaLayoutD
         super.prepare(for: segue, sender: sender)
         
         if let cell = sender as? WordCell {
-            if segue.identifier == "showWord" {
+            if segue.identifier == "showWord" || segue.identifier == "showWordPreview" {
                 let destController: WordController = segue.destination as! WordController
+                destController.segue = segue.identifier
                 
                 let selectedEntry = cell.word!
                 destController.selectedEntry = selectedEntry
@@ -91,15 +87,15 @@ class MainController: UIViewController, UICollectionViewDataSource, HausaLayoutD
     
     func setUpUI() {
         if let bar = navigationController?.navigationBar {
-            let width = bar.frame.size.width
             let height = bar.frame.size.height
-            let x = width / 2 - logoImage.size.width / 2
-            let y = height / 2 - logoImage.size.height / 2
-            
+
             let imageView = UIImageView(image: logoImage)
-            imageView.frame = CGRect(x: x, y: y, width: width, height: height)
-            imageView.contentMode = .scaleAspectFit
-            navigationItem.titleView = imageView
+            imageView.contentMode = UIViewContentMode.scaleAspectFit
+            let titleView = UIView(frame: CGRect(x: 0, y: 0, width: (height / logoImage.size.height) * logoImage.size.width, height: height))
+            imageView.frame = titleView.bounds
+            titleView.addSubview(imageView)
+            
+            self.navigationItem.titleView = titleView
         }
     }
     

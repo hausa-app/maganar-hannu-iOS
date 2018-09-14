@@ -20,6 +20,8 @@ class HomeController: MainController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateEntries()
+        
+        
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -187,9 +189,13 @@ class HomeController: MainController {
         return true
     }
     
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        self.index = indexPath
+    }
+    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         super.shouldPerformSegue(withIdentifier: identifier, sender: sender)
-        if identifier == "showWord" {
+        if identifier == "showWord" || identifier == "showWordPreview" {
             screenMng.setActiveEntryList(entries[index.section]!)
             
             if let cell = sender as? WordCell {

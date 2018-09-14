@@ -28,7 +28,7 @@ extension PresentMenuAnimator : UIViewControllerAnimatedTransitioning {
         containerView.insertSubview(toVC.view, belowSubview: fromVC.view)
         
         // replace main view with snapshot
-        if let snapshot = fromVC.view.snapshotView(afterScreenUpdates: false) {
+        if let snapshot = fromVC.view.snapshotView() {
             snapshot.tag = MenuHelper.snapshotNumber
             snapshot.isUserInteractionEnabled = false
             snapshot.layer.shadowOpacity = 0.7

@@ -13,7 +13,7 @@ open class AnimatedLogo: UIView {
     fileprivate let strokeEndTimingFunction = CAMediaTimingFunction(controlPoints: 1.00, 0.0, 0.35, 1.0)
     fileprivate let circleLayerTimingFunction = CAMediaTimingFunction(controlPoints: 0.65, 0.0, 0.40, 1.0)
     
-    fileprivate let radius: CGFloat = 110
+    var radius: CGFloat!
     fileprivate let startTimeOffset = 0.7 * kAnimationDuration
     
     fileprivate var circleLayer: CAShapeLayer!
@@ -23,6 +23,8 @@ open class AnimatedLogo: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        radius = UIScreen.main.bounds.width * 0.7 * 0.5
         
         circleLayer = generateCircleLayer()
         logoLayer = generateLogoLayer()
@@ -36,7 +38,7 @@ open class AnimatedLogo: UIView {
         layer.anchorPoint = CGPoint.zero
     
         animateCircleLayer()
-        animateLogoLayer()
+        //animateLogoLayer()
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -65,7 +67,7 @@ extension AnimatedLogo {
         let layer = CAShapeLayer()
         let imageLayer = CALayer()
         imageLayer.backgroundColor = UIColor.clear.cgColor
-        imageLayer.bounds = CGRect(x: -radius, y: -radius, width: radius * 2.0, height: radius * 2.0)
+        imageLayer.bounds = CGRect(x: -radius, y: -radius, width: radius * 2.2, height: radius * 2.2)
         imageLayer.contents = #imageLiteral(resourceName: "logo").cgImage
         layer.addSublayer(imageLayer)
         

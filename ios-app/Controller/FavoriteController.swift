@@ -115,7 +115,7 @@ class FavoriteController: MainController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-        if segue.identifier == "showWord" {
+        if segue.identifier == "showWord" || segue.identifier == "showWordPreview" {
             screenMng.setActiveEntryList(self.favoriteEntries)
         }
     }

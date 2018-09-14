@@ -192,7 +192,7 @@
 		<key>id</key>
 		<integer>13</integer>
 		<key>cellIdentifier</key>
-		<string>switchCell</string>
+		<string>textCell</string>
 		<key>childRows</key>
 		<integer>0</integer>
 		<key>visible</key>
@@ -208,7 +208,7 @@
 		<key>id</key>
 		<integer>14</integer>
 		<key>cellIdentifier</key>
-		<string>switchCell</string>
+		<string>textCell</string>
 		<key>childRows</key>
 		<integer>0</integer>
 		<key>visible</key>
@@ -224,7 +224,7 @@
 		<key>id</key>
 		<integer>15</integer>
 		<key>cellIdentifier</key>
-		<string>switchCell</string>
+		<string>textCell</string>
 		<key>childRows</key>
 		<integer>0</integer>
 		<key>visible</key>

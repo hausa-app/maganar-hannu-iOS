@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SlideMenu: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SlideMenu: UIViewController, UITableViewDataSource, UITableViewDelegate, UIViewControllerTransitioningDelegate {
 
     var properties: NSMutableArray!
     var visibleRows = [Int:[Int]]()
@@ -35,12 +35,8 @@ class SlideMenu: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     override func viewWillLayoutSubviews() {
         if UIScreen.main.bounds.width < UIScreen.main.bounds.height {
-            //self.portraitWidth.isActive = true
-            //self.landscapeWidth.isActive = false
             self.tableView.isScrollEnabled = false
         } else {
-            //self.portraitWidth.isActive = false
-            //self.landscapeWidth.isActive = true
             self.tableView.isScrollEnabled = true
         }
     }
@@ -140,9 +136,11 @@ class SlideMenu: UIViewController, UITableViewDataSource, UITableViewDelegate {
             }
             
         } else if cell.reuseIdentifier == "updateCell" {
+            self.view.isUserInteractionEnabled = true
             cell.updateInformations()
             
             cell.buttonHandler = {
+                self.view.isUserInteractionEnabled = false
                 switch Config.updateAvailable() {
                 case .available:
                     StartupController.instance.networkManager.sendData(HN_requestUpdatedEntries())
@@ -170,12 +168,6 @@ class SlideMenu: UIViewController, UITableViewDataSource, UITableViewDelegate {
                     UserConfig.setCheckForUpdatesOnStartup(check: !UserConfig.isCheckForUpdatesOnStartup())
                     tableView.reloadData()
                 }
-            } else if cell.id == 13 {
-                cell.setLabel(text: "Open website")
-            } else if cell.id == 14 {
-                cell.setLabel(text: "Contact via e-Mail")
-            } else if cell.id == 15 {
-                cell.setLabel(text: "Privacy policy/Impressum")
             }
         } else if cell.reuseIdentifier == "designCell" {
             if cell.id == 8 {
@@ -218,6 +210,14 @@ class SlideMenu: UIViewController, UITableViewDataSource, UITableViewDelegate {
                     UserConfig.setRecentViewsColor(colorHex: 0x295b2f)
                     cell.colorSlider.value = Float(cell.colorArray.index(of: 0x295b2f)!)
                 }
+            }
+        } else if cell.reuseIdentifier == "textCell" {
+            if cell.id == 13 {
+                cell.setLabel(text: "Open website")
+            } else if cell.id == 14 {
+                cell.setLabel(text: "Contact via e-Mail")
+            } else if cell.id == 15 {
+                cell.setLabel(text: "Privacy policy - Impressum")
             }
         }
         
@@ -325,11 +325,13 @@ class SlideMenu: UIViewController, UITableViewDataSource, UITableViewDelegate {
             UIApplication.shared.openURL(URL(string: "https://maganar-hannu.herokuapp.com/")!)
         } else if cell.id == 15 {
             DispatchQueue.main.async {
-                self.interactor?.toView = "policy"
+                
+                //self.interactor?.toView = "policy"
                 self.dismiss(animated: false)
+                (self.transitioningDelegate as? ResizedUITabBarController)?.performSegue(withIdentifier: "showPolicy", sender: self)
             }
         } else if cell.id == 14 {
-            if let url = URL(string: "mailto:halimayarfulani@yahoo.com") {
+            if let url = URL(string: "mailto:hausa-app@mnm-team.org") {
                 if #available(iOS 10.0, *) {
                     UIApplication.shared.open(url)
                 } else {

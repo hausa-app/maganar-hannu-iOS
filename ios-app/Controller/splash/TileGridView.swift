@@ -29,11 +29,11 @@ class TileGridView: UIView {
         super.layoutSubviews()
         containerView.center = center
         modelTileView.center = containerView.center
-        if let centerTileView = centerTileView {
+        //if let centerTileView = centerTileView {
             // Custom offset needed for UILabel font
-            let center = CGPoint(x: centerTileView.bounds.midX + 31, y: centerTileView.bounds.midY)
-            logoLabel.center = center
-        }
+            //let center = CGPoint(x: centerTileView.bounds.midX + 31, y: centerTileView.bounds.midY)
+            //logoLabel.center = center
+        //}
     }
     
     init(TileFileName: String) {
@@ -50,9 +50,6 @@ class TileGridView: UIView {
         
         renderTileViews()
         
-        logoLabel = generateLogoLabel()
-        
-        centerTileView?.addSubview(logoLabel)
         layoutIfNeeded()
     }
     
