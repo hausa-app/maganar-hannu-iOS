@@ -40,12 +40,12 @@ class UserConfig: Config {
         preferences.set(participateInStats, forKey: "participateInStats")
         preferences.set(updateStatsOnStartup, forKey: "updateStatsOnStartup")
         preferences.set(NSKeyedArchiver.archivedData(withRootObject: recentSearches), forKey: "recentSearches")
-        preferences.set(searchFilter.hashValue, forKey: "searchFilter")
-        preferences.set(mainThemeColor.hashValue, forKey: "mainThemeColor")
-        preferences.set(mostPopularColor.hashValue, forKey: "mostPopularColor")
-        preferences.set(recentSearchesColor.hashValue, forKey: "recentSearchesColor")
-        preferences.set(recentViewsColor.hashValue, forKey: "recentViewsColor")
-        preferences.set(checkForUpdatesOnStartup.hashValue, forKey: "checkForUpdatesOnStartup")
+        preferences.set(searchFilter.rawValue, forKey: "searchFilter")
+        preferences.set(mainThemeColor, forKey: "mainThemeColor")
+        preferences.set(mostPopularColor, forKey: "mostPopularColor")
+        preferences.set(recentSearchesColor, forKey: "recentSearchesColor")
+        preferences.set(recentViewsColor, forKey: "recentViewsColor")
+        preferences.set(checkForUpdatesOnStartup, forKey: "checkForUpdatesOnStartup")
         
         if alone! { preferences.synchronize() }
     }
@@ -57,6 +57,7 @@ class UserConfig: Config {
             self.quality = preferences.string(forKey: "quality")!
             
             self.databaseTimestamp = preferences.object(forKey: "databaseTimestamp") as! Int64
+            
             self.updateOnlyOnWifi = preferences.bool(forKey: "updateOnlyOnWifi")
             self.participateInStats = preferences.bool(forKey: "participateInStats")
             self.updateStatsOnStartup = preferences.bool(forKey: "updateStatsOnStartup")

@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import ios_app
+@testable import Hausa
 
 class ios_appTests: XCTestCase {
     
