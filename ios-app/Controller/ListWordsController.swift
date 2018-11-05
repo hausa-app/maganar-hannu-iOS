@@ -55,7 +55,7 @@ class ListWordsController: MainController {
             }
         }
         
-        for header in self.collectionView.visibleSupplementaryViews(ofKind: UICollectionElementKindSectionHeader) {
+        for header in self.collectionView.visibleSupplementaryViews(ofKind: UICollectionView.elementKindSectionHeader) {
             if let header = header as? HeaderSection {
                 if headerText == "Mafi jan hankali — Most popular" {
                     header.setColor(type: .popular)
@@ -179,7 +179,7 @@ class ListWordsController: MainController {
             }
             
             if !visibles.isEmpty {
-                let headers = (collectionView.visibleSupplementaryViews(ofKind: UICollectionElementKindSectionHeader) as! [HeaderSection]).filter({ $0.settingsActive })
+                let headers = (collectionView.visibleSupplementaryViews(ofKind: UICollectionView.elementKindSectionHeader) as! [HeaderSection]).filter({ $0.settingsActive })
                 for item in headers { item.changeIcon(false) }
                 
                 if headers.count == 1 {
@@ -217,7 +217,16 @@ class ListWordsController: MainController {
         var cellSize: CGFloat = 0
         
         var item: Entry! = nil
+        let items = calculate(width: width)
         
+        targetWidth = width / CGFloat(items) - 20
+        if indexPath.item % 2 != 0 {
+            item = entries[indexPath.item - (indexPath.item % items)]
+        } else {
+            item = entries[indexPath.item]
+        }
+        
+        /*
         if width < self.view.frame.size.height {
             targetWidth = width * 0.5 - 20
             if indexPath.item % 2 != 0 {
@@ -233,6 +242,7 @@ class ListWordsController: MainController {
                 item = entries[indexPath.item]
             }
         }
+        */
         
         let labelSize = UILabel.estimatedSize(item.word, targetSize: CGSize(width: targetWidth, height: 0))
         let sec = UILabel.estimatedSize(getAsString(list: item.translationList), targetSize: CGSize(width: targetWidth, height: 0))

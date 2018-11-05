@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina5_5" orientation="landscape">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad12_9rounded" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,10 +17,10 @@
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Piu-Jw-fwf">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="32.333333333333336"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Most Popular " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ONz-fs-FlS" userLabel="Most Popular">
-                            <rect key="frame" x="4" y="5" width="361" height="24"/>
+                            <rect key="frame" x="4" y="10.5" width="361" height="24"/>
                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -29,16 +28,17 @@
                     </subviews>
                     <color key="backgroundColor" red="0.16208741069999999" green="0.35514754059999998" blue="0.18445479870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
+                        <constraint firstAttribute="height" constant="45" id="FFn-r9-I6n"/>
                         <constraint firstItem="ONz-fs-FlS" firstAttribute="leading" secondItem="Piu-Jw-fwf" secondAttribute="leading" constant="4" id="Ffx-TK-qdq"/>
                         <constraint firstAttribute="trailing" secondItem="ONz-fs-FlS" secondAttribute="trailing" constant="10" id="MU4-xs-0FV"/>
                         <constraint firstItem="ONz-fs-FlS" firstAttribute="centerY" secondItem="Piu-Jw-fwf" secondAttribute="centerY" id="hSH-xd-cDi"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tM1-es-kfa" userLabel="Container 2">
-                    <rect key="frame" x="0.0" y="32.333333333333336" width="375" height="82.666666666666657"/>
+                    <rect key="frame" x="0.0" y="45" width="375" height="70"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No items available to show" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8lg-hh-Gqp">
-                            <rect key="frame" x="86" y="31.666666666666664" width="203" height="21"/>
+                            <rect key="frame" x="86" y="24.5" width="203" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="0.80368381076388884" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -74,17 +74,17 @@
             </variation>
             <variation key="heightClass=compact">
                 <mask key="constraints">
-                    <include reference="n7c-uc-Rgn"/>
+                    <exclude reference="n7c-uc-Rgn"/>
                 </mask>
             </variation>
             <variation key="heightClass=compact-widthClass=compact">
                 <mask key="constraints">
-                    <include reference="77N-b6-O76"/>
+                    <exclude reference="77N-b6-O76"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
                 <mask key="constraints">
-                    <include reference="bHa-DD-tUq"/>
+                    <exclude reference="bHa-DD-tUq"/>
                 </mask>
             </variation>
             <connections>

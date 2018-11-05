@@ -31,9 +31,9 @@ class TileView: UIView {
     
     func startAnimatingWithDuration(_ duration: TimeInterval, beginTime: TimeInterval,    rippleDelay: TimeInterval, rippleOffset: CGPoint) {
         let timingFunction = CAMediaTimingFunction(controlPoints: 0.25, 0, 0.2, 1)
-        let linearFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
-        let easeOutFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-        let easeInOutTimingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        let linearFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
+        let easeOutFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
+        let easeInOutTimingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         let zeroPointValue = NSValue(cgPoint: CGPoint.zero)
         
         var animations = [CAAnimation]()
@@ -71,7 +71,7 @@ class TileView: UIView {
         // Group
         let groupAnimation = CAAnimationGroup()
         groupAnimation.repeatCount = Float.infinity
-        groupAnimation.fillMode = kCAFillModeBackwards
+        groupAnimation.fillMode = CAMediaTimingFillMode.backwards
         groupAnimation.duration = duration
         groupAnimation.beginTime = beginTime + rippleDelay
         groupAnimation.isRemovedOnCompletion = false

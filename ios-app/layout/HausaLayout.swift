@@ -56,7 +56,7 @@ class HausaLayout: UICollectionViewLayout {
             
             let frame = CGRect(x: 0, y: sectionSize, width: collectionView.frame.width, height: 50)
             
-            let sectionHeaderAttributes = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, with: IndexPath(item: 0, section: section))
+            let sectionHeaderAttributes = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, with: IndexPath(item: 0, section: section))
             sectionHeaderAttributes.frame = frame
             cache["header"]?[IndexPath(item: 0, section: section)] = sectionHeaderAttributes
             
@@ -130,7 +130,7 @@ class HausaLayout: UICollectionViewLayout {
     
     override func layoutAttributesForSupplementaryView(ofKind elementKind: String, at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         switch elementKind {
-        case UICollectionElementKindSectionHeader:
+        case UICollectionView.elementKindSectionHeader:
             return cache["header"]?[indexPath]
         default:
             return nil;

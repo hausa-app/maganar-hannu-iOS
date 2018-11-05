@@ -18,9 +18,11 @@ class SlideMenu: UIViewController, UITableViewDataSource, UITableViewDelegate, U
     
     @IBOutlet weak var tableView: UITableView!
     let logoImage = #imageLiteral(resourceName: "logo-black")
+
+    @IBOutlet var threeConstraint: NSLayoutConstraint!
+    @IBOutlet var zeroSevenConstraint: NSLayoutConstraint!
+    @IBOutlet var zeroFiveConstraint: NSLayoutConstraint!
     
-    @IBOutlet weak var portraitWidth: NSLayoutConstraint!
-    @IBOutlet weak var landscapeWidth: NSLayoutConstraint!
     
     var identifier: String!
     
@@ -31,6 +33,22 @@ class SlideMenu: UIViewController, UITableViewDataSource, UITableViewDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(updateCells), name: .gotDBTime, object: nil)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        if (self.view.frame.width * 0.75) < 310.5 {
+            threeConstraint.isActive = false
+            zeroFiveConstraint.isActive = false
+            zeroSevenConstraint.isActive = true
+        } else if (self.view.frame.width * 0.5) > 310.5 {
+            threeConstraint.isActive = false
+            zeroFiveConstraint.isActive = true
+            zeroSevenConstraint.isActive = false
+        } else {
+            threeConstraint.isActive = true
+            zeroFiveConstraint.isActive = false
+            zeroSevenConstraint.isActive = false
+        }
     }
     
     override func viewWillLayoutSubviews() {

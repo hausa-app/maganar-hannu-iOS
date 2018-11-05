@@ -27,7 +27,7 @@ class CategoryController: MainController {
                 }
             }
             
-            for header in self.collectionView.visibleSupplementaryViews(ofKind: UICollectionElementKindSectionHeader) {
+            for header in self.collectionView.visibleSupplementaryViews(ofKind: UICollectionView.elementKindSectionHeader) {
                 if let header = header as? HeaderSection {
                     header.setColor()
                 }
@@ -70,7 +70,7 @@ class CategoryController: MainController {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "sectionHeader", for: indexPath)
         switch kind {
-        case UICollectionElementKindSectionHeader:
+        case UICollectionView.elementKindSectionHeader:
             
             if let header = headerView as? HeaderSection {
                 header.headerLabel.text = "Fannoni — Categories"
@@ -91,7 +91,15 @@ class CategoryController: MainController {
         var cellSize: CGFloat = 0
         
         var item: Category! = nil
+        let items = calculate(width: width)
         
+        targetWidth = width / CGFloat(items) - 20
+        if indexPath.item % items != 0 {
+            item = screenMng.categoryList[indexPath.item - (indexPath.item % items)]
+        } else {
+            item = screenMng.categoryList[indexPath.item]
+        }
+        /*
         if width < self.view.frame.size.height {
             targetWidth = width * 0.5 - 20
             if indexPath.item % 2 != 0 {
@@ -107,6 +115,7 @@ class CategoryController: MainController {
                 item = screenMng.categoryList[indexPath.item]
             }
         }
+        */
         
         let labelSize = UILabel.estimatedSize(item.category_hausa, targetSize: CGSize(width: targetWidth, height: 0))
         let sec = UILabel.estimatedSize(item.category_english, targetSize: CGSize(width: targetWidth, height: 0))

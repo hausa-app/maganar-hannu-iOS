@@ -36,7 +36,7 @@ class CategoryWordsController: MainController {
             }
         }
         
-        for header in self.collectionView.visibleSupplementaryViews(ofKind: UICollectionElementKindSectionHeader) {
+        for header in self.collectionView.visibleSupplementaryViews(ofKind: UICollectionView.elementKindSectionHeader) {
             if let header = header as? HeaderSection {
                 header.setColor()
             }
@@ -47,7 +47,7 @@ class CategoryWordsController: MainController {
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "sectionHeader", for: indexPath)
         
         switch kind {
-        case UICollectionElementKindSectionHeader:
+        case UICollectionView.elementKindSectionHeader:
             
             if let header = headerView as? HeaderSection {
                 header.setColor()
@@ -83,7 +83,16 @@ class CategoryWordsController: MainController {
         var cellSize: CGFloat = 0
         
         var item: Entry! = nil
+        let items = calculate(width: width)
         
+        targetWidth = width / CGFloat(items) - 20
+        if indexPath.item % 2 != 0 {
+            item = categoryObjects[indexPath.item - (indexPath.item % items)]
+        } else {
+            item = categoryObjects[indexPath.item]
+        }
+        
+        /*
         if width < self.view.frame.size.height {
             targetWidth = width * 0.5 - 20
             if indexPath.item % 2 != 0 {
@@ -99,6 +108,7 @@ class CategoryWordsController: MainController {
                 item = categoryObjects[indexPath.item]
             }
         }
+        */
         
         let labelSize = UILabel.estimatedSize(item.word, targetSize: CGSize(width: targetWidth, height: 0))
         let sec = UILabel.estimatedSize(getAsString(list: item.translationList), targetSize: CGSize(width: targetWidth, height: 0))

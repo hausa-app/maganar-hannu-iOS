@@ -109,8 +109,8 @@ class WordController: UIViewController, UIScrollViewDelegate {
         activityViewController.popoverPresentationController?.sourceView = self.view
         
         // exclude some activity types from the list (optional)
-        activityViewController.excludedActivityTypes = [ UIActivityType.airDrop, UIActivityType.saveToCameraRoll, UIActivityType.addToReadingList,
-                                                         UIActivityType.assignToContact, UIActivityType.openInIBooks, UIActivityType.postToVimeo, UIActivityType.print ]
+        activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.airDrop, UIActivity.ActivityType.saveToCameraRoll, UIActivity.ActivityType.addToReadingList,
+                                                         UIActivity.ActivityType.assignToContact, UIActivity.ActivityType.openInIBooks, UIActivity.ActivityType.postToVimeo, UIActivity.ActivityType.print ]
         
         self.present(activityViewController, animated: true, completion: nil)
     }

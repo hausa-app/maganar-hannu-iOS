@@ -110,13 +110,13 @@ extension TileGridView {
         }
         
         if let centerTileView = centerTileView {
-            containerView.bringSubview(toFront: centerTileView)
+            containerView.bringSubviewToFront(centerTileView)
         }
     }
     
     fileprivate func startAnimatingWithBeginTime(_ beginTime: TimeInterval) {
         
-        let linearTimingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        let linearTimingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
         
         let keyframe = CAKeyframeAnimation(keyPath: "transform.scale")
         keyframe.timingFunctions = [linearTimingFunction, CAMediaTimingFunction(controlPoints: 0.6, 0.0, 0.15, 1.0), linearTimingFunction]

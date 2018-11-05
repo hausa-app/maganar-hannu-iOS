@@ -47,14 +47,21 @@ struct MenuHelper {
     }
     
     static func menuWidth() -> CGFloat {
-        if UIScreen.main.bounds.width < UIScreen.main.bounds.height {
-            return 0.75
-        } else {
-            return 0.5
+        let width = UIScreen.main.bounds.width
+        if (width * 0.75) < 310.5 {
+            return width * 0.75
+        } else if (width * 0.5) > 310.5 {
+            return width * 0.5
         }
+        return 310.5
+//        if UIScreen.main.bounds.width < UIScreen.main.bounds.height {
+//            return 0.75
+//        } else {
+//            return 0.5
+//        }
     }
     
-    static func mapGestureStateToInteractor(_ gestureState: UIGestureRecognizerState, progress: CGFloat, interactor: Interactor?, triggerSegue: () -> ()){
+    static func mapGestureStateToInteractor(_ gestureState: UIGestureRecognizer.State, progress: CGFloat, interactor: Interactor?, triggerSegue: () -> ()){
         guard let interactor = interactor else { return }
         switch gestureState {
         case .began:

@@ -18,7 +18,7 @@ class TextCheckCell: UITableViewCell {
     var viewsDict: [String : Any]!
     
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         checkedImage.image = #imageLiteral(resourceName: "checked")

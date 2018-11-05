@@ -58,6 +58,7 @@
 		4EAE249D1FE5F199001E2C4F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAE249C1FE5F199001E2C4F /* Category.swift */; };
 		4EAE24A21FE5F560001E2C4F /* ReadDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAE24A11FE5F560001E2C4F /* ReadDatabase.swift */; };
 		4EB034DA202C30F3005B962A /* various in Resources */ = {isa = PBXBuildFile; fileRef = 4EB034D9202C30F3005B962A /* various */; };
+		4EB43C80218FE3AF001E3E94 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB43C7F218FE3AF001E3E94 /* TitleView.swift */; };
 		4EC1F9E21FF3515E0058599F /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC1F9E11FF3515E0058599F /* AppConfig.swift */; };
 		4EC1F9E41FF3516F0058599F /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC1F9E31FF3516F0058599F /* Config.swift */; };
 		4ECD68921FFFA07D007FCF71 /* TextCheckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECD68911FFFA07D007FCF71 /* TextCheckCell.swift */; };
@@ -182,6 +183,7 @@
 		4EAE249C1FE5F199001E2C4F /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		4EAE24A11FE5F560001E2C4F /* ReadDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadDatabase.swift; sourceTree = "<group>"; };
 		4EB034D9202C30F3005B962A /* various */ = {isa = PBXFileReference; lastKnownFileType = folder; path = various; sourceTree = "<group>"; };
+		4EB43C7F218FE3AF001E3E94 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		4EC1F9E11FF3515E0058599F /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		4EC1F9E31FF3516F0058599F /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		4EC846DA20BB750B00768BE2 /* Hausa.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Hausa.entitlements; sourceTree = "<group>"; };
@@ -406,6 +408,7 @@
 				4EFE78FD20C9EEF4005960C8 /* TriangleView.swift */,
 				4ED74E3A213E03D200DDD69D /* HausaLayout.swift */,
 				4E8139702144981200549672 /* Badges.swift */,
+				4EB43C7F218FE3AF001E3E94 /* TitleView.swift */,
 			);
 			path = layout;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 				TargetAttributes = {
 					4EABD7041FABD9D80068CDB1 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -614,11 +618,13 @@
 					};
 					4EABD7181FABD9D80068CDB1 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 4EABD7041FABD9D80068CDB1;
 					};
 					4EABD7231FABD9D80068CDB1 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 4EABD7041FABD9D80068CDB1;
 					};
@@ -800,6 +806,7 @@
 				4EAE24951FE5ED1A001E2C4F /* Entry.swift in Sources */,
 				4E9452921FE72B6A00D9C8D7 /* SearchManager.swift in Sources */,
 				4EDA06512003F4BD00F7945A /* MenuHelper.swift in Sources */,
+				4EB43C80218FE3AF001E3E94 /* TitleView.swift in Sources */,
 				4EDDDBA61FF62D3A004C6BBD /* ListWordsController.swift in Sources */,
 				4EC1F9E21FF3515E0058599F /* AppConfig.swift in Sources */,
 				4EAADDB32140B65E008B2FB7 /* SearchController.swift in Sources */,
@@ -995,7 +1002,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mnm.hausa.ios-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1014,7 +1021,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mnm.hausa.ios-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1030,7 +1037,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mnm.hausa.ios-appTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hausa.app/Hausa";
 			};
@@ -1047,7 +1054,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mnm.hausa.ios-appTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hausa.app/Hausa";
 			};
@@ -1064,7 +1071,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mnm.hausa.ios-appUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "ios-app";
 			};
@@ -1081,7 +1088,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mnm.hausa.ios-appUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "ios-app";
 			};

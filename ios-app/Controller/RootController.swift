@@ -40,19 +40,19 @@ class RootController: UIViewController {
             return
         }
         
-        rootViewController?.willMove(toParentViewController: nil)
-        rootViewController?.removeFromParentViewController()
+        rootViewController?.willMove(toParent: nil)
+        rootViewController?.removeFromParent()
         rootViewController?.view.removeFromSuperview()
-        rootViewController?.didMove(toParentViewController: nil)
+        rootViewController?.didMove(toParent: nil)
         
         let splashViewController = SplashViewController(tileViewFileName: "Chimes")
         rootViewController = splashViewController
         splashViewController.pulsing = true
         
-        splashViewController.willMove(toParentViewController: self)
-        addChildViewController(splashViewController)
+        splashViewController.willMove(toParent: self)
+        addChild(splashViewController)
         view.addSubview(splashViewController.view)
-        splashViewController.didMove(toParentViewController: self)
+        splashViewController.didMove(toParent: self)
     }
     
     func showMainViewController() {
@@ -60,24 +60,24 @@ class RootController: UIViewController {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let main =  storyboard.instantiateViewController(withIdentifier: "MainController") as! ResizedUITabBarController
-        main.willMove(toParentViewController: self)
-        addChildViewController(main)
+        main.willMove(toParent: self)
+        addChild(main)
         
         if let rootViewController = self.rootViewController {
             self.rootViewController = main
-            rootViewController.willMove(toParentViewController: nil)
+            rootViewController.willMove(toParent: nil)
             
             transition(from: rootViewController, to: main, duration: 0.55, options: [.transitionCrossDissolve, .curveEaseOut], animations: { () -> Void in
                 
             }, completion: { _ in
-                main.didMove(toParentViewController: self)
-                rootViewController.removeFromParentViewController()
-                rootViewController.didMove(toParentViewController: nil)
+                main.didMove(toParent: self)
+                rootViewController.removeFromParent()
+                rootViewController.didMove(toParent: nil)
             })
         } else {
             rootViewController = main
             view.addSubview(main.view)
-            main.didMove(toParentViewController: self)
+            main.didMove(toParent: self)
         }
     }
     

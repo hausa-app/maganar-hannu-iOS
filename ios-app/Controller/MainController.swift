@@ -15,8 +15,8 @@ class MainController: UIViewController, UICollectionViewDataSource, UICollection
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var menuButton: UIBarButtonItem!
-
-    let logoImage = #imageLiteral(resourceName: "logo-black")
+    
+    var titleView: TitleView!
     
     override func loadView() {
         super.loadView()
@@ -33,18 +33,17 @@ class MainController: UIViewController, UICollectionViewDataSource, UICollection
         if let cv = collectionView {
             cv.register(
                 UINib(nibName: "HeaderSection", bundle: nil),
-                forSupplementaryViewOfKind: UICollectionElementKindSectionHeader,
+                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                 withReuseIdentifier: "sectionHeader"
             )
             
             cv.register(
                 UINib(nibName: "BigHeaderSection", bundle: nil),
-                forSupplementaryViewOfKind: UICollectionElementKindSectionHeader,
+                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                 withReuseIdentifier: "bigSectionHeader"
             )
             cv.delegate = self
         }
-        
         NotificationCenter.default.addObserver(self, selector: #selector(updateState), name: .updateState, object: nil)
     }
     
@@ -68,7 +67,7 @@ class MainController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        self.view.layoutIfNeeded()
+        view.layoutIfNeeded()
     }
     
     @objc func updateState() {
@@ -86,17 +85,8 @@ class MainController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func setUpUI() {
-        if let bar = navigationController?.navigationBar {
-            let height = bar.frame.size.height
-
-            let imageView = UIImageView(image: logoImage)
-            imageView.contentMode = UIViewContentMode.scaleAspectFit
-            let titleView = UIView(frame: CGRect(x: 0, y: 0, width: (height / logoImage.size.height) * logoImage.size.width, height: height))
-            imageView.frame = titleView.bounds
-            titleView.addSubview(imageView)
-            
-            self.navigationItem.titleView = titleView
-        }
+        titleView = TitleView(image: #imageLiteral(resourceName: "logo-black") ,height: 44)
+        self.navigationItem.titleView = titleView
     }
     
     func deleteButtons() {
@@ -122,12 +112,15 @@ class MainController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize{
-        let width  = self.view.frame.size.width;
-        if width < self.view.frame.size.height {
-            return CGSize(width: collectionView.frame.width, height: (width * 0.5 - 20) * 0.28)
-        } else {
-            return CGSize(width: collectionView.frame.width, height: (width * 0.25 - 20) * 0.31)
-        }
+        return CGSize(width: collectionView.frame.width, height: 45)
+        
+        // alt
+//        let width  = self.view.frame.size.width;
+//        if width < self.view.frame.size.height {
+//            return CGSize(width: collectionView.frame.width, height: (width * 0.5 - 20) * 0.28)
+//        } else {
+//            return CGSize(width: collectionView.frame.width, height: (width * 0.25 - 20) * 0.31)
+//        }
     }
     
     func getAsString(list: [String]) -> String {
@@ -139,6 +132,16 @@ class MainController: UIViewController, UICollectionViewDataSource, UICollection
             }
         }
         return string
+    }
+    
+    func calculate(width: CGFloat) -> Int {
+        var selected: CGFloat = 241.0
+        var start: CGFloat = 1.0
+        while selected > 240 {
+            selected = width / start - 20
+            start += 1.0
+        }
+        return Int(start - 1.0)
     }
 }
 

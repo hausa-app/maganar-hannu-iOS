@@ -22,7 +22,7 @@ class PolicyController: UIViewController {
             let height = bar.frame.size.height
             
             let imageView = UIImageView(image: logoImage)
-            imageView.contentMode = UIViewContentMode.scaleAspectFit
+            imageView.contentMode = UIView.ContentMode.scaleAspectFit
             let titleView = UIView(frame: CGRect(x: 0, y: 0, width: (height / logoImage.size.height) * logoImage.size.width, height: height))
             imageView.frame = titleView.bounds
             titleView.addSubview(imageView)

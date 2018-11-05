@@ -24,21 +24,34 @@ class SearchController: UIViewController, UICollectionViewDataSource, UICollecti
         
         searchBar.placeholder = "Search..."
         searchBar.barTintColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
-        searchBar.showsCancelButton = true
+        //searchBar.showsCancelButton = true
         searchBar.delegate = self
         searchBar.layer.borderWidth = 1;
         searchBar.tintColor = .black
         
         searchBar.layer.borderColor = UIColor.white.cgColor
+        configureCancelBarButton()
         
-    
         let searchBarContainer = SearchBarContainerView(customSearchBar: searchBar)
-        searchBarContainer.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: navBar.frame.height)
+        searchBarContainer.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: navBar.frame.height)
         navitem.titleView = searchBarContainer
     }
     
     override func viewDidLoad() {
         collectionView.delegate = self
+    }
+    
+    func configureCancelBarButton() {
+        let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
+        cancelButton.tintColor = .black
+
+        navitem.rightBarButtonItem = cancelButton
+    }
+    
+    @objc func cancel() {
+        screenMng.clearSearchResults()
+        searchBar.resignFirstResponder()
+        self.dismiss(animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -103,7 +116,16 @@ class SearchController: UIViewController, UICollectionViewDataSource, UICollecti
         var cellSize: CGFloat = 0
         
         var item: Entry! = nil
+        let items = calculate(width: width)
         
+        targetWidth = width / CGFloat(items) - 20
+        if indexPath.item % 2 != 0 {
+            item = screenMng.getSearchResults()[indexPath.item - (indexPath.item % items)]
+        } else {
+            item = screenMng.getSearchResults()[indexPath.item]
+        }
+        
+        /*
         if width < self.view.frame.size.height {
             targetWidth = width * 0.5 - 20
             if indexPath.item % 2 != 0 {
@@ -119,6 +141,7 @@ class SearchController: UIViewController, UICollectionViewDataSource, UICollecti
                 item = screenMng.getSearchResults()[indexPath.item]
             }
         }
+        */
         
         let labelSize = UILabel.estimatedSize(item.word, targetSize: CGSize(width: targetWidth, height: 0))
         let sec = UILabel.estimatedSize(getAsString(list: item.translationList), targetSize: CGSize(width: targetWidth, height: 0))
@@ -141,6 +164,16 @@ class SearchController: UIViewController, UICollectionViewDataSource, UICollecti
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
+    }
+    
+    func calculate(width: CGFloat) -> Int {
+        var selected: CGFloat = 241.0
+        var start: CGFloat = 1.0
+        while selected > 240 {
+            selected = width / start - 20
+            start += 1.0
+        }
+        return Int(start - 1.0)
     }
     
 }

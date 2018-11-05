@@ -20,8 +20,6 @@ class HomeController: MainController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateEntries()
-        
-        
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -86,7 +84,7 @@ class HomeController: MainController {
         }
         
         switch kind {
-        case UICollectionElementKindSectionHeader:
+        case UICollectionView.elementKindSectionHeader:
             
             if let header = headerView as? HeaderSection {
                 if indexPath.section == 0 {
@@ -137,7 +135,7 @@ class HomeController: MainController {
             }
 
             if !visibles.isEmpty {
-                let headers = (collectionView.visibleSupplementaryViews(ofKind: UICollectionElementKindSectionHeader) as! [HeaderSection]).filter({ $0.settingsActive })
+                let headers = (collectionView.visibleSupplementaryViews(ofKind: UICollectionView.elementKindSectionHeader) as! [HeaderSection]).filter({ $0.settingsActive })
                 for item in headers { item.changeIcon(false) }
                 
                 if headers.count == 1 {
@@ -247,11 +245,19 @@ class HomeController: MainController {
         var cellSize: CGFloat = 0
         
         var item: Entry! = nil
+        let items = calculate(width: width)
         
+        targetWidth = width / CGFloat(items) - 20
+        if indexPath.item % items != 0 {
+            item = entries[indexPath.section]![indexPath.item - (indexPath.item % items)]
+        } else {
+            item = entries[indexPath.section]![indexPath.item]
+        }
+        /*
         if width < self.view.frame.size.height {
-            targetWidth = width * 0.5 - 20
-            if indexPath.item % 2 != 0 {
-                item = entries[indexPath.section]![indexPath.item - (indexPath.item % 2)]
+            targetWidth = width * (1/4) - 20
+            if indexPath.item % 4 != 0 {
+                item = entries[indexPath.section]![indexPath.item - (indexPath.item % 4)]
             } else {
                 item = entries[indexPath.section]![indexPath.item]
             }
@@ -263,6 +269,7 @@ class HomeController: MainController {
                 item = entries[indexPath.section]![indexPath.item]
             }
         }
+        */
         
         let labelSize = UILabel.estimatedSize(item.word, targetSize: CGSize(width: targetWidth, height: 0))
         let sec = UILabel.estimatedSize(getAsString(list: item.translationList), targetSize: CGSize(width: targetWidth, height: 0))

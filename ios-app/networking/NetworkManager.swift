@@ -69,7 +69,7 @@ class NetworkManager {
     private func saveImage(_ fileName: String, image: UIImage) {
         let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         let fileURL = documentsURL.appendingPathComponent(fileName)
-        if let pngImageData = UIImagePNGRepresentation(image) {
+        if let pngImageData = image.pngData() {
             do {
                 try pngImageData.write(to: fileURL, options: .atomic)
             } catch { print("Could not save image to file!")}

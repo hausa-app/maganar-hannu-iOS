@@ -27,8 +27,13 @@ class ResizedUITabBarController: UITabBarController, MFMailComposeViewController
         newFrame.size.height = newTabBarHeight
         newFrame.origin.y = view.frame.size.height - newTabBarHeight
         
-        tabBar.frame = newFrame
+        //tabBar.frame = newFrame
         tabBar.tintColor = .black
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        self.tabBar.invalidateIntrinsicContentSize()
     }
     
     override func viewDidLayoutSubviews() {

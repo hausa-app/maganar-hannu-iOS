@@ -10,6 +10,8 @@ import UIKit
 
 class Utilities {
     
+    static var navigationHeight: CGFloat = 0
+    
     static func hausaString(_ word: String) -> String {
                         
         let toReturn = word
@@ -286,7 +288,7 @@ extension UIViewController {
                 return
             }
         }
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         
         blurEffectView.frame = view.bounds
@@ -307,7 +309,7 @@ extension UIViewController {
     class func displaySpinner(onView : UIView) -> UIView {
         let spinnerView = UIView.init(frame: onView.bounds)
         spinnerView.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
-        let ai = UIActivityIndicatorView.init(activityIndicatorStyle: .whiteLarge)
+        let ai = UIActivityIndicatorView.init(style: .whiteLarge)
         ai.startAnimating()
         ai.center = spinnerView.center
         
@@ -472,7 +474,7 @@ extension UILabel {
     func underline() {
         if let textString = self.text {
             let attributedString = NSMutableAttributedString(string: textString)
-            attributedString.addAttribute(NSAttributedStringKey.underlineStyle, value: NSUnderlineStyle.styleSingle.rawValue, range: NSRange(location: 0, length: attributedString.length - 1))
+            attributedString.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: NSRange(location: 0, length: attributedString.length - 1))
             attributedText = attributedString
         }
     }
@@ -610,21 +612,21 @@ class transitionFromRight: UIStoryboardSegue {
         let src = self.source
         let dst = self.destination
         let transition: CATransition = CATransition()
-        let timeFunc : CAMediaTimingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        let timeFunc : CAMediaTimingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         transition.duration = 0.3
         transition.timingFunction = timeFunc
-        transition.type = kCATransitionPush
-        transition.subtype = kCATransitionFromRight
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromRight
         
         src.view.window?.layer.add(transition, forKey: nil)
         src.present(dst, animated: false, completion: nil)
-        
     }
     
     
 }
 
 class NavigationBarWithoutAnimation: UINavigationBar {
+    
     
     override func popItem(animated: Bool) -> UINavigationItem? {
         return super.popItem(animated: false)
