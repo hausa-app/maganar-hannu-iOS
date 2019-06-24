@@ -33,9 +33,11 @@ class SearchManager {
         
         var result: [Entry] = []
         
-        for value in requestAll! {
-            if !result.contains(where: { $0.id == value.id } ) {
-                result.append(value)
+        if let request = requestAll {
+            for value in request {
+                if !result.contains(where: { $0.id == value.id } ) {
+                    result.append(value)
+                }
             }
         }
         

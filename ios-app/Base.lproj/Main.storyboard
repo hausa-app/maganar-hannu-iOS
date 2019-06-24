@@ -1714,7 +1714,7 @@ Cg
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SPP-aQ-oG7" userLabel="copyright">
                                                                     <rect key="frame" x="7" y="24" width="282.66666666666669" height="12"/>
-                                                                    <string key="text">© 2018 Dr. Constanze Halima Schmaling
+                                                                    <string key="text">© 2019 Dr. Constanze Halima Schmaling
 </string>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                     <nil key="textColor"/>

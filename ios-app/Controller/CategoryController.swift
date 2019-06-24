@@ -41,19 +41,21 @@ class CategoryController: MainController {
             let cell = sender as! CategoryCell
             let index = self.collectionView.indexPath(for: cell)
             
-            let catID = screenMng.categoryList[(index?.item)!].categoryID
-            screenMng.setCategoryWords(with: catID)
+            if let catID = screenMng.categoryList?[(index?.item)!].categoryID {
+                screenMng.setCategoryWords(with: catID)
+            }
+            
         }
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
 
-        let item = screenMng.categoryList[indexPath.item]
-        
-        cell.category = item
-        cell.setCategoryColor(item.color)
-        cell.setColor()
+        if let item = screenMng.categoryList?[indexPath.item] {
+            cell.category = item
+            cell.setCategoryColor(item.color)
+            cell.setColor()
+        }
 
         return cell
     }
@@ -64,7 +66,7 @@ class CategoryController: MainController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return screenMng.categoryList.count
+        return screenMng.categoryList?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -90,14 +92,14 @@ class CategoryController: MainController {
         var height: CGFloat = 0
         var cellSize: CGFloat = 0
         
-        var item: Category! = nil
+        var item: Category?
         let items = calculate(width: width)
         
         targetWidth = width / CGFloat(items) - 20
         if indexPath.item % items != 0 {
-            item = screenMng.categoryList[indexPath.item - (indexPath.item % items)]
+            item = screenMng.categoryList?[indexPath.item - (indexPath.item % items)]
         } else {
-            item = screenMng.categoryList[indexPath.item]
+            item = screenMng.categoryList?[indexPath.item]
         }
         /*
         if width < self.view.frame.size.height {
@@ -116,12 +118,14 @@ class CategoryController: MainController {
             }
         }
         */
-        
-        let labelSize = UILabel.estimatedSize(item.category_hausa, targetSize: CGSize(width: targetWidth, height: 0))
-        let sec = UILabel.estimatedSize(item.category_english, targetSize: CGSize(width: targetWidth, height: 0))
-        cellSize = labelSize.height + intrinsicMargin + sec.height
+        if let item = item {
+            let labelSize = UILabel.estimatedSize(item.category_hausa, targetSize: CGSize(width: targetWidth, height: 0))
+            let sec = UILabel.estimatedSize(item.category_english, targetSize: CGSize(width: targetWidth, height: 0))
+            cellSize = labelSize.height + intrinsicMargin + sec.height
+            
+            height = targetWidth + cellSize - intrinsicMargin
+        }
 
-        height = targetWidth + cellSize - intrinsicMargin
         return CGSize(width: targetWidth, height: height)
     }
     

@@ -16,16 +16,16 @@ class StatisticsManager {
         self.database = database
     }
     
-    func getFavoriteEntries(_ limit: Int? = nil) -> [Entry] {
-        return database.getFavoriteList(limit)!
+    func getFavoriteEntries(_ limit: Int? = nil) -> [Entry]? {
+         return database.getFavoriteList(limit)
     }
     
-    func getMostPopularEntries(_ limit: Int? = nil) -> [Entry] {
-        return database.getMostPopularEntries(limit)!
+    func getMostPopularEntries(_ limit: Int? = nil) -> [Entry]? {
+        return database.getMostPopularEntries(limit)
     }
     
-    func getRecentViewedEntries(_ limit: Int? = nil) -> [Entry] {
-        return database.getRecentViewedEntries(limit)!
+    func getRecentViewedEntries(_ limit: Int? = nil) -> [Entry]? {
+        return database.getRecentViewedEntries(limit)
     }
     
     func getMostPopularEntriesAt(_ from: Int, _ to: Int) -> [SignImage]? {

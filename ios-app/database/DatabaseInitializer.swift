@@ -21,7 +21,7 @@ class DatabaseInitializer: Database {
                     table.column(category_catEnglish)
                     table.column(category_color)
                     table.column(category_mediaID)
-                    table.column(category_timestamp, defaultValue: 332145240)
+                    table.column(category_timestamp, defaultValue: 1561322469331)
                     
                     table.foreignKey(category_mediaID, references: media_table, media_id, delete: .cascade)
                 })
@@ -29,14 +29,14 @@ class DatabaseInitializer: Database {
                 try db.run( english_table.create(ifNotExists: true) { table in
                     table.column(english_id, primaryKey: .autoincrement)
                     table.column(english_entry)
-                    table.column(english_timestamp, defaultValue: 332145240)
+                    table.column(english_timestamp, defaultValue: UserConfig.databaseTimestamp)
                 })
                 
                 try db.run( entry_table.create(ifNotExists: true) { table in
                     table.column(entry_id, primaryKey: .autoincrement)
                     table.column(entry_englishID)
                     table.column(entry_hausaID)
-                    table.column(entry_timestamp, defaultValue: 332145240)
+                    table.column(entry_timestamp, defaultValue: UserConfig.databaseTimestamp)
                     
                     table.foreignKey(entry_englishID, references: english_table, english_id, delete: .cascade)
                     table.foreignKey(entry_hausaID, references:  hausa_table, hausa_id, delete: .cascade)
@@ -45,7 +45,7 @@ class DatabaseInitializer: Database {
                 try db.run( entrycat_table.create(ifNotExists: true) { table in
                     table.column(entrycat_id)
                     table.column(entrycat_catID)
-                    table.column(entrycat_timestamp, defaultValue: 332145240)
+                    table.column(entrycat_timestamp, defaultValue: UserConfig.databaseTimestamp)
                     
                     table.foreignKey(entrycat_catID, references: category_table, category_id, delete: .cascade)
                     table.foreignKey(entrycat_id, references: entry_table, entry_id, delete: .cascade)
@@ -54,7 +54,7 @@ class DatabaseInitializer: Database {
                 try db.run( entrymedia_table.create(ifNotExists: true) { table in
                     table.column(entrymedia_id)
                     table.column(entrymedia_mediaID)
-                    table.column(entrymedia_timestamp, defaultValue: 332145240)
+                    table.column(entrymedia_timestamp, defaultValue: UserConfig.databaseTimestamp)
                     
                     table.foreignKey(entrymedia_mediaID, references: media_table, media_id, delete: .cascade)
                     table.foreignKey(entrymedia_id, references: entry_table, entry_id, delete: .cascade)
@@ -63,14 +63,14 @@ class DatabaseInitializer: Database {
                 try db.run( hausa_table.create(ifNotExists: true) { table in
                     table.column(hausa_id, primaryKey: .autoincrement)
                     table.column(hausa_entry)
-                    table.column(hausa_timestamp, defaultValue: 332145240)
+                    table.column(hausa_timestamp, defaultValue: UserConfig.databaseTimestamp)
                 })
                 
                 try db.run( media_table.create(ifNotExists: true) { table in
                     table.column(media_id, primaryKey: .autoincrement)
                     table.column(media_url)
                     table.column(media_type)
-                    table.column(media_timestamp, defaultValue: 332145240)
+                    table.column(media_timestamp, defaultValue: UserConfig.databaseTimestamp)
                 })
                 
                 try db.run( statsOwn.create(ifNotExists: true) { table in

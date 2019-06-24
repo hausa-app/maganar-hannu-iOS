@@ -18,7 +18,7 @@ class UserConfig: Config {
     static var clientActivated = false
     
     static var quality: String = "mi"
-    static var databaseTimestamp: Int64 = 332145240
+    static var databaseTimestamp: Int64 = 1561322469331
     static var updateOnlyOnWifi: Bool = true
     static var participateInStats: Bool = false
     static var updateStatsOnStartup: Bool = false

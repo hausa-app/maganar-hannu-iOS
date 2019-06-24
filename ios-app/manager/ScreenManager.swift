@@ -20,14 +20,19 @@ class ScreenManager {
     
     var entryList: EntryList = EntryList()
     
-    var categoryList: [Category]
+    var categoryList: [Category]?
     
     init() {
-        self.categoryList = database.getCategories()!
+        if let categories = database.getCategories() {
+            self.categoryList = categories
+        }
+        
         self.searchManager = SearchManager(database: database)
         self.statisticsManager = StatisticsManager(database: limitedDatabase)
-
-        self.entryList.setFavoriteEntries(entries: statisticsManager.getFavoriteEntries())
+ 
+        if let favorites = statisticsManager.getFavoriteEntries() {
+            self.entryList.setFavoriteEntries(entries: favorites)
+        }
     }
     
     func update() {
@@ -65,7 +70,9 @@ class ScreenManager {
     
     func setFavorited(entry: Entry) {
         self.statisticsManager.changeFavoriteStatus(entry: entry)
-        self.entryList.setFavoriteEntries(entries: statisticsManager.getFavoriteEntries())
+        if let favorites = statisticsManager.getFavoriteEntries() {
+            self.entryList.setFavoriteEntries(entries: favorites)
+        }
     }
     
     func addHit(entry: Entry) {
@@ -76,17 +83,21 @@ class ScreenManager {
         self.statisticsManager.removeViewed(entry: entry)
     }
     
-    func getPopularEntries(_ limit: Int? = nil) -> [Entry] {
-        self.entryList.setMostPopularEntries(entries: statisticsManager.getMostPopularEntries(limit))
+    func getPopularEntries(_ limit: Int? = nil) -> [Entry]? {
+        if let popular = statisticsManager.getMostPopularEntries(limit) {
+            self.entryList.setMostPopularEntries(entries: popular)
+        }
         return self.entryList.getMostPopularEntries()
     }
     
-    func getRecentViewedEntries(_ limit: Int? = nil) -> [Entry] {
-        self.entryList.setRecentViewedEntries(entries: statisticsManager.getRecentViewedEntries(limit))
+    func getRecentViewedEntries(_ limit: Int? = nil) -> [Entry]? {
+        if let recentViewed = statisticsManager.getRecentViewedEntries(limit) {
+            self.entryList.setRecentViewedEntries(entries: recentViewed)
+        }
         return self.entryList.getRecentViewedEntries()
     }
     
-    func getFavoriteEntries(_ limit: Int? = nil) -> [Entry] {
+    func getFavoriteEntries(_ limit: Int? = nil) -> [Entry]? {
         return statisticsManager.getFavoriteEntries(limit)
     }
     

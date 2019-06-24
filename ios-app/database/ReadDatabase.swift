@@ -41,7 +41,7 @@ class ReadDatabase: Database {
             for word in try db.prepare(joinAll().where(entrycat_table[entrycat_catID] == with)) {
                 buildHausaList(&entries, word: word)
             }
-            return entries
+            return entries.sorted(by: { Utilities.hausaString($0.word)  < Utilities.hausaString($1.word)})
         } catch {
             print("Could not fetch words from categories!")
             return nil

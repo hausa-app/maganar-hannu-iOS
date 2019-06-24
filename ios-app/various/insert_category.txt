@@ -6,4 +6,5 @@ VALUES
 	(4,'Kasuwanci da ƙidaya','Commerce and counting', 5153510, 171),
 	(5,'Ayyukan yau da kullum','Everyday activities', 9449471, 195),
     (6,'Lokaci da yanayi','Time and weather', 14952764, 294),
-    (7,'Ilmi','Education', 14388500, 347);
+    (7,'Ilmi','Education', 10183713, 347),
+    (8,'Gida: Kayan gida da aikace-aikacen gida', 'House: Things and activities in the house', 16096256, 438);

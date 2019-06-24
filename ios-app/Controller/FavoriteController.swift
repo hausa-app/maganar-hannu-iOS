@@ -65,7 +65,7 @@ class FavoriteController: MainController {
 
         headerView.setColor()
         
-        if favoriteEntries.isEmpty {
+        if favoriteEntries == nil || favoriteEntries.isEmpty {
             headerView.setHeader("Favorites")
         } else {
             headerView.changeIcon(editingList)
@@ -108,7 +108,7 @@ class FavoriteController: MainController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let count = favoriteEntries.count
+        let count = favoriteEntries?.count ?? 0
         if count > limit { return count - 1 }
         return count
     }
