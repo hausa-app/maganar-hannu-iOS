@@ -285,8 +285,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "97"
             endingLineNumber = "97"
-            landmarkName = "Utilities"
-            landmarkType = "3">
+            landmarkName = "readDataFromCSV()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1155,13 +1155,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/NetworkManager.swift"
-            timestampString = "558629351.5390919"
+            timestampString = "582302978.075375"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"
             endingLineNumber = "56"
-            landmarkName = "fetchImageFromUrl(_:_:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1187,13 +1187,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/NetworkManager.swift"
-            timestampString = "558629351.53933"
+            timestampString = "582302978.0757329"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "58"
             endingLineNumber = "58"
-            landmarkName = "fetchImageFromUrl(_:_:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -1235,13 +1235,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/NetworkManager.swift"
-            timestampString = "558629351.539399"
+            timestampString = "582302978.075984"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
             endingLineNumber = "59"
-            landmarkName = "fetchImageFromUrl(_:_:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1251,13 +1251,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/NetworkManager.swift"
-            timestampString = "558629351.539462"
+            timestampString = "582302978.076225"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "55"
             endingLineNumber = "55"
-            landmarkName = "fetchImageFromUrl(_:_:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1267,13 +1267,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/NetworkManager.swift"
-            timestampString = "558629351.5395041"
+            timestampString = "582302978.076463"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "54"
             endingLineNumber = "54"
-            landmarkName = "fetchImageFromUrl(_:_:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1379,13 +1379,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/NetworkManager.swift"
-            timestampString = "558629351.539988"
+            timestampString = "582302978.076787"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "40"
             endingLineNumber = "40"
-            landmarkName = "sendData(_:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1491,13 +1491,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/NetworkManager.swift"
-            timestampString = "558629351.540387"
+            timestampString = "582302978.077077"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "61"
             endingLineNumber = "61"
-            landmarkName = "fetchImageFromUrl(_:_:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1955,13 +1955,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-app/networking/NetworkManager.swift"
-            timestampString = "558629351.542757"
+            timestampString = "582302978.077611"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
             endingLineNumber = "44"
-            landmarkName = "sendData(_:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

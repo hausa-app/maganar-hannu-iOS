@@ -1,7 +1,7 @@
 PODS:
-  - SQLite.swift (0.11.5):
-    - SQLite.swift/standard (= 0.11.5)
-  - SQLite.swift/standard (0.11.5)
+  - SQLite.swift (0.12.0):
+    - SQLite.swift/standard (= 0.12.0)
+  - SQLite.swift/standard (0.12.0)
   - SwiftSocket (2.0.2)
 
 DEPENDENCIES:
@@ -14,9 +14,9 @@ SPEC REPOS:
     - SwiftSocket
 
 SPEC CHECKSUMS:
-  SQLite.swift: 6e5356850bb1791459f8c16d6ee9195b28714a2e
+  SQLite.swift: 7cad9db150a03716336e69469ec9559c85aece5b
   SwiftSocket: 6f4c9c63fbc5c1d61188936bb3c599fd546f40ae
 
 PODFILE CHECKSUM: cd198fce78444358244c45542900b986cdfadfca
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.1

@@ -117,9 +117,9 @@ class CustomCell: UITableViewCell {
     @IBOutlet weak var updateImage: UIImageView!
     @IBOutlet weak var updateButton: UIButton!
     
-    let downloadImage = #imageLiteral(resourceName: "download")
-    let utdImage = #imageLiteral(resourceName: "uptodate")
-    let checkImage = #imageLiteral(resourceName: "question_ico")
+    let downloadImage = UIImage(named: "download")
+    let utdImage = UIImage(named: "uptodate")
+    let checkImage = UIImage(named: "question_ico")
     
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     

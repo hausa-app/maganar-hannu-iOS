@@ -21,7 +21,6 @@ class StartupController {
     
     func initialize() {
         AppConfig.readConfig()
-        
     }
     
     func checkUpdate() {
