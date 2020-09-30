@@ -127,7 +127,7 @@ class HN_category: HNObject {
     override func readParams(object: JSONObject) {
         id = object.getInt(name: "id")
         hausa = object.get(name: "cat_hausa") as! String
-        english = object.get(name: "cat_hausa") as! String
+        english = object.get(name: "cat_english") as! String
         timestamp = Int64(object.getString(name: "timestamp")!)
         flag = object.getBool(name: "flag")
         color = object.get(name: "color") as! String;

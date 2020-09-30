@@ -9,7 +9,7 @@
 import Foundation
 import SQLite
 
-class Database {
+public class Database {
     
     var db: Connection!
     

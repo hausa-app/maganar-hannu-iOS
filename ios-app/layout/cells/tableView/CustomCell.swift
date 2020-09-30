@@ -127,7 +127,7 @@ class CustomCell: UITableViewCell {
         updateImage.isHidden = false
         
         let databaseTimestamp = UserConfig.getDatabaseTimestamp()
-        if databaseTimestamp == 332145240 {
+        if databaseTimestamp == 1561322469331 {
             databaseText.text = "Initial Version"
         } else { databaseText.text = databaseTimestamp.toDate().format() }
         
