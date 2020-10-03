@@ -18,8 +18,8 @@ class HausaEntry: Entry {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.word = aDecoder.decodeObject(forKey: "word") as! String
-        self.translationList = aDecoder.decodeObject(forKey: "translationList") as! [String]
+        self.word = aDecoder.decodeObject(forKey: "word") as? String
+        self.translationList = aDecoder.decodeObject(forKey: "translationList") as? [String]
     }
     
     override func encode(with aCoder: NSCoder) {

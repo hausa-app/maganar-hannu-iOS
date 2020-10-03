@@ -29,10 +29,10 @@ class AppConfig: Config {
             imageList = NSKeyedUnarchiver.unarchiveObject(with: imageListObject as Data) as! [SignImage]
         }
         if let lastChecked = preferences.value(forKey: "lastChecked") {
-            lastCheckedDBTimestampServer = lastChecked as! Int64
+            lastCheckedDBTimestampServer = lastChecked as? Int64
         }
         if let dbTSServer = preferences.value(forKey: "databaseTimestampServer") {
-            databaseTimestampServer = dbTSServer as! Int64
+            databaseTimestampServer = dbTSServer as? Int64
         }
     }
     

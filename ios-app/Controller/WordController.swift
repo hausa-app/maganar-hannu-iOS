@@ -127,7 +127,7 @@ class WordController: UIViewController, UIScrollViewDelegate {
     
     func updateEntry(_ updateAL: Bool? = false) {
         if updateAL! { self.activeList = screenMng.getActiveEntryList() }
-        if let index = activeList.index(of: selectedEntry) {
+        if let index = activeList.firstIndex(of: selectedEntry) {
             self.index = index
         }
         

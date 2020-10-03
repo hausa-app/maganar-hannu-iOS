@@ -190,43 +190,43 @@ class SlideMenu: UIViewController, UITableViewDataSource, UITableViewDelegate, U
         } else if cell.reuseIdentifier == "designCell" {
             if cell.id == 8 {
                 cell.setLabel(text: "Main theme color")
-                cell.colorSlider.value = Float(cell.colorArray.index(of: UserConfig.getMainThemeColor())!)
+                cell.colorSlider.value = Float(cell.colorArray.firstIndex(of: UserConfig.getMainThemeColor())!)
                 cell.sliderHandler = {
                     UserConfig.setMainThemeColor(colorHex: cell.colorArray[Int(cell.colorSlider.value)])
                 }
                 cell.resetHandler = {
                     UserConfig.setMainThemeColor(colorHex: 0x295b2f)
-                    cell.colorSlider.value = Float(cell.colorArray.index(of: 0x295b2f)!)
+                    cell.colorSlider.value = Float(cell.colorArray.firstIndex(of: 0x295b2f)!)
                 }
             } else if cell.id == 9 {
                 cell.setLabel(text: "\"Most popular\"")
-                cell.colorSlider.value = Float(cell.colorArray.index(of: UserConfig.getMostPopularColor())!)
+                cell.colorSlider.value = Float(cell.colorArray.firstIndex(of: UserConfig.getMostPopularColor())!)
                 cell.sliderHandler = {
                     UserConfig.setMostPopularColor(colorHex: cell.colorArray[Int(cell.colorSlider.value)])
                 }
                 cell.resetHandler = {
                     UserConfig.setMostPopularColor(colorHex: 0x295b2f)
-                    cell.colorSlider.value = Float(cell.colorArray.index(of: 0x295b2f)!)
+                    cell.colorSlider.value = Float(cell.colorArray.firstIndex(of: 0x295b2f)!)
                 }
             } else if cell.id == 10 {
                 cell.setLabel(text: "\"Recent searches\"")
-                cell.colorSlider.value = Float(cell.colorArray.index(of: UserConfig.getRecentSearchesColor())!)
+                cell.colorSlider.value = Float(cell.colorArray.firstIndex(of: UserConfig.getRecentSearchesColor())!)
                 cell.sliderHandler = {
                     UserConfig.setRecentSearchesColor(colorHex: cell.colorArray[Int(cell.colorSlider.value)])
                 }
                 cell.resetHandler = {
                     UserConfig.setRecentSearchesColor(colorHex: 0x295b2f)
-                    cell.colorSlider.value = Float(cell.colorArray.index(of: 0x295b2f)!)
+                    cell.colorSlider.value = Float(cell.colorArray.firstIndex(of: 0x295b2f)!)
                 }
             } else if cell.id == 11 {
                 cell.setLabel(text: "\"Recent views\"")
-                cell.colorSlider.value = Float(cell.colorArray.index(of: UserConfig.getRecentViewsColor())!)
+                cell.colorSlider.value = Float(cell.colorArray.firstIndex(of: UserConfig.getRecentViewsColor())!)
                 cell.sliderHandler = {
                     UserConfig.setRecentViewsColor(colorHex: cell.colorArray[Int(cell.colorSlider.value)])
                 }
                 cell.resetHandler = {
                     UserConfig.setRecentViewsColor(colorHex: 0x295b2f)
-                    cell.colorSlider.value = Float(cell.colorArray.index(of: 0x295b2f)!)
+                    cell.colorSlider.value = Float(cell.colorArray.firstIndex(of: 0x295b2f)!)
                 }
             }
         } else if cell.reuseIdentifier == "textCell" {

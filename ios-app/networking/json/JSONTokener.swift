@@ -256,7 +256,7 @@ class JSONTokener {
             return false
         }
         
-        if (literal.index(of: ".")?.encodedOffset == -1) {
+        if (literal.firstIndex(of: ".")?.encodedOffset == -1) {
             var number = literal
             if (number.starts(with: "0x") || number.starts(with: "0X")) {
                 number = number.fastSubstring(beginIndex: 2, subLen: nil)

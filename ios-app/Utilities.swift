@@ -383,35 +383,35 @@ enum ThemeType: Int {
 
 public extension UIColor {
     
-    public class func fuberBlue()->UIColor {
+    class func fuberBlue()->UIColor {
         struct C {
             static var c : UIColor = UIColor(red: 15/255, green: 78/255, blue: 101/255, alpha: 1)
         }
         return C.c
     }
     
-    public class func fuberLightBlue()->UIColor {
+    class func fuberLightBlue()->UIColor {
         struct C {
             static var c : UIColor = UIColor(red: 77/255, green: 181/255, blue: 217/255, alpha: 1)
         }
         return C.c
     }
     
-    public class func hausaGreen()->UIColor {
+    class func hausaGreen()->UIColor {
         struct C {
             static var c : UIColor = UIColor(red: 12/255, green: 92/255, blue: 42/255, alpha: 1)
         }
         return C.c
     }
     
-    public class func hausaSecond()->UIColor {
+    class func hausaSecond()->UIColor {
         struct C {
             static var c : UIColor = UIColor(red: 24/255, green: 60/255, blue: 39/255, alpha: 1)
         }
         return C.c
     }
     
-    public static func uiColorFromHex(rgbValue: Int) -> UIColor {
+    static func uiColorFromHex(rgbValue: Int) -> UIColor {
         
         let red =   CGFloat((rgbValue & 0xFF0000) >> 16) / 0xFF
         let green = CGFloat((rgbValue & 0x00FF00) >> 8) / 0xFF
@@ -446,7 +446,7 @@ public extension Date {
         return dateFormatter.string(from: self)
     }
     
-    public func toInt() -> Int {
+    func toInt() -> Int {
         let timeInterval = self.timeIntervalSince1970
         return Int(timeInterval)
     }

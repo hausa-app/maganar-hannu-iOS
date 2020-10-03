@@ -126,11 +126,11 @@ class HN_category: HNObject {
     
     override func readParams(object: JSONObject) {
         id = object.getInt(name: "id")
-        hausa = object.get(name: "cat_hausa") as! String
-        english = object.get(name: "cat_english") as! String
+        hausa = object.get(name: "cat_hausa") as? String
+        english = object.get(name: "cat_english") as? String
         timestamp = Int64(object.getString(name: "timestamp")!)
         flag = object.getBool(name: "flag")
-        color = object.get(name: "color") as! String;
+        color = object.get(name: "color") as? String;
         media_id = object.getInt(name: "media_id")
     }
 }
@@ -173,7 +173,7 @@ class HN_hausa: HNObject {
     
     override func readParams(object: JSONObject) {
         id = object.getInt(name: "id")
-        entry = object.get(name: "entry_hausa") as! String
+        entry = object.get(name: "entry_hausa") as? String
         timestamp = Int64(object.getString(name: "timestamp")!)
         flag = object.getBool(name: "flag")
     }
@@ -187,7 +187,7 @@ class HN_english: HNObject {
     
     override func readParams(object: JSONObject) {
         id = object.getInt(name: "id")
-        entry = object.get(name: "entry_english") as! String
+        entry = object.get(name: "entry_english") as? String
         timestamp = Int64(object.getString(name: "timestamp")!)
         flag = object.getBool(name: "flag")
     }
@@ -202,8 +202,8 @@ class HN_media: HNObject {
     
     override func readParams(object: JSONObject) {
         id = object.getInt(name: "id")
-        url = object.get(name: "media_url") as! String
-        type = object.get(name: "media_type") as! String
+        url = object.get(name: "media_url") as? String
+        type = object.get(name: "media_type") as? String
         timestamp = Int64(object.getString(name: "timestamp")!)
         flag = object.getBool(name: "flag")
     }

@@ -34,17 +34,17 @@ import Foundation
     }
     
     required init(coder aDecoder: NSCoder) {
-        self.id = aDecoder.decodeObject(forKey: "id") as! Int
-        self.lastModified = aDecoder.decodeObject(forKey: "lastModified") as! Date
+        self.id = aDecoder.decodeObject(forKey: "id") as? Int
+        self.lastModified = aDecoder.decodeObject(forKey: "lastModified") as? Date
         
         
         if let imageListObject = aDecoder.decodeObject(forKey: "imageList") as? NSData {
-            imageList = NSKeyedUnarchiver.unarchiveObject(with: imageListObject as Data) as! [SignImage]
+            imageList = NSKeyedUnarchiver.unarchiveObject(with: imageListObject as Data) as? [SignImage]
         }
         
-        self.category = aDecoder.decodeObject(forKey: "category") as! Category
-        self.favorite = aDecoder.decodeObject(forKey: "favorite") as! Bool
-        self.favoritedTime = aDecoder.decodeObject(forKey: "favoritedTime") as! Date
+        self.category = aDecoder.decodeObject(forKey: "category") as? Category
+        self.favorite = aDecoder.decodeObject(forKey: "favorite") as? Bool
+        self.favoritedTime = aDecoder.decodeObject(forKey: "favoritedTime") as? Date
     }
     
     func encode(with aCoder: NSCoder) {
@@ -53,7 +53,7 @@ import Foundation
         aCoder.encode(category, forKey: "category")
         aCoder.encode(favorite, forKey: "favorite")
         aCoder.encode(favoritedTime, forKey: "favoritedTime")
-        aCoder.encode(NSKeyedArchiver.archivedData(withRootObject: imageList), forKey: "imageList")
+        aCoder.encode(NSKeyedArchiver.archivedData(withRootObject: imageList!), forKey: "imageList")
     }
     
     

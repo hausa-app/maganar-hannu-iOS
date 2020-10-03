@@ -39,7 +39,7 @@ import UIKit
     }
     
     required init(coder aDecoder: NSCoder) {
-        self.media_id = aDecoder.decodeObject(forKey: "media_id") as! Int
+        self.media_id = aDecoder.decodeObject(forKey: "media_id") as? Int
         self.media_path = aDecoder.decodeObject(forKey: "media_path") as! String
         self.media_type = aDecoder.decodeObject(forKey: "media_type") as! String
         super.init()
@@ -57,8 +57,8 @@ import UIKit
         let imageSource = CGImageSourceCreateWithURL(url, nil)
         if imageSource == nil { return nil }
         let options:NSDictionary = [
-            kCGImageSourceCreateThumbnailWithTransform : kCFBooleanTrue
-            ,   kCGImageSourceCreateThumbnailFromImageIfAbsent : kCFBooleanTrue
+            kCGImageSourceCreateThumbnailWithTransform : kCFBooleanTrue!
+            ,   kCGImageSourceCreateThumbnailFromImageIfAbsent : kCFBooleanTrue!
             ,   kCGImageSourceThumbnailMaxPixelSize : max
             ] as CFDictionary
         let imgRef = CGImageSourceCreateThumbnailAtIndex(imageSource!, 0, options)

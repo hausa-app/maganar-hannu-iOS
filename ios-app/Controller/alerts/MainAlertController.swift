@@ -112,18 +112,26 @@ class MainAlertController: UIViewController, UITableViewDataSource, UITableViewD
             view.addConstraint(NSLayoutConstraint(item: popupView, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1, constant: 0))
         }
         
+        if let view = view {
+            view.addConstraint(NSLayoutConstraint(item: view, attribute: .leadingMargin, relatedBy: .equal, toItem: popupView, attribute: .leading, multiplier: 1, constant: -10))
+        }
         
-        view.addConstraint(NSLayoutConstraint(item: view, attribute: .leadingMargin, relatedBy: .equal, toItem: popupView, attribute: .leading, multiplier: 1, constant: -10))
+        if let innerView = innerView {
+            popupView.addConstraint(NSLayoutConstraint(item: innerView, attribute: .top, relatedBy: .equal, toItem: popupView, attribute: .top, multiplier: 1, constant: 2))
+            popupView.addConstraint(NSLayoutConstraint(item: innerView, attribute: .leading, relatedBy: .equal, toItem: popupView, attribute: .leading, multiplier: 1, constant: 2))
+        }
 
-        popupView.addConstraint(NSLayoutConstraint(item: innerView, attribute: .top, relatedBy: .equal, toItem: popupView, attribute: .top, multiplier: 1, constant: 2))
-        popupView.addConstraint(NSLayoutConstraint(item: innerView, attribute: .leading, relatedBy: .equal, toItem: popupView, attribute: .leading, multiplier: 1, constant: 2))
         popupView.addConstraint(NSLayoutConstraint(item: popupView, attribute: .trailing, relatedBy: .equal, toItem: innerView, attribute: .trailing, multiplier: 1, constant: 2))
         popupView.addConstraint(NSLayoutConstraint(item: popupView, attribute: .bottom, relatedBy: .equal, toItem: innerView, attribute: .bottom, multiplier: 1, constant: 2))
         
         titleStack.addConstraint(NSLayoutConstraint(item: titleStack, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 40))
         
         innerView.addConstraint(NSLayoutConstraint(item: titleStack, attribute: .leading, relatedBy: .equal, toItem: innerView, attribute: .leading, multiplier: 1, constant: 0))
-        innerView.addConstraint(NSLayoutConstraint(item: innerView, attribute: .trailing, relatedBy: .equal, toItem: titleStack, attribute: .trailing, multiplier: 1, constant: 0))
+        
+        if let innerView = innerView {
+            innerView.addConstraint(NSLayoutConstraint(item: innerView, attribute: .trailing, relatedBy: .equal, toItem: titleStack, attribute: .trailing, multiplier: 1, constant: 0))
+        }
+
         innerView.addConstraint(NSLayoutConstraint(item: titleStack, attribute: .top, relatedBy: .equal, toItem: innerView, attribute: .top, multiplier: 1, constant: 5))
         
         seperator.addConstraint(NSLayoutConstraint(item: seperator, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 1))
@@ -133,24 +141,39 @@ class MainAlertController: UIViewController, UITableViewDataSource, UITableViewD
         innerView.addConstraint(NSLayoutConstraint(item: seperator2, attribute: .leading, relatedBy: .equal, toItem: innerView, attribute: .leading, multiplier: 1, constant: 0))
         innerView.addConstraint(NSLayoutConstraint(item: seperator, attribute: .top, relatedBy: .equal, toItem: titleStack, attribute: .bottom, multiplier: 1, constant: 8))
         innerView.addConstraint(NSLayoutConstraint(item: seperator, attribute: .width, relatedBy: .equal, toItem: titleStack, attribute: .width, multiplier: 1, constant: 0))
-        innerView.addConstraint(NSLayoutConstraint(item: innerView, attribute: .trailing, relatedBy: .equal, toItem: seperator, attribute: .trailing, multiplier: 1, constant: 0))
         
+        if let innerView = innerView {
+            innerView.addConstraint(NSLayoutConstraint(item: innerView, attribute: .trailing, relatedBy: .equal, toItem: seperator, attribute: .trailing, multiplier: 1, constant: 0))
+        }
+
         innerView.addConstraint(NSLayoutConstraint(item: seperator2, attribute: .top, relatedBy: .equal, toItem: tableView, attribute: .bottom, multiplier: 1, constant: 0))
         innerView.addConstraint(NSLayoutConstraint(item: seperator2, attribute: .width, relatedBy: .equal, toItem: tableView, attribute: .width, multiplier: 1, constant: 0))
-        innerView.addConstraint(NSLayoutConstraint(item: innerView, attribute: .trailing, relatedBy: .equal, toItem: seperator2, attribute: .trailing, multiplier: 1, constant: 0))
+        
+        if let innerView = innerView {
+            innerView.addConstraint(NSLayoutConstraint(item: innerView, attribute: .trailing, relatedBy: .equal, toItem: seperator2, attribute: .trailing, multiplier: 1, constant: 0))
+        }
+
         innerView.addConstraint(NSLayoutConstraint(item: bottomButtons, attribute: .top, relatedBy: .equal, toItem: seperator2, attribute: .bottom, multiplier: 1, constant: 0))
         
         innerView.addConstraint(NSLayoutConstraint(item: tableView, attribute: .width, relatedBy: .equal, toItem: titleStack, attribute: .width, multiplier: 1, constant: 0))
         innerView.addConstraint(NSLayoutConstraint(item: tableView, attribute: .leading, relatedBy: .equal, toItem: innerView, attribute: .leading, multiplier: 1, constant: 0))
         innerView.addConstraint(NSLayoutConstraint(item: tableView, attribute: .top, relatedBy: .equal, toItem: seperator, attribute: .bottom, multiplier: 1, constant: 0))
 
-        innerView.addConstraint(NSLayoutConstraint(item: innerView, attribute: .trailing, relatedBy: .equal, toItem: tableView, attribute: .trailing, multiplier: 1, constant: 0))
-
+        if let innerView = innerView {
+            innerView.addConstraint(NSLayoutConstraint(item: innerView, attribute: .trailing, relatedBy: .equal, toItem: tableView, attribute: .trailing, multiplier: 1, constant: 0))
+        }
+        
                 innerView.addConstraint(NSLayoutConstraint(item: bottomButtons, attribute: .width, relatedBy: .equal, toItem: tableView, attribute: .width, multiplier: 1, constant: 0))
         innerView.addConstraint(NSLayoutConstraint(item: bottomButtons, attribute: .leading, relatedBy: .equal, toItem: innerView, attribute: .leading, multiplier: 1, constant: 0))
 
-        innerView.addConstraint(NSLayoutConstraint(item: innerView, attribute: .trailing, relatedBy: .equal, toItem: bottomButtons, attribute: .trailing, multiplier: 1, constant: 0))
-        innerView.addConstraint(NSLayoutConstraint(item: innerView, attribute: .bottom, relatedBy: .equal, toItem: bottomButtons, attribute: .bottom, multiplier: 1, constant: 0))
+        
+        if let innerView = innerView {
+            innerView.addConstraint(NSLayoutConstraint(item: innerView, attribute: .trailing, relatedBy: .equal, toItem: bottomButtons, attribute: .trailing, multiplier: 1, constant: 0))
+            
+            innerView.addConstraint(NSLayoutConstraint(item: innerView, attribute: .bottom, relatedBy: .equal, toItem: bottomButtons, attribute: .bottom, multiplier: 1, constant: 0))
+        }
+        
+
         
         bottomButtons.addConstraint(NSLayoutConstraint(item: bottomButtons, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 50))
         bottomButtons.addConstraint(NSLayoutConstraint(item: button, attribute: .height, relatedBy: .equal, toItem: cancel, attribute: .height, multiplier: 1, constant: 0))
